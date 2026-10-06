@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pappa e ciccia | Italienische Markt-Trattoria & Weinbar • Rochusmarkt Wien 1030</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            wine: {
+              50: '#fbf4f5',
+              100: '#f5e6e8',
+              200: '#edd0d4',
+              300: '#dfaeb4',
+              400: '#cb818b',
+              500: '#b45a66',
+              600: '#9b424e',
+              700: '#7a2832', // Specified brand wine red
+              800: '#67242c',
+              900: '#562127',
+              950: '#351115',
+            },
+            cypress: {
+              700: '#2d4b36',
+              800: '#233c2b',
+              900: '#1b3022', // Specified dark cypress green
+              950: '#122017',
+            },
+            parchment: {
+              50: '#fdfbf7',
+              100: '#f8f4ec',
+              200: '#efe5d6',
+              300: '#e3d2ba',
+              400: '#cbb391',
+              500: '#af936f',
+            },
+            slatechalk: '#1a1816',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .chalk-border {
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15), 0 10px 30px -10px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body class="bg-[#141211] text-[#ede8e1] font-sans antialiased selection:bg-wine-700 selection:text-white pb-20 md:pb-0">
+
+  <!-- TOP CONCEPT BANNER -->
+  <aside aria-label="Konzept-Status" class="bg-wine-900 border-b border-wine-700/60 text-[11px] tracking-wider uppercase text-wine-200 py-2 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span>Konzeptentwurf für Pappa e ciccia • Live Demo</span>
+      <span class="text-wine-400 hidden sm:inline">•</span>
+      <span class="text-parchment-200/90 hidden sm:inline">Rochusmarkt Stand 3, 1030 Wien</span>
+    </div>
+  </aside>
+
+  <!-- VERIFIED LOCATION & HOURS TOP BAR -->
+  <div class="border-b border-white/5 bg-[#171413] text-[11px] tracking-wide text-parchment-300/80 py-2.5 px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-4 flex-wrap">
+        <span class="text-parchment-100 font-medium">📍 Rochusmarkt Stand 3 / Landstraßer Hauptstraße 51, 1030 Wien</span>
+        <span class="text-white/20 hidden md:inline">•</span>
+        <span class="text-emerald-400/90 font-medium">900 m von HTL Rennweg (U3 Rochusgasse)</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span class="hidden lg:inline text-parchment-300">🕒 Mo–Fr 10:30–23:00 | Sa–So Ruhetag</span>
+        <span class="text-white/20 hidden lg:inline">•</span>
+        <a href="tel:+436766575360" class="text-parchment-200 hover:text-white font-medium transition-colors flex items-center gap-1.5">
+          <span>📞</span>
+          <span>+43 676 6575360</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-[#141211]/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col">
+        <div class="flex items-baseline gap-2">
+          <span class="font-serif text-3xl tracking-wide text-parchment-100 font-normal">Pappa e ciccia</span>
+          <span class="text-xs uppercase tracking-widest text-wine-300 font-serif italic">Trattoria</span>
+        </div>
+        <span class="text-[9px] tracking-[0.25em] uppercase text-parchment-400/70 font-sans">
+          Markt-Küche &bull; Enoteca &bull; Rochusmarkt Stand 3
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-9 text-xs tracking-[0.18em] uppercase font-medium text-parchment-300">
+        <a href="#lavagna" class="hover:text-wine-300 transition-colors">La Lavagna</a>
+        <a href="#speisekarte" class="hover:text-wine-300 transition-colors">Speisekarte</a>
+        <a href="#weinbar" class="hover:text-wine-300 transition-colors">Vini &amp; Bar</a>
+        <a href="#geschichte" class="hover:text-wine-300 transition-colors">Marktflair</a>
+        <a href="#standort" class="hover:text-wine-300 transition-colors">Kontakt</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <button onclick="openModal()" class="px-5 py-2.5 bg-wine-700 hover:bg-wine-600 text-white text-xs tracking-widest uppercase font-medium transition-all shadow-sm">
+          Tisch anfragen
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-parchment-200 p-2" aria-label="Menü öffnen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#1a1715] border-b border-white/10 px-6 py-6 space-y-4 text-xs tracking-widest uppercase">
+      <a href="#lavagna" onclick="toggleMobileMenu()" class="block py-1 hover:text-wine-300">La Lavagna (Tagesempfehlungen)</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-wine-300">Speisekarte &amp; Allergene</a>
+      <a href="#weinbar" onclick="toggleMobileMenu()" class="block py-1 hover:text-wine-300">Vini &amp; Franciacorta</a>
+      <a href="#geschichte" onclick="toggleMobileMenu()" class="block py-1 hover:text-wine-300">Das Marktleben</a>
+      <a href="#standort" onclick="toggleMobileMenu()" class="block py-1 hover:text-wine-300">Standort Rochusmarkt</a>
+      <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-3 py-3 bg-wine-700 text-white font-medium tracking-widest uppercase text-xs">
+        Tisch reservieren
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <!-- High res atmospheric Italian bistro / wine glasses -->
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=85" alt="Pappa e ciccia Markt-Atmosphäre am Rochusmarkt" class="w-full h-full object-cover opacity-20">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#141211] via-[#141211]/80 to-[#141211]/40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 border border-wine-600/40 bg-wine-950/70 text-parchment-200 text-[11px] tracking-[0.25em] uppercase">
+        <span>🍷</span>
+        <span>Markt-Trattoria &bull; Stand 3 Rochusmarkt Wien</span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-normal tracking-normal text-parchment-100 mb-8 leading-[1.12]">
+        Toskanische Markteleganz.<br>
+        <span class="italic text-wine-300">Direkt am lebendigen Rochusmarkt.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-parchment-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+        Wo der Tag mit feinstem Espresso beginnt und am Abend bei Tagliolini mit frischem Trüffel, Vongole Veraci und handverlesenen Weinen ausklingt. Authentische italienische Seele ohne Chichi – mitten im 3. Wiener Gemeindebezirk.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openModal()" class="w-full sm:w-auto px-9 py-4 bg-wine-700 hover:bg-wine-600 text-white text-xs tracking-[0.2em] uppercase font-semibold transition-all shadow-lg shadow-wine-950/50">
+          Tisch anfragen
+        </button>
+        <a href="#speisekarte" class="w-full sm:w-auto px-9 py-4 border border-parchment-400/30 hover:border-parchment-200 text-parchment-200 hover:text-white text-xs tracking-[0.2em] uppercase transition-all bg-black/20">
+          Speisekarte &amp; Vini
+        </a>
+      </div>
+
+      <!-- KEY FACTS BADGES -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-16 pt-8 border-t border-white/10 text-center">
+        <div class="p-3">
+          <div class="font-serif text-2xl text-parchment-100">Stand 3</div>
+          <div class="text-[10px] tracking-widest uppercase text-parchment-400 mt-1">Rochusmarkt Wien</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-emerald-400">900 m</div>
+          <div class="text-[10px] tracking-widest uppercase text-parchment-400 mt-1">von HTL Rennweg</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-wine-300">Mo–Fr</div>
+          <div class="text-[10px] tracking-widest uppercase text-parchment-400 mt-1">10:30–23:00 Uhr</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-parchment-100">Franciacorta</div>
+          <div class="text-[10px] tracking-widest uppercase text-parchment-400 mt-1">&amp; Negroni Bar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA LAVAGNA (TAFELSCHRIFT & TAGESEMPFEHLUNGEN) -->
+  <section id="lavagna" class="py-16 bg-[#1a1715] border-y border-white/10 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="bg-[#12100f] border border-white/15 p-8 sm:p-12 chalk-border relative overflow-hidden">
+        <!-- Cypress Accent Ribbon -->
+        <div class="absolute top-0 right-0 w-36 h-36 overflow-hidden pointer-events-none">
+          <div class="bg-cypress-900 text-parchment-200 text-[9px] uppercase tracking-widest font-semibold py-1.5 text-center transform rotate-45 translate-x-10 translate-y-6 shadow-md border border-white/10">
+            Mercato
+          </div>
+        </div>
+
+        <div class="max-w-3xl space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-wine-400 text-xs uppercase tracking-[0.25em] font-semibold">La Lavagna del Giorno</span>
+            <span class="text-white/20">•</span>
+            <span class="font-serif italic text-parchment-300 text-sm">Frisch vom Markt handgeschrieben</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl text-parchment-100 font-normal">
+            Tagliolini al Tartufo Fresco &bull; Hausgemacht
+          </h2>
+
+          <p class="text-xs sm:text-sm text-parchment-300/90 leading-relaxed font-light">
+            Feine, täglich frisch gezogene Eiernudeln geschwenkt in toskanischer Fassbutter und 24 Monate gereiftem Parmigiano Reggiano, am Tisch üppig mit tagesfrischem schwarzem Trüffel gehobelt.
+          </p>
+
+          <div class="pt-2 flex flex-wrap items-center gap-4 text-xs text-parchment-400">
+            <span>Allergene: <strong class="text-parchment-200 font-normal">[A, C, G]</strong></span>
+            <span>•</span>
+            <span>Weinempfehlung: <strong class="text-wine-300 font-normal">2021 Chianti Classico DOCG, Fattoria di Rignana</strong></span>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-baseline gap-2">
+            <span class="font-serif text-3xl text-parchment-100">€ 24,50</span>
+            <span class="text-[10px] uppercase tracking-wider text-parchment-400">Tagesfrische Marktportion</span>
+          </div>
+          <button onclick="openModal('Tagliolini al Tartufo')" class="px-6 py-2.5 border border-wine-500/80 hover:bg-wine-700 text-parchment-100 text-xs tracking-widest uppercase transition-all">
+            Vorbestellen / Tisch reservieren
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE SECTION -->
+  <section id="speisekarte" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-[10px] tracking-[0.3em] uppercase text-wine-400 font-semibold mb-2">Unsere Speisekarte</div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-parchment-100 font-normal">Klassiker der italienischen Markt-Küche</h2>
+      <p class="text-xs sm:text-sm text-parchment-300 mt-4 font-light leading-relaxed">
+        Alle Speisen werden à la minute aus frischen Markt-Zutaten zubereitet. Ausgewiesene Allergen-Kennzeichnung nach österreichischem Lebensmittelrecht.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex justify-center flex-wrap gap-2 mt-10 border-b border-white/10 pb-4">
+        <button onclick="filterDishes('all', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-wine-500 text-white font-medium">Alle Speisen</button>
+        <button onclick="filterDishes('antipasti', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-parchment-400 hover:text-white">Antipasti</button>
+        <button onclick="filterDishes('primi', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-parchment-400 hover:text-white">Primi Piatti</button>
+        <button onclick="filterDishes('dolci-bevande', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-parchment-400 hover:text-white">Dolci &amp; Aperitivi</button>
+      </div>
+    </div>
+
+    <!-- Dishes Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Dish 1: Vitello Tonnato Classico -->
+      <div class="dish-item antipasti bg-[#1b1816] border border-white/10 p-6 flex flex-col justify-between hover:border-wine-700/60 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80" alt="Vitello Tonnato Classico" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-parchment-100 font-normal">Vitello Tonnato Classico</h3>
+                <span class="font-serif text-xl text-wine-300 ml-3">€ 17,90</span>
+              </div>
+              <p class="text-xs text-parchment-300 font-light leading-relaxed">
+                Hauchzart rosa gegartes Kalbfleisch, samtige Sauce aus weißem Thunfisch, Eigelb und feinsten Kapern, garniert mit knusprigen Kapernäpfeln und toskanischem Olivenöl.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-parchment-400 tracking-wider">
+          <span>Allergene: <strong class="text-parchment-200">[C, D, G]</strong></span>
+          <span class="text-wine-300 font-medium">Antipasto Favorit</span>
+        </div>
+      </div>
+
+      <!-- Dish 2: Tagliolini al Tartufo Fresco -->
+      <div class="dish-item primi bg-[#1b1816] border border-white/10 p-6 flex flex-col justify-between hover:border-wine-700/60 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1621996346565-e3d5d6281699?auto=format&fit=crop&w=350&q=80" alt="Tagliolini al Tartufo Fresco" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-parchment-100 font-normal">Tagliolini al Tartufo Fresco</h3>
+                <span class="font-serif text-xl text-wine-300 ml-3">€ 24,50</span>
+              </div>
+              <p class="text-xs text-parchment-300 font-light leading-relaxed">
+                Hausgemachte feine Eiernudeln, toskanische Fassbutter, Parmigiano Reggiano DOP und reichlich frisch über den Teller gehobelter Trüffel der Saison.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-parchment-400 tracking-wider">
+          <span>Allergene: <strong class="text-parchment-200">[A, C, G]</strong></span>
+          <span class="text-amber-400 font-medium">Empfehlung des Hauses</span>
+        </div>
+      </div>
+
+      <!-- Dish 3: Spaghetti alle Vongole Veraci -->
+      <div class="dish-item primi bg-[#1b1816] border border-white/10 p-6 flex flex-col justify-between hover:border-wine-700/60 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=350&q=80" alt="Spaghetti alle Vongole Veraci" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-parchment-100 font-normal">Spaghetti alle Vongole Veraci</h3>
+                <span class="font-serif text-xl text-wine-300 ml-3">€ 22,80</span>
+              </div>
+              <p class="text-xs text-parchment-300 font-light leading-relaxed">
+                Frische Venusmuscheln à la minute in der Pfanne geöffnet, fruchtiger Weißwein, milder Knoblauch, Peperoncino-Hauch und frische glatte Blattpetersilie.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-parchment-400 tracking-wider">
+          <span>Allergene: <strong class="text-parchment-200">[A, B, R]</strong></span>
+          <span class="text-cypress-300 font-medium">Frische Meeresspezialität</span>
+        </div>
+      </div>
+
+      <!-- Dish 4: Antipasto Misto del Mercato -->
+      <div class="dish-item antipasti bg-[#1b1816] border border-white/10 p-6 flex flex-col justify-between hover:border-wine-700/60 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&w=350&q=80" alt="Antipasto Misto del Mercato" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-parchment-100 font-normal">Antipasto Misto del Mercato</h3>
+                <span class="font-serif text-xl text-wine-300 ml-3">€ 19,50</span>
+              </div>
+              <p class="text-xs text-parchment-300 font-light leading-relaxed">
+                Große Markt-Auswahl: 24-Monate Prosciutto di San Daniele, cremige Burrata di Puglia, marinierte Artischockenherzen, Taggiasca-Oliven und sonnengetrocknete Tomaten.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-parchment-400 tracking-wider">
+          <span>Allergene: <strong class="text-parchment-200">[G]</strong></span>
+          <span class="text-parchment-300 font-medium">Ideal zum Teilen</span>
+        </div>
+      </div>
+
+      <!-- Dish 5: Negroni Sbagliato & Franciacorta -->
+      <div class="dish-item dolci-bevande bg-[#1b1816] border border-white/10 p-6 flex flex-col justify-between hover:border-wine-700/60 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=350&q=80" alt="Negroni Sbagliato & Franciacorta" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-parchment-100 font-normal">Negroni Sbagliato &amp; Franciacorta</h3>
+                <span class="font-serif text-xl text-wine-300 ml-3">ab € 9,50</span>
+              </div>
+              <p class="text-xs text-parchment-300 font-light leading-relaxed">
+                Der mailändische Aperitivo-Kult: Campari Bitter, Wermut Carpano Antica Formula, veredelt mit edlem Franciacorta DOCG Brut Schaumwein und frischer Orangenzeste.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-parchment-400 tracking-wider">
+          <span>Aperitivo &bull; Weinbar Spezialität</span>
+          <span class="text-wine-300 font-medium">Klassiker am Rochusmarkt</span>
+        </div>
+      </div>
+
+      <!-- Dish 6: Tiramisu Tradizionale -->
+      <div class="dish-item dolci-bevande bg-[#1b1816] border border-white/10 p-6 flex flex-col justify-between hover:border-wine-700/60 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=350&q=80" alt="Tiramisu Tradizionale" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-parchment-100 font-normal">Tiramisu Tradizionale</h3>
+                <span class="font-serif text-xl text-wine-300 ml-3">€ 8,50</span>
+              </div>
+              <p class="text-xs text-parchment-300 font-light leading-relaxed">
+                Täglich frisch geschlagene Mascarponecreme mit Eigelb, getränkte Savoiardi-Biskotten in starkem Röst-Espresso und feinstem Marsala, bestäubt mit herber Kakaonote.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-parchment-400 tracking-wider">
+          <span>Allergene: <strong class="text-parchment-200">[A, C, G]</strong></span>
+          <span class="text-parchment-300 font-medium">Dolce Finale</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ALLERGEN LEGEND -->
+    <div class="mt-12 p-6 bg-[#161312] border border-white/5 text-[11px] text-parchment-400/80 leading-relaxed">
+      <div class="font-semibold text-parchment-200 uppercase tracking-widest text-[10px] mb-2">Österreichische Allergenkennzeichnung:</div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
+        <span><strong>A:</strong> Gluten</span>
+        <span><strong>B:</strong> Krebstiere</span>
+        <span><strong>C:</strong> Ei</span>
+        <span><strong>D:</strong> Fisch</span>
+        <span><strong>G:</strong> Milch / Laktose</span>
+        <span><strong>L:</strong> Sellerie</span>
+        <span><strong>R:</strong> Weichtiere</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEINBAR & VINI HIGHLIGHT SECTION -->
+  <section id="weinbar" class="py-20 bg-wine-950 border-y border-wine-800/40 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-wine-300 font-semibold border-b border-wine-500/40 pb-1">
+              Enoteca &bull; Weinbar-Kultur
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-parchment-100 font-normal leading-tight">
+            Handverlesene Weine.<br>
+            <span class="italic text-wine-300">Vom Piemont bis nach Sizilien.</span>
+          </h2>
+
+          <p class="text-sm text-parchment-200 leading-relaxed font-light">
+            In unserer Weinbar servieren wir keinen Allerweltswein, sondern handwerkliche Erzeugnisse von Familienweingütern: prickelnder Franciacorta DOCG als eleganter Start, mineralischer Vermentino di Sardegna zu den Vongole und körperreicher Brunello di Montalcino für lange Abende am Rochusmarkt.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 pt-4 border-t border-white/10 text-xs">
+            <div>
+              <div class="font-serif text-xl text-parchment-100">Über 40 Positionen</div>
+              <p class="text-parchment-400 mt-1">Stets wechselnde offene Weine im Glas &amp; gereifte Flaschenraritäten.</p>
+            </div>
+            <div>
+              <div class="font-serif text-xl text-wine-300">Aperitivo Italiano</div>
+              <p class="text-parchment-400 mt-1">Täglich ab 16:30 Uhr mit frisch aufgeschnittenen Salumi.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="border border-white/10 bg-[#161312] p-4 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Weinauswahl in der Trattoria" class="w-full h-80 object-cover">
+            <div class="p-4 text-center">
+              <span class="font-serif italic text-parchment-200 text-sm">„Ein gutes Glas Wein am Markt ist das beste Gegenmittel gegen jede Hektik.“</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GESCHICHTE & MARKTFLAIR -->
+  <section id="geschichte" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="border border-cypress-800/40 bg-cypress-950/40 p-8 sm:p-14 relative">
+      <div class="max-w-3xl space-y-5">
+        <span class="text-[10px] uppercase tracking-[0.25em] text-emerald-400 font-semibold">Das Rochusmarkt-Gefühl</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-parchment-100 font-normal">
+          Der Markt als Speisekammer.
+        </h2>
+        <p class="text-xs sm:text-sm text-parchment-300 leading-relaxed font-light">
+          Stand 3 am Rochusmarkt ist kein gewöhnliches Lokal, sondern eine lebendige Oase. Wenn morgens die Markthändler ihre Kisten aufbauen, riecht es hier bereits nach frischem Basilikum, geröstetem Espresso und warmem Focaccia-Brot. Wir kochen, was die Saison und der Markt uns schenken.
+        </p>
+        <p class="text-xs text-parchment-400">
+          Nur 900 m von der HTL Rennweg entfernt – perfekt für eine genussvolle Mittagspause oder den stilvollen Feierabend nach der Schule bzw. Arbeit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT & KONTAKT -->
+  <section id="standort" class="py-20 bg-[#171413] border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-wine-400 font-semibold">Besuchen Sie uns</span>
+          <h2 class="font-serif text-4xl text-parchment-100 mt-2 mb-6">Mitten am Rochusmarkt</h2>
+          
+          <div class="space-y-4 text-xs font-light text-parchment-300">
+            <p><strong class="text-parchment-100 font-semibold">Adresse:</strong> Rochusmarkt Stand 3 / Landstraßer Hauptstraße 51, 1030 Wien</p>
+            <p><strong class="text-parchment-100 font-semibold">Öffentlich:</strong> U3 Station Rochusgasse (Ausgang Landstraßer Hauptstraße, nur 30 Meter zum Stand)</p>
+            <p><strong class="text-parchment-100 font-semibold">Fußweg:</strong> ca. 900 Meter (10–12 Gehminuten) von der HTL Rennweg</p>
+            <p><strong class="text-parchment-100 font-semibold">Telefon:</strong> <a href="tel:+436766575360" class="text-wine-300 underline">+43 676 6575360</a></p>
+            <p><strong class="text-parchment-100 font-semibold">Öffnungszeiten:</strong> Montag bis Freitag 10:30 – 23:00 Uhr<br><span class="text-parchment-400 text-[11px]">(Samstag &amp; Sonntag Ruhetag am Marktstand)</span></p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://maps.google.com/?q=Rochusmarkt+Stand+3+1030+Wien" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-slate-900 text-xs uppercase tracking-widest font-semibold hover:bg-parchment-200 transition-all">
+              Route in Google Maps ↗
+            </a>
+            <button onclick="openModal()" class="px-6 py-3 border border-white/20 hover:border-white text-white text-xs uppercase tracking-widest font-medium transition-all">
+              Tisch reservieren
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-[#12100f] border border-white/10 p-8 flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif text-2xl text-parchment-100 mb-3">Tischreservierung am Markt</h3>
+            <p class="text-xs text-parchment-300 font-light leading-relaxed mb-6">
+              Aufgrund der limitierten Sitzplätze am Stand empfehlen wir insbesondere für die Mittagszeit (12:00–14:00) und die Abendstunden eine vorherige telefonische oder schriftliche Reservierung.
+            </p>
+            <div class="p-4 bg-wine-950/60 border border-wine-800/40 text-xs text-parchment-200 space-y-1">
+              <div>📞 Schnelle Reservierung per Anruf:</div>
+              <a href="tel:+436766575360" class="text-sm font-serif text-wine-300 block font-semibold">+43 676 6575360</a>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-white/10 text-[11px] text-parchment-400">
+            Wir freuen uns auf Ihren Besuch am Rochusmarkt Stand 3!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-[#12100f] text-parchment-400 py-10 text-xs">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+      <div>&copy; 2026 Pappa e ciccia • Rochusmarkt Stand 3, 1030 Wien. Alle Rechte vorbehalten.</div>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-parchment-200 transition-colors">Impressum</a>
+        <a href="#" class="hover:text-parchment-200 transition-colors">Datenschutz</a>
+        <a href="#" class="hover:text-parchment-200 transition-colors">Allergenverordnung</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[#191614] border border-white/15 max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-parchment-400 hover:text-white text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-wine-400 font-semibold">Tisch- &amp; Platzreservierung</span>
+        <h3 class="font-serif text-3xl font-normal text-parchment-100 mt-1">Pappa e ciccia am Rochusmarkt</h3>
+        <p class="text-xs text-parchment-400 mt-1">Mo–Fr 10:30–23:00 Uhr • Schnelle Rückbestätigung per Telefon.</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitReservation(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Ihr Name *</label>
+          <input type="text" required placeholder="Vor- und Nachname" class="w-full bg-[#12100f] border border-white/15 focus:border-wine-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43 676..." class="w-full bg-[#12100f] border border-white/15 focus:border-wine-500 px-4 py-3 text-white outline-none">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">E-Mail</label>
+            <input type="email" placeholder="name@beispiel.at" class="w-full bg-[#12100f] border border-white/15 focus:border-wine-500 px-4 py-3 text-white outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Datum (Mo-Fr)</label>
+            <input type="date" required id="res-date" class="w-full bg-[#12100f] border border-white/15 focus:border-wine-500 px-3 py-3 text-white outline-none text-[11px]">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Uhrzeit</label>
+            <select class="w-full bg-[#12100f] border border-white/15 focus:border-wine-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>12:00 Mittag</option>
+              <option>13:00 Mittag</option>
+              <option selected>18:30 Aperitivo</option>
+              <option>19:30 Abend</option>
+              <option>20:30 Abend</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Gäste</label>
+            <select class="w-full bg-[#12100f] border border-white/15 focus:border-wine-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>2 Personen</option>
+              <option>3–4 Personen</option>
+              <option>5–6 Personen</option>
+              <option>Kleine Gruppe 7+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Gericht vorbestellen / Sonderwunsch</label>
+          <input type="text" id="special-dish" placeholder="z.B. Tagliolini al Tartufo vorbestellen, Fensterplatz" class="w-full bg-[#12100f] border border-white/15 focus:border-wine-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-wine-700 hover:bg-wine-600 text-white font-semibold tracking-widest uppercase transition-all text-xs mt-3">
+          Reservierungsanfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-3xl text-parchment-100 mb-2">Grazie mille!</h4>
+        <p class="text-xs text-parchment-300 mb-6">Wir haben Ihre Reservierungsanfrage erhalten und rufen Sie zeitnah zur Bestätigung an.</p>
+        <button onclick="closeModal()" class="px-6 py-2.5 border border-wine-500 text-parchment-200 text-xs tracking-wider uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY CTA BAR (Bottom Navigation) -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-[#161312]/95 backdrop-blur-md border-t border-white/15 px-3 py-2.5 flex items-center justify-between gap-2">
+    <a href="tel:+436766575360" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-parchment-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📞</span>
+      <span>Anrufen</span>
+    </a>
+    <a href="#speisekarte" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-parchment-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>🍝</span>
+      <span>Karte</span>
+    </a>
+    <a href="https://maps.google.com/?q=Rochusmarkt+Stand+3+1030+Wien" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-parchment-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📍</span>
+      <span>Route</span>
+    </a>
+    <button onclick="openModal()" class="flex-1 py-2.5 bg-wine-700 text-white rounded text-center text-[11px] font-semibold tracking-wide">
+      Tisch
+    </button>
+  </div>
+
+  <script>
+    function filterDishes(cat, btn) {
+      document.querySelectorAll('.menu-tab').forEach(b => {
+        b.classList.remove('border-wine-500', 'text-white', 'font-medium');
+        b.classList.add('border-transparent', 'text-parchment-400');
+      });
+      btn.classList.add('border-wine-500', 'text-white', 'font-medium');
+      btn.classList.remove('border-transparent', 'text-parchment-400');
+
+      document.querySelectorAll('.dish-item').forEach(card => {
+        if (cat === 'all' || card.classList.contains(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(dish = '') {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      if (dish) {
+        document.getElementById('special-dish').value = 'Vorbestellung: ' + dish;
+      }
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitReservation(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

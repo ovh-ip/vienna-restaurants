@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grammophon Bistro | Mediterranes Bistro, Specialty Coffee & Mantı • 1030 Wien</title>
+  <meta name="description" content="Zeitgenössisches mediterranes Bistro, handgemachte Mantı, Specialty Coffee & Aperitivo-Kultur in der Hainburger Straße 64, 1030 Wien. 700 m von HTL Rennweg.">
+
+  <!-- Google Fonts: Instrument Serif & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            graphite: {
+              950: '#121415',
+              900: '#181b1c',
+              850: '#212527',
+              800: '#2a2f32',
+              700: '#3a4146',
+              600: '#505a61',
+            },
+            sage: {
+              50: '#f4f7f5',
+              100: '#e5ece7',
+              200: '#cbdbd0',
+              300: '#a7c2b0',
+              400: '#7fa48c',
+              500: '#5f876e',
+              600: '#4a6c56',
+              700: '#3c5645',
+              800: '#324538',
+              900: '#2b3930',
+            },
+            ochre: {
+              50: '#fbf8f0',
+              100: '#f6eedd',
+              200: '#ecdcbb',
+              300: '#dec390',
+              400: '#cda461',
+              500: '#ba873a',
+              600: '#a06e2e',
+              700: '#7e5326',
+              800: '#674324',
+              900: '#553721',
+            },
+            ecru: {
+              50: '#fcfbf9',
+              100: '#f7f5f0',
+              200: '#ece7dd',
+              300: '#ddd5c5',
+              400: '#c5b9a4',
+              500: '#a89a81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .bg-graphite-pattern {
+      background-color: #181b1c;
+      background-image: radial-gradient(rgba(205, 164, 97, 0.05) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+  </style>
+</head>
+<body class="bg-graphite-pattern text-ecru-100 font-sans antialiased selection:bg-ochre-500 selection:text-white pb-20 md:pb-0">
+
+  <!-- TOP CONCEPT BANNER -->
+  <aside aria-label="Konzept-Status" class="bg-graphite-950 border-b border-ochre-600/40 text-[11px] tracking-wider uppercase text-ochre-200 py-2.5 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-sage-400 animate-pulse"></span>
+      <span class="font-medium text-white">Konzeptentwurf für Grammophon Bistro • Live Demo</span>
+      <span class="text-ochre-500 hidden sm:inline">•</span>
+      <span class="text-ecru-200 hidden sm:inline">Hainburger Straße 64, 1030 Wien</span>
+    </div>
+  </aside>
+
+  <!-- VERIFIED LOCATION, HOURS & SOCIAL TOP BAR -->
+  <div class="border-b border-white/10 bg-graphite-900 text-[11px] tracking-wide text-ecru-300 py-2.5 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-3 sm:space-x-4 flex-wrap">
+        <span class="text-white font-medium">📍 Hainburger Straße 64, 1030 Wien</span>
+        <span class="text-white/20 hidden sm:inline">•</span>
+        <span class="text-sage-300 font-medium">700 m von HTL Rennweg • U3 Kardinal-Nagl-Platz</span>
+      </div>
+      <div class="flex items-center space-x-4 sm:space-x-6">
+        <span class="text-ecru-300">🕒 Mo–Sa 16:00–22:00 | So Ruhetag</span>
+        <span class="text-white/20 hidden md:inline">•</span>
+        <a href="https://www.instagram.com/grammophonbistrocafe" target="_blank" rel="noopener noreferrer" class="text-ochre-300 hover:text-white font-medium transition-colors flex items-center gap-1.5">
+          <span>📷</span>
+          <span>@grammophonbistrocafe</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-graphite-900/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col group">
+        <div class="flex items-baseline gap-2.5">
+          <span class="font-serif text-3xl sm:text-4xl tracking-wide text-white font-normal group-hover:text-ochre-300 transition-colors">Grammophon</span>
+          <span class="text-xs uppercase tracking-[0.2em] text-sage-400 font-serif italic">Bistro &amp; Café</span>
+        </div>
+        <span class="text-[9px] tracking-[0.25em] uppercase text-ecru-400 font-sans">
+          Manti &bull; Specialty Coffee &bull; Aperitivo &bull; 1030 Wien
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-7 lg:space-x-9 text-xs tracking-[0.16em] uppercase font-medium text-ecru-300">
+        <a href="#philosophie" class="hover:text-ochre-300 transition-colors">Bistro &amp; Sound</a>
+        <a href="#speisekarte" class="hover:text-ochre-300 transition-colors">Speisekarte</a>
+        <a href="#allergene" class="hover:text-ochre-300 transition-colors">Allergene</a>
+        <a href="#aperitivo" class="hover:text-ochre-300 transition-colors">Aperitivo &amp; Drinks</a>
+        <a href="#kontakt" class="hover:text-ochre-300 transition-colors">Kontakt &amp; Anfahrt</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="https://www.instagram.com/grammophonbistrocafe" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 border border-white/20 hover:border-ochre-400 text-ecru-200 text-xs tracking-wider uppercase font-medium transition-all">
+          Instagram
+        </a>
+        <button onclick="openModal()" class="px-5 py-2.5 bg-sage-600 hover:bg-sage-500 text-white text-xs tracking-widest uppercase font-semibold transition-all shadow-sm">
+          Tisch anfragen
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-ecru-200 p-2" aria-label="Menü öffnen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-graphite-950 border-b border-white/10 px-6 py-6 space-y-4 text-xs tracking-widest uppercase">
+      <div class="p-3 bg-graphite-900 border border-sage-700/50 text-sage-300 text-[11px] font-medium text-center">
+        📍 700 m von HTL Rennweg • U3 Kardinal-Nagl-Platz
+      </div>
+      <a href="#philosophie" onclick="toggleMobileMenu()" class="block py-1 hover:text-ochre-300">Das Bistro-Konzept &amp; Mantı</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-ochre-300">Speisekarte &amp; Delikatessen</a>
+      <a href="#allergene" onclick="toggleMobileMenu()" class="block py-1 hover:text-ochre-300">Allergen-Kennzeichnung [A-P]</a>
+      <a href="#aperitivo" onclick="toggleMobileMenu()" class="block py-1 hover:text-ochre-300">Specialty Coffee &amp; Negroni Bar</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1 hover:text-ochre-300">Hainburger Straße 64</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="https://www.instagram.com/grammophonbistrocafe" target="_blank" rel="noopener noreferrer" class="w-full py-3 text-center border border-white/20 text-ecru-200 font-semibold tracking-wider uppercase text-xs">
+          Instagram @grammophonbistrocafe
+        </a>
+        <button onclick="toggleMobileMenu(); openModal();" class="w-full py-3 bg-sage-600 text-white font-semibold tracking-wider uppercase text-xs">
+          Tisch reservieren
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-white/10">
+    <div class="absolute inset-0 z-0">
+      <!-- High res atmospheric European bistro interior & warm tones -->
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=85" alt="Grammophon Bistro Wien Hainburger Straße" class="w-full h-full object-cover opacity-20">
+      <div class="absolute inset-0 bg-gradient-to-t from-graphite-900 via-graphite-900/80 to-graphite-950/65"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 border border-sage-600/40 bg-graphite-950/80 text-ecru-200 text-[11px] tracking-[0.25em] uppercase">
+        <span class="text-ochre-400">☕ &bull; 🥟</span>
+        <span>Mediterranes Bistro &bull; Specialty Coffee &bull; Handgerollte Mantı</span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white font-normal leading-[1.08] tracking-tight max-w-4xl mx-auto">
+        Mediterrane Aromen, <span class="italic text-ochre-400 font-normal">feine Mantı</span> &amp; warmer Schallplattenklang.
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg text-ecru-300 max-w-2xl mx-auto font-light leading-relaxed">
+        Willkommen im <strong class="text-white font-medium">Grammophon Bistro</strong> in der Hainburger Straße 64. Wir vereinen mediterrane Wohlfühlküche – von handgeformten Mantı mit schäumender Paprikabutter bis zu knusprigen Burrata-Panini – mit Third-Wave Specialty Coffee und entspanntem Aperitivo ab 16:00 Uhr.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center items-center gap-4">
+        <button onclick="openModal()" class="px-8 py-3.5 bg-sage-600 hover:bg-sage-500 text-white font-medium text-xs tracking-[0.2em] uppercase transition-all shadow-md">
+          Tisch anfragen
+        </button>
+        <a href="#speisekarte" class="px-8 py-3.5 border border-white/25 hover:border-ochre-400 text-white font-medium text-xs tracking-[0.2em] uppercase transition-all">
+          Speisekarte ansehen ↓
+        </a>
+      </div>
+
+      <!-- KEY FACTS CARDS -->
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
+        <div class="p-4 bg-graphite-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-sage-300 block">Distanz</span>
+          <span class="font-serif text-2xl text-white font-normal mt-0.5 block">700 m</span>
+          <span class="text-[11px] text-ecru-400 block mt-0.5">von HTL Rennweg</span>
+        </div>
+        <div class="p-4 bg-graphite-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-ochre-300 block">Öffentlich</span>
+          <span class="font-serif text-2xl text-white font-normal mt-0.5 block">U3 Station</span>
+          <span class="text-[11px] text-ecru-400 block mt-0.5">Kardinal-Nagl-Platz</span>
+        </div>
+        <div class="p-4 bg-graphite-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-sage-300 block">Öffnungszeiten</span>
+          <span class="font-serif text-2xl text-white font-normal mt-0.5 block">Mo – Sa</span>
+          <span class="text-[11px] text-ecru-400 block mt-0.5">16:00 – 22:00 Uhr</span>
+        </div>
+        <div class="p-4 bg-graphite-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-ochre-300 block">Social</span>
+          <span class="font-serif text-2xl text-white font-normal mt-0.5 block">@grammophon</span>
+          <span class="text-[11px] text-ecru-400 block mt-0.5">bistrocafe auf Instagram</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHIE & BESONDERHEITEN -->
+  <section id="philosophie" class="py-20 lg:py-24 border-b border-white/10 bg-graphite-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-sage-400 font-semibold border-b border-sage-500 pb-1">
+              Handwerk &bull; Bistro-Kultur &bull; Wohlklang
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-white leading-[1.15]">
+            Das Grammophon ist ein Ort für gute Gespräche und ehrliche Kost.
+          </h2>
+
+          <p class="text-sm sm:text-base text-ecru-300 leading-relaxed font-light">
+            Der Name ist bei uns Programm: dezente Vinylklänge, warme Holztöne und das sanfte Klirren der Aperitivo-Gläser begleiten jeden Abend. Unser Herz schlägt für handgemachte Teigtaschen (Mantı), die täglich frisch gerollt und mit aromatischer Knoblauch-Joghurt-Creme sowie zischender Paprika-Kräuterbutter serviert werden.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="p-4 border border-white/10 bg-graphite-900/70">
+              <span class="text-ochre-300 font-serif text-xl block mb-1">Handgerollte Mantı</span>
+              <p class="text-xs text-ecru-400 leading-relaxed">Traditionell gefaltet mit feinstem Rindfleisch oder vegetarisch mit Erdäpfeln und mediterranen Kräutern.</p>
+            </div>
+            <div class="p-4 border border-white/10 bg-graphite-900/70">
+              <span class="text-sage-300 font-serif text-xl block mb-1">Specialty Coffee & Drinks</span>
+              <p class="text-xs text-ecru-400 leading-relaxed">Hauseigene Single-Origin Espresso-Röstungen, samtiger Flat White, Cold Brew und klassische Aperitivo-Drinks.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="#speisekarte" class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-ochre-300 hover:text-white transition-colors">
+              <span>Direkt zu den Spezialitäten</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative overflow-hidden border border-white/15 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1000&q=85" alt="Handgemachte Manti mit Joghurt und Paprikabutter" class="w-full h-[460px] object-cover hover:scale-105 transition duration-700">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-graphite-950 via-graphite-950/80 to-transparent p-6">
+              <div class="flex items-center justify-between text-xs text-ecru-300">
+                <span>🥟 Täglich frisch von Hand zubereitete Mantı</span>
+                <span class="text-ochre-300 font-medium">Hainburger Straße 64</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE (MAIN MENU) -->
+  <section id="speisekarte" class="py-20 lg:py-28 border-b border-white/10 bg-graphite-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-[11px] tracking-[0.25em] uppercase text-sage-400 font-semibold block mb-2">Speisen &amp; Signature Dishes</span>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white font-normal">
+          Unsere Karte
+        </h2>
+        <p class="text-sm text-ecru-300 mt-3 font-light">
+          Frisch zubereitete mediterrane Bistroküche und Signature Drinks. Mit österreichischer Allergen-Kennzeichnung [A, C, G, N...].
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <button onclick="filterDishes('all', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-sage-500 text-white transition-all">
+          Alle Spezialitäten
+        </button>
+        <button onclick="filterDishes('manti', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-ecru-400 hover:text-white transition-all">
+          Hausgemachte Mantı
+        </button>
+        <button onclick="filterDishes('bistro', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-ecru-400 hover:text-white transition-all">
+          Shakshuka &amp; Panini
+        </button>
+        <button onclick="filterDishes('coffee', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-ecru-400 hover:text-white transition-all">
+          Specialty Coffee
+        </button>
+        <button onclick="filterDishes('drinks', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-ecru-400 hover:text-white transition-all">
+          Aperitivo &amp; Drinks
+        </button>
+      </div>
+
+      <!-- DISHES GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Hausgemachte Mantı (REQUIRED) -->
+        <article class="dish-item manti bg-graphite-850 border border-white/10 p-6 flex flex-col justify-between hover:border-sage-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-sage-900/60 border border-sage-700/50 text-[10px] uppercase tracking-wider text-sage-300 font-semibold mb-1">
+                  Signature Dish
+                </span>
+                <h3 class="font-serif text-2xl text-white font-normal group-hover:text-sage-300 transition-colors">Hausgemachte Mantı</h3>
+              </div>
+              <span class="font-serif text-2xl text-white font-semibold shrink-0">€ 14,50</span>
+            </div>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Traditionell handgefaltete kleine Teigtaschen (wählbar mit gewürztem Bio-Rindfleisch oder vegetarisch mit Kartoffeln &amp; frischer Minze), serviert auf cremigem Knoblauch-Joghurt und übergossen mit schäumender, aromatischer Paprikabutter.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-sage-300 font-semibold" title="Glutenhaltiges Getreide, Ei, Milch/Laktose">[A, C, G]</span>
+            <button onclick="openModal('Hausgemachte Mantı')" class="text-xs uppercase tracking-wider text-ecru-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. Shakshuka mit Bio-Ei & Feta (REQUIRED) -->
+        <article class="dish-item bistro bg-graphite-850 border border-white/10 p-6 flex flex-col justify-between hover:border-ochre-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-ochre-900/50 border border-ochre-700/50 text-[10px] uppercase tracking-wider text-ochre-300 font-semibold mb-1">
+                  Pfannengericht
+                </span>
+                <h3 class="font-serif text-2xl text-white font-normal group-hover:text-ochre-300 transition-colors">Shakshuka mit Bio-Ei &amp; Feta</h3>
+              </div>
+              <span class="font-serif text-2xl text-white font-semibold shrink-0">€ 12,80</span>
+            </div>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Langsam eingekochte Tomaten-Paprika-Sauce mit orientalischem Kreuzkümmel und Knoblauch, pochiertem Bio-Freilandei, cremig zerbröckeltem griechischem Schafskäse (Feta) und ofenfrischem Sauerteigbrot.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-ochre-300 font-semibold" title="Glutenhaltiges Getreide, Ei, Milch/Laktose">[A, C, G]</span>
+            <button onclick="openModal('Shakshuka mit Bio-Ei & Feta')" class="text-xs uppercase tracking-wider text-ecru-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. Panini Gourmet di Parma & Burrata (REQUIRED) -->
+        <article class="dish-item bistro bg-graphite-850 border border-white/10 p-6 flex flex-col justify-between hover:border-sage-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-graphite-900 border border-white/10 text-[10px] uppercase tracking-wider text-ecru-400 font-medium mb-1">
+                  Gourmet Panini
+                </span>
+                <h3 class="font-serif text-2xl text-white font-normal group-hover:text-sage-300 transition-colors">Panini di Parma &amp; Burrata</h3>
+              </div>
+              <span class="font-serif text-2xl text-white font-semibold shrink-0">€ 11,20</span>
+            </div>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Knusprig geröstetes Sauerteig-Panini, belegt mit hauchdünnem 24-Monate Prosciutto di Parma, zart schmelzender cremiger Burrata, wildem Rucola, confierten Kirschtomaten und feinem Feigensenf.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-sage-300 font-semibold" title="Glutenhaltiges Getreide, Milch/Laktose">[A, G]</span>
+            <button onclick="openModal('Panini di Parma & Burrata')" class="text-xs uppercase tracking-wider text-ecru-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. Specialty Flat White & Cold Brew (REQUIRED) -->
+        <article class="dish-item coffee bg-graphite-850 border border-white/10 p-6 flex flex-col justify-between hover:border-ochre-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-ochre-900/50 border border-ochre-700/50 text-[10px] uppercase tracking-wider text-ochre-300 font-semibold mb-1">
+                  Third Wave Barista
+                </span>
+                <h3 class="font-serif text-2xl text-white font-normal group-hover:text-ochre-300 transition-colors">Specialty Flat White &amp; Cold Brew</h3>
+              </div>
+              <span class="font-serif text-2xl text-white font-semibold shrink-0">€ 4,40 / 4,80</span>
+            </div>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Doppelter Ristretto aus hellem äthiopischem Single-Origin Espresso mit mikro-geschäumter Vollmilch (oder Hafermilch) bzw. schonend 18 Stunden kalt extrahierter fruchtiger Cold Brew auf klarem Hand-Ice.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-ochre-300 font-semibold" title="Milch/Laktose (optional vegan mit Hafer)">[G]</span>
+            <button onclick="openModal('Specialty Coffee')" class="text-xs uppercase tracking-wider text-ecru-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. Signature Negroni & Aperitivo Spritz (REQUIRED) -->
+        <article class="dish-item drinks bg-graphite-850 border border-white/10 p-6 flex flex-col justify-between hover:border-sage-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-graphite-900 border border-white/10 text-[10px] uppercase tracking-wider text-ecru-400 font-medium mb-1">
+                  Aperitivo Klassiker
+                </span>
+                <h3 class="font-serif text-2xl text-white font-normal group-hover:text-sage-300 transition-colors">Signature Negroni &amp; Spritz</h3>
+              </div>
+              <span class="font-serif text-2xl text-white font-semibold shrink-0">€ 9,50 / 7,20</span>
+            </div>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Unser Negroni: Botanischer Gin, Campari Bitter &amp; samtiger roter Wermut auf Kristall-Eisblock mit Orangenzeste. Oder eleganter Aperitivo Spritz mit venezianischem Select, Prosecco Superiore und grüner Cerignola-Olive.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-sage-300 font-semibold" title="Sulfite">[O]</span>
+            <button onclick="openModal('Signature Negroni / Spritz')" class="text-xs uppercase tracking-wider text-ecru-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 6. Hausgemachtes Mezze-Trio -->
+        <article class="dish-item manti bistro bg-graphite-850 border border-white/10 p-6 flex flex-col justify-between hover:border-ochre-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-graphite-900 border border-white/10 text-[10px] uppercase tracking-wider text-ecru-400 font-medium mb-1">
+                  Aperitivo Snack
+                </span>
+                <h3 class="font-serif text-2xl text-white font-normal group-hover:text-ochre-300 transition-colors">Mezze Trio mit Fladenbrot</h3>
+              </div>
+              <span class="font-serif text-2xl text-white font-semibold shrink-0">€ 11,90</span>
+            </div>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Cremiger Kichererbsen-Hummus mit Tahini, feuriges Muhammara (Walnuss-Paprika-Paste) und erfrischendes Haydari mit Minze, serviert mit warmem Sesam-Fladenbrot.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-ochre-300 font-semibold">[A, G, H, N]</span>
+            <button onclick="openModal('Mezze Trio')" class="text-xs uppercase tracking-wider text-ecru-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Evening Aperitivo Banner -->
+      <div class="mt-12 p-6 bg-graphite-950 border border-ochre-700/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="font-serif text-xl text-white">Aperitivo Hour von 16:00 bis 18:30 Uhr</h4>
+          <p class="text-xs text-ecru-400 mt-1">Zu jedem Spritz, Negroni oder Glas Naturwein servieren wir einen Teller warme Oliven &amp; geröstete Gewürzmandeln aufs Haus.</p>
+        </div>
+        <button onclick="openModal('Aperitivo Reservierung')" class="px-6 py-3 bg-sage-600 hover:bg-sage-500 text-white text-xs uppercase tracking-widest font-semibold shrink-0">
+          Aperitivo reservieren
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALLERGEN CODEX SECTION (Österreichische Kennzeichnung) -->
+  <section id="allergene" class="py-16 border-b border-white/10 bg-graphite-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-8">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-ochre-400 font-semibold block mb-1">Transparenz &amp; Information</span>
+        <h3 class="font-serif text-3xl sm:text-4xl text-white">Österreichische Allergen-Kennzeichnung</h3>
+        <p class="text-xs text-ecru-400 mt-2">
+          Alle Gerichte im Grammophon Bistro sind gemäß der österreichischen Allergeninformationsverordnung ausgewiesen. Sprechen Sie unser Team gern auf vegane &amp; glutenfreie Optionen an.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-xs">
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-ochre-400 font-bold block mb-0.5">A</span>
+          <span class="text-white block font-medium">Gluten</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Weizen, Sauerteig etc.</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-ochre-400 font-bold block mb-0.5">B</span>
+          <span class="text-white block font-medium">Krebstiere</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Garnelen, Krebse</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-ochre-400 font-bold block mb-0.5">C</span>
+          <span class="text-white block font-medium">Ei</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Bio-Eier im Teig & Shakshuka</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-ochre-400 font-bold block mb-0.5">D</span>
+          <span class="text-white block font-medium">Fisch</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Fischerzeugnisse</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-ochre-400 font-bold block mb-0.5">E</span>
+          <span class="text-white block font-medium">Erdnuss</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Erdnüsse & Erzeugnisse</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-ochre-400 font-bold block mb-0.5">F</span>
+          <span class="text-white block font-medium">Soja</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Sojabohnen</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-ochre-400 font-bold block mb-0.5">G</span>
+          <span class="text-white block font-medium">Milch / Laktose</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Knoblauch-Joghurt, Butter, Feta</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-sage-300 font-bold block mb-0.5">H</span>
+          <span class="text-white block font-medium">Schalenfrüchte</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Walnüsse, Mandeln</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-sage-300 font-bold block mb-0.5">L</span>
+          <span class="text-white block font-medium">Sellerie</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Knollen- & Staudensellerie</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-sage-300 font-bold block mb-0.5">M</span>
+          <span class="text-white block font-medium">Senf</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Senfkörner & Senf</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-sage-300 font-bold block mb-0.5">N</span>
+          <span class="text-white block font-medium">Sesam</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Tahini, Sesam-Fladenbrot</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-sage-300 font-bold block mb-0.5">O</span>
+          <span class="text-white block font-medium">Sulfite</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Weine, Wermut, Aperitifs</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-sage-300 font-bold block mb-0.5">P</span>
+          <span class="text-white block font-medium">Lupinen</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Lupinenmehl</span>
+        </div>
+        <div class="p-3 bg-graphite-900 border border-white/5">
+          <span class="font-mono text-sage-300 font-bold block mb-0.5">R</span>
+          <span class="text-white block font-medium">Weichtiere</span>
+          <span class="text-[10px] text-ecru-400 block mt-0.5">Mollusken</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APERITIVO & SOUND LOUNGE -->
+  <section id="aperitivo" class="py-20 lg:py-24 border-b border-white/10 bg-graphite-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 order-2 lg:order-1 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80" alt="Specialty Coffee Latte Art" class="w-full h-64 object-cover border border-white/10">
+            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="Knuspriges Panini Gourmet" class="w-full h-44 object-cover border border-white/10">
+          </div>
+          <div class="space-y-4 pt-8">
+            <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80" alt="Frische Shakshuka in der Pfanne" class="w-full h-44 object-cover border border-white/10">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Aperitivo Drinks & Negroni" class="w-full h-64 object-cover border border-white/10">
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-ochre-400 font-semibold border-b border-ochre-500 pb-1">
+              Atmosphäre &amp; Klang
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-white leading-[1.15]">
+            Ein Rückzugsort für den Feierabend im dritten Bezirk.
+          </h2>
+
+          <p class="text-sm sm:text-base text-ecru-300 leading-relaxed font-light">
+            Ob auf dem Heimweg von der HTL Rennweg, nach einem Arbeitstag bei den U-Bahnen am Kardinal-Nagl-Platz oder für eine gemütliche Runde mit Freunden: Das Grammophon bietet die perfekte Balance aus gediegener Ruhe, feinem Specialty Coffee und ungezwungener mediterraner Gastfreundschaft.
+          </p>
+
+          <div class="space-y-3 pt-2 text-xs text-ecru-300">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-sage-900 border border-sage-700 flex items-center justify-center text-sage-300">✓</span>
+              <span>Geöffnet Montag bis Samstag von 16:00 bis 22:00 Uhr</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-ochre-900 border border-ochre-700 flex items-center justify-center text-ochre-300">✓</span>
+              <span>Nur 700 m Gehweg von HTL Rennweg &amp; 3 Minuten von U3 Kardinal-Nagl-Platz</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-sage-900 border border-sage-700 flex items-center justify-center text-sage-300">✓</span>
+              <span>Aktuelle Specials, Bohnen &amp; Events auf Instagram @grammophonbistrocafe</span>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="https://www.instagram.com/grammophonbistrocafe" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 hover:border-ochre-400 text-white text-xs tracking-wider uppercase font-semibold transition-all">
+              <span>📷 Auf Instagram folgen</span>
+            </a>
+            <button onclick="openModal()" class="px-6 py-3 bg-sage-600 hover:bg-sage-500 text-white text-xs tracking-widest uppercase font-semibold transition-all">
+              Tisch online anfragen
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT, ANFAHRT & KONTAKT -->
+  <section id="kontakt" class="py-20 lg:py-24 border-b border-white/10 bg-graphite-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[11px] tracking-[0.25em] uppercase text-sage-400 font-semibold block mb-1">Anfahrt &amp; Erreichbarkeit</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal">Besuchen Sie das Grammophon</h2>
+        <p class="text-xs text-ecru-400 mt-2 font-light">
+          Hainburger Straße 64, 1030 Wien. Nur wenige Schritte von der U3 Station Kardinal-Nagl-Platz entfernt.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Info Card 1 -->
+        <div class="p-8 bg-graphite-900 border border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-2xl mb-3 block">📍</span>
+            <h3 class="font-serif text-2xl text-white mb-2">Adresse &amp; Weg</h3>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light">
+              <strong class="text-white block font-medium">Grammophon Bistro</strong>
+              Hainburger Straße 64<br>
+              1030 Wien, Österreich
+            </p>
+            <div class="mt-4 p-3 bg-graphite-950 border border-sage-700/40 text-xs text-sage-300 font-medium">
+              🚶 700 m von HTL Rennweg &bull; U3 Kardinal-Nagl-Platz (Aufgang Hainburger Str.)
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <a href="https://maps.google.com/?q=Hainburger+Stra%C3%9Fe+64+1030+Wien" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-wider text-ochre-300 hover:text-white transition-colors flex items-center gap-1">
+              <span>Google Maps Route öffnen</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Info Card 2 -->
+        <div class="p-8 bg-graphite-900 border border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-2xl mb-3 block">🕒</span>
+            <h3 class="font-serif text-2xl text-white mb-2">Öffnungszeiten</h3>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Unser gemütlicher Treffpunkt für Nachmittag &amp; Abend:
+            </p>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-ecru-400">Montag – Samstag:</span>
+                <span class="text-white font-medium">16:00 – 22:00 Uhr</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-ecru-400">Sonntag:</span>
+                <span class="text-ecru-400 font-medium">Ruhetag</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-ecru-400">Warme Küche &amp; Mantı:</span>
+                <span class="text-sage-300 font-medium">bis 21:30 Uhr</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <span class="text-[11px] text-ecru-400">Ideal für Afterwork &amp; gemütliche Abende</span>
+          </div>
+        </div>
+
+        <!-- Info Card 3 -->
+        <div class="p-8 bg-graphite-900 border border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-2xl mb-3 block">💬</span>
+            <h3 class="font-serif text-2xl text-white mb-2">Social &amp; Reservierung</h3>
+            <p class="text-xs text-ecru-300 leading-relaxed font-light mb-4">
+              Folgen Sie uns für tägliche Specials, Einblicke und reservieren Sie Ihren Tisch für den Feierabend:
+            </p>
+            <div class="p-4 bg-graphite-950 border border-ochre-800/40 space-y-1">
+              <span class="text-[10px] uppercase tracking-wider text-ecru-400 block">Instagram</span>
+              <a href="https://www.instagram.com/grammophonbistrocafe" target="_blank" rel="noopener noreferrer" class="text-lg font-serif text-ochre-300 hover:text-white block font-semibold">@grammophonbistrocafe</a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <button onclick="openModal()" class="w-full py-3 bg-sage-600 hover:bg-sage-500 text-white text-xs uppercase tracking-widest font-semibold transition-all">
+              Tisch jetzt anfragen
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-graphite-950 text-ecru-400 py-10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+      <div>&copy; 2026 Grammophon Bistro &bull; Hainburger Straße 64, 1030 Wien. Alle Rechte vorbehalten.</div>
+      <div class="space-x-5">
+        <a href="#speisekarte" class="hover:text-ecru-200 transition-colors">Speisekarte</a>
+        <a href="#allergene" class="hover:text-ecru-200 transition-colors">Allergenverordnung</a>
+        <a href="https://www.instagram.com/grammophonbistrocafe" target="_blank" rel="noopener noreferrer" class="hover:text-ecru-200 transition-colors">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-graphite-900 border border-white/15 max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-ecru-400 hover:text-white text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-ochre-400 font-semibold">Tisch- &amp; Platzanfrage</span>
+        <h3 class="font-serif text-3xl font-normal text-white mt-1">Grammophon Bistro</h3>
+        <p class="text-xs text-ecru-400 mt-1">Hainburger Straße 64, 1030 Wien • Mo–Sa 16:00–22:00</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitReservation(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block uppercase tracking-wider text-ecru-300 mb-1 text-[10px]">Ihr Name *</label>
+          <input type="text" required placeholder="Vor- und Nachname" class="w-full bg-graphite-950 border border-white/15 focus:border-sage-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block uppercase tracking-wider text-ecru-300 mb-1 text-[10px]">Telefonnummer / WhatsApp *</label>
+            <input type="tel" required placeholder="+43 6..." class="w-full bg-graphite-950 border border-white/15 focus:border-sage-500 px-4 py-3 text-white outline-none">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-ecru-300 mb-1 text-[10px]">E-Mail</label>
+            <input type="email" placeholder="name@beispiel.at" class="w-full bg-graphite-950 border border-white/15 focus:border-sage-500 px-4 py-3 text-white outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-ecru-300 mb-1 text-[10px]">Datum (Mo–Sa)</label>
+            <input type="date" required id="res-date" class="w-full bg-graphite-950 border border-white/15 focus:border-sage-500 px-3 py-3 text-white outline-none text-[11px]">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-ecru-300 mb-1 text-[10px]">Uhrzeit</label>
+            <select class="w-full bg-graphite-950 border border-white/15 focus:border-sage-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>16:00 Aperitivo</option>
+              <option>17:00 Nachmittag</option>
+              <option selected>18:30 Abend</option>
+              <option>19:30 Abend</option>
+              <option>20:30 Spät</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-ecru-300 mb-1 text-[10px]">Personen</label>
+            <select class="w-full bg-graphite-950 border border-white/15 focus:border-sage-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>1 Person</option>
+              <option selected>2 Personen</option>
+              <option>3–4 Personen</option>
+              <option>5–6 Personen</option>
+              <option>Gruppe (7+)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block uppercase tracking-wider text-ecru-300 mb-1 text-[10px]">Gericht vorbestellen / Sonderwunsch</label>
+          <input type="text" id="special-dish" placeholder="z.B. Hausgemachte Mantı & Burrata Panini vorbestellen" class="w-full bg-graphite-950 border border-white/15 focus:border-sage-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-sage-600 hover:bg-sage-500 text-white font-semibold tracking-widest uppercase transition-all text-xs mt-3">
+          Reservierungsanfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-3xl text-white mb-2">Herzlichen Dank!</h4>
+        <p class="text-xs text-ecru-300 mb-6">Wir haben Ihre Reservierungsanfrage erhalten und melden uns in Kürze zur Bestätigung.</p>
+        <button onclick="closeModal()" class="px-6 py-2.5 border border-sage-500 text-ecru-200 text-xs tracking-wider uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY CTA BAR (Bottom Navigation) -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-graphite-950/95 backdrop-blur-md border-t border-white/15 px-3 py-2.5 flex items-center justify-between gap-2">
+    <a href="https://www.instagram.com/grammophonbistrocafe" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-ecru-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📷</span>
+      <span>Insta</span>
+    </a>
+    <a href="#speisekarte" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-ecru-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>🥟</span>
+      <span>Karte</span>
+    </a>
+    <a href="https://maps.google.com/?q=Hainburger+Stra%C3%9Fe+64+1030+Wien" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-ecru-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📍</span>
+      <span>Route</span>
+    </a>
+    <button onclick="openModal()" class="flex-1 py-2.5 bg-sage-600 text-white rounded text-center text-[11px] font-semibold tracking-wide">
+      Tisch
+    </button>
+  </div>
+
+  <script>
+    function filterDishes(cat, btn) {
+      document.querySelectorAll('.menu-tab').forEach(b => {
+        b.classList.remove('border-sage-500', 'text-white');
+        b.classList.add('border-transparent', 'text-ecru-400');
+      });
+      btn.classList.add('border-sage-500', 'text-white');
+      btn.classList.remove('border-transparent', 'text-ecru-400');
+
+      document.querySelectorAll('.dish-item').forEach(card => {
+        if (cat === 'all' || card.classList.contains(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(dish = '') {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      if (dish) {
+        document.getElementById('special-dish').value = 'Vorbestellung: ' + dish;
+      }
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitReservation(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gasthaus Schmitzberger | Traditionelles Wiener Vorstadt-Beisl & Mittagsmenü • 1030 Wien</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            schmitz: {
+              green: '#2d4a3e',
+              greenDark: '#1c332a',
+              greenLight: '#3f6354',
+              oak: '#8b5a2b',
+              oakDark: '#67411e',
+              oakLight: '#a6723e',
+              paper: '#faf7f2',
+              card: '#ffffff',
+              cardMuted: '#f4ede2',
+              border: '#e4dbce',
+              borderDark: '#cdbfac',
+              dark: '#1c1815',
+              muted: '#6f675e',
+              gold: '#c9933b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-schmitz-paper text-schmitz-dark font-sans antialiased selection:bg-schmitz-green selection:text-white">
+
+  <!-- TOP CONCEPT BANNER -->
+  <div class="bg-schmitz-green text-white text-xs font-semibold py-2 px-4 text-center tracking-wider uppercase shadow-sm flex items-center justify-center gap-2 border-b border-schmitz-greenLight">
+    <span class="inline-block w-2 h-2 rounded-full bg-schmitz-gold animate-pulse"></span>
+    <span>Konzeptentwurf für Gasthaus Schmitzberger • Live Demo</span>
+  </div>
+
+  <!-- TOP BAR (VERIFIED DATA) -->
+  <div class="border-b border-schmitz-border bg-[#f2eae0] text-[11px] py-2.5 px-6 text-schmitz-muted font-medium">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center gap-1.5 text-schmitz-dark">
+          📍 Nottendorfer Gasse 30, 1030 Wien
+        </span>
+        <span class="text-schmitz-border">•</span>
+        <span class="text-schmitz-green font-semibold hidden sm:inline">
+          🚶 900 m von HTL Rennweg • Nottendorfer Gasse 30
+        </span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center gap-1.5">
+          🕒 Mo–Fr 10:00 – 21:00 Uhr | Sa–So Ruhetag
+        </span>
+        <a href="tel:+4317989168" class="text-schmitz-green hover:text-schmitz-greenDark transition-colors font-semibold flex items-center gap-1">
+          📞 +43 1 798 91 68
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-schmitz-paper/95 backdrop-blur-md border-b border-schmitz-border">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3.5 group">
+        <div class="w-11 h-11 border-2 border-schmitz-green bg-schmitz-card flex items-center justify-center font-serif text-2xl font-bold text-schmitz-green shadow-xs group-hover:bg-schmitz-green group-hover:text-white transition-colors">
+          S
+        </div>
+        <div>
+          <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-schmitz-dark block leading-none">Gasthaus Schmitzberger</span>
+          <span class="text-[10px] tracking-[0.25em] uppercase text-schmitz-oak font-semibold mt-1 block">Wiener Vorstadt-Beisl &bull; Mittagsmenü &bull; 1030</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-xs tracking-wider uppercase font-medium text-schmitz-dark">
+        <a href="#mittagsmenue" class="hover:text-schmitz-green transition-colors font-semibold text-schmitz-green">Mittagsmenü</a>
+        <a href="#speisekarte" class="hover:text-schmitz-green transition-colors">Speisekarte</a>
+        <a href="#wirtshaus" class="hover:text-schmitz-green transition-colors">Über Uns</a>
+        <a href="#kontakt" class="hover:text-schmitz-green transition-colors">Standort &amp; Öffnungszeiten</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="tel:+4317989168" class="px-4 py-2.5 border border-schmitz-border text-schmitz-dark hover:border-schmitz-green hover:text-schmitz-green text-xs tracking-wider uppercase font-medium transition-all">
+          01 798 91 68
+        </a>
+        <button onclick="openModal('Tisch reservieren')" class="px-5 py-2.5 bg-schmitz-green hover:bg-schmitz-greenDark text-white text-xs tracking-wider uppercase font-semibold transition-all shadow-sm">
+          Tisch reservieren
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-schmitz-dark p-2" aria-label="Navigation anzeigen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-schmitz-paper border-b border-schmitz-border px-6 py-6 space-y-3 text-xs tracking-wider uppercase font-medium">
+      <div class="p-3 bg-schmitz-cardMuted border border-schmitz-border rounded text-center text-schmitz-green text-[11px] font-semibold mb-2">
+        🚶 900 m von HTL Rennweg • Nottendorfer Gasse 30
+      </div>
+      <a href="#mittagsmenue" onclick="toggleMobileMenu()" class="block py-1 text-schmitz-green font-bold">Wöchentliches Mittagsmenü</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-schmitz-green">Speisekarte &amp; Hausmannskost</a>
+      <a href="#wirtshaus" onclick="toggleMobileMenu()" class="block py-1 hover:text-schmitz-green">Das Beisl &amp; Wirtshaustradition</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1 hover:text-schmitz-green">Öffnungszeiten &amp; Anfahrt</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="toggleMobileMenu(); openModal('Tisch reservieren');" class="w-full py-3 bg-schmitz-green text-white text-xs uppercase tracking-wider font-semibold">
+          Tisch reservieren
+        </button>
+        <a href="tel:+4317989168" class="w-full py-3 text-center border border-schmitz-green text-schmitz-green text-xs uppercase tracking-wider font-semibold">
+          Direkt anrufen: 01 798 91 68
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative py-20 lg:py-28 border-b border-schmitz-border bg-[#f6eee2] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-schmitz-green font-semibold border-b-2 border-schmitz-green pb-1">
+              Wiener Vorstadt-Beisl &bull; Nottendorfer Gasse 30
+            </span>
+          </div>
+
+          <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl text-schmitz-dark font-normal leading-[1.1]">
+            Echte Wiener Wirtshauskultur.<br>
+            <span class="italic text-schmitz-oak font-normal">Schnitzel, Zwiebelrostbraten &amp; kühles Fassbier.</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-schmitz-muted leading-relaxed font-light max-w-xl">
+            Herzlich willkommen im Gasthaus Schmitzberger! Bei uns gibt es kein gekünsteltes Schischi, 
+            sondern handfeste Wiener Küche wie bei den Großeltern: frischer Erdäpfelsalat, knusprig soufflierte Schnitzel, 
+            dunkles Rindsgulasch und täglich wechselnde, günstige Mittagsmenüs für die gesamte Nachbarschaft.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+            <button onclick="openModal('Tisch reservieren')" class="px-8 py-3.5 bg-schmitz-green hover:bg-schmitz-greenDark text-white text-xs tracking-widest uppercase font-semibold transition-all text-center shadow-md">
+              Tisch reservieren
+            </button>
+            <a href="#mittagsmenue" class="px-8 py-3.5 border-2 border-schmitz-oak text-schmitz-oak hover:bg-schmitz-oak hover:text-white text-xs tracking-widest uppercase font-semibold transition-all text-center">
+              Heutiges Mittagsmenü ↓
+            </a>
+          </div>
+
+          <!-- KEY FACTS BADGES -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-schmitz-border text-center">
+            <div class="p-3 bg-schmitz-card rounded border border-schmitz-border">
+              <div class="font-serif text-3xl font-normal text-schmitz-green">900 m</div>
+              <div class="text-[10px] tracking-wider uppercase text-schmitz-muted mt-1">von HTL Rennweg</div>
+            </div>
+            <div class="p-3 bg-schmitz-card rounded border border-schmitz-border">
+              <div class="font-serif text-3xl font-normal text-schmitz-oak">Mo – Fr</div>
+              <div class="text-[10px] tracking-wider uppercase text-schmitz-muted mt-1">10:00 – 21:00 Uhr</div>
+            </div>
+            <div class="p-3 bg-schmitz-card rounded border border-schmitz-border">
+              <div class="font-serif text-3xl font-normal text-schmitz-dark">ab € 9,80</div>
+              <div class="text-[10px] tracking-wider uppercase text-schmitz-muted mt-1">Mittagsmenü m. Suppe</div>
+            </div>
+            <div class="p-3 bg-schmitz-card rounded border border-schmitz-border">
+              <div class="font-serif text-3xl font-normal text-schmitz-green">Frisch</div>
+              <div class="text-[10px] tracking-wider uppercase text-schmitz-muted mt-1">Gezapftes Bier</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="border-2 border-schmitz-border bg-schmitz-card p-4 shadow-xl">
+            <div class="relative overflow-hidden mb-4">
+              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Wiener Zwiebelrostbraten und Schnitzel" class="w-full h-80 object-cover">
+              <div class="absolute bottom-3 left-3 bg-schmitz-green/90 text-white text-[10px] uppercase tracking-widest px-3 py-1 font-semibold">
+                Traditionell gekocht
+              </div>
+            </div>
+            <div class="text-center px-2 py-1">
+              <p class="font-serif italic text-schmitz-oak text-base">
+                „A guates Schnitzel, a frischer Erdäpfelsalat und a kühles Bier – mehr braucht da Wiener ned.“
+              </p>
+              <span class="text-[10px] text-schmitz-muted uppercase tracking-wider block mt-2">Gasthaus Schmitzberger • 1030 Wien</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MITTAGSMENÜ HIGHLIGHT SECTION -->
+  <section id="mittagsmenue" class="py-16 bg-white border-b border-schmitz-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-schmitz-cardMuted border-2 border-schmitz-border p-8 sm:p-10 rounded-sm shadow-xs">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8 border-b border-schmitz-border pb-6">
+          <div>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-schmitz-oak font-bold">Wochentags 11:30 – 14:00 Uhr</span>
+            <h2 class="font-serif text-3xl sm:text-4xl text-schmitz-dark font-normal mt-1">
+              Täglich frisches Mittagsmenü
+            </h2>
+            <p class="text-xs text-schmitz-muted mt-1">
+              Jedes Mittagsmenü wird inklusive herzhafter Tagessuppe serviert. Schneller Service für die Mittagspause!
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="px-4 py-2 bg-schmitz-green text-white text-xs uppercase tracking-wider font-semibold">
+              Menü I: € 9,80 &bull; Menü II: € 11,50
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-5 border border-schmitz-border">
+            <span class="text-[10px] uppercase tracking-wider text-schmitz-oak font-semibold block mb-1">Montag &bull; Tagessuppe inklusive</span>
+            <h4 class="font-serif text-xl text-schmitz-dark font-medium">Gebackenes Hühnerschnitzel</h4>
+            <p class="text-xs text-schmitz-muted mt-2">Mit Petersilerdäpfeln &amp; Preiselbeeren oder wahlweise hausgemachter Gemüselasagne.</p>
+            <div class="mt-3 text-[10px] text-schmitz-green font-bold">Allergene: [A, C, G]</div>
+          </div>
+
+          <div class="bg-white p-5 border border-schmitz-border">
+            <span class="text-[10px] uppercase tracking-wider text-schmitz-oak font-semibold block mb-1">Dienstag &bull; Tagessuppe inklusive</span>
+            <h4 class="font-serif text-xl text-schmitz-dark font-medium">Wiener Rindsgulasch</h4>
+            <p class="text-xs text-schmitz-muted mt-2">Zart geschmortes Rindfleisch mit hausgemachtem Semmelknödel &amp; Essiggurkerl.</p>
+            <div class="mt-3 text-[10px] text-schmitz-green font-bold">Allergene: [A, C, G]</div>
+          </div>
+
+          <div class="bg-white p-5 border border-schmitz-border">
+            <span class="text-[10px] uppercase tracking-wider text-schmitz-oak font-semibold block mb-1">Mittwoch &bull; Tagessuppe inklusive</span>
+            <h4 class="font-serif text-xl text-schmitz-dark font-medium">Gebackener Emmentaler</h4>
+            <p class="text-xs text-schmitz-muted mt-2">Knusprig paniert mit Wildpreiselbeeren, Sauce Tartare &amp; gemischtem Salatteller.</p>
+            <div class="mt-3 text-[10px] text-schmitz-green font-bold">Allergene: [A, C, G, M]</div>
+          </div>
+
+          <div class="bg-white p-5 border border-schmitz-border">
+            <span class="text-[10px] uppercase tracking-wider text-schmitz-oak font-semibold block mb-1">Donnerstag &bull; Tagessuppe inklusive</span>
+            <h4 class="font-serif text-xl text-schmitz-dark font-medium">Schweinsbraten mit Sauerkraut</h4>
+            <p class="text-xs text-schmitz-muted mt-2">Saftiger Schopf mit knuspriger Kruste, warmem Weinsauerkraut &amp; Waldviertler Knödel.</p>
+            <div class="mt-3 text-[10px] text-schmitz-green font-bold">Allergene: [A, C, L]</div>
+          </div>
+
+          <div class="bg-white p-5 border border-schmitz-border">
+            <span class="text-[10px] uppercase tracking-wider text-schmitz-oak font-semibold block mb-1">Freitag &bull; Tagessuppe inklusive</span>
+            <h4 class="font-serif text-xl text-schmitz-dark font-medium">Gebackenes Schollenfilet</h4>
+            <p class="text-xs text-schmitz-muted mt-2">Goldgelb paniert mit klassischem Wiener Erdäpfel-Vogerlsalat &amp; Zitrone.</p>
+            <div class="mt-3 text-[10px] text-schmitz-green font-bold">Allergene: [A, C, D, G, M]</div>
+          </div>
+
+          <div class="bg-schmitz-green text-white p-5 border border-schmitz-greenDark flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] uppercase tracking-wider text-schmitz-gold font-bold block mb-1">Für Büros &amp; HTL Rennweg</span>
+              <h4 class="font-serif text-xl font-normal">Menü telefonisch vorbestellen</h4>
+              <p class="text-xs text-slate-200 mt-2 font-light">Einfach anrufen, Menü wählen und ohne Wartezeit warm abholen oder direkt speisen.</p>
+            </div>
+            <div class="mt-4">
+              <a href="tel:+4317989168" class="inline-block w-full py-2 bg-white text-schmitz-green font-bold text-center text-xs uppercase tracking-wider">
+                📞 01 798 91 68
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE (CORE HIGHLIGHTS & TRADITION) -->
+  <section id="speisekarte" class="py-20 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-block text-[11px] tracking-[0.25em] uppercase text-schmitz-green font-semibold mb-2">
+        Wiener Hausmannskost &bull; Frisch aus der Küche
+      </div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-schmitz-dark font-normal">Klassiker der Wiener Küche</h2>
+      <p class="text-xs sm:text-sm text-schmitz-muted mt-3 font-light">
+        Ehrliche Zutaten, traditionell zubereitet. Alle Gerichte mit transparenter österreichischer Allergenkennzeichnung.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mt-8">
+        <button onclick="filterSchmitz('all', this)" class="schmitz-tab px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-xs bg-schmitz-green text-white transition-all">
+          Alle Gerichte
+        </button>
+        <button onclick="filterSchmitz('klassiker', this)" class="schmitz-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-xs bg-schmitz-card text-schmitz-dark border border-schmitz-border hover:border-schmitz-green transition-all">
+          Wirtshaus-Klassiker
+        </button>
+        <button onclick="filterSchmitz('suppe', this)" class="schmitz-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-xs bg-schmitz-card text-schmitz-dark border border-schmitz-border hover:border-schmitz-green transition-all">
+          Suppentopf
+        </button>
+        <button onclick="filterSchmitz('vegetarisch', this)" class="schmitz-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-xs bg-schmitz-card text-schmitz-dark border border-schmitz-border hover:border-schmitz-green transition-all">
+          Vegetarisch &amp; Käse
+        </button>
+        <button onclick="filterSchmitz('mehlspeis', this)" class="schmitz-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded-xs bg-schmitz-card text-schmitz-dark border border-schmitz-border hover:border-schmitz-green transition-all">
+          Süße Mehlspeisen
+        </button>
+      </div>
+    </div>
+
+    <!-- MENU GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="schmitz-grid">
+
+      <!-- ITEM 1: Wiener Schnitzel (MUST-HAVE) -->
+      <div class="schmitz-item bg-white border-2 border-schmitz-border hover:border-schmitz-green transition-all p-6 rounded-xs flex flex-col justify-between shadow-xs group" data-category="klassiker">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 bg-schmitz-green/10 text-schmitz-green border border-schmitz-green/20">
+              Der Klassiker
+            </span>
+            <div class="text-right">
+              <span class="font-serif text-2xl text-schmitz-dark font-medium block">€ 14,90 / € 22,50</span>
+              <span class="text-[10px] text-schmitz-muted">Schwein / Kalb</span>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl text-schmitz-dark group-hover:text-schmitz-green transition-colors mb-2">
+            Wiener Schnitzel vom Kalb oder Schwein
+          </h3>
+          <p class="text-xs text-schmitz-muted leading-relaxed font-light mb-4">
+            Goldgelb in der Pfanne herausgebacken mit luftig soufflierter Panier. Serviert mit unserem berühmten hausgemachten Wiener Erdäpfelsalat und Zitrone.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-schmitz-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-schmitz-muted uppercase">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Ei">C</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Milch">G</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Senf">M</span>
+          </div>
+          <button onclick="openModal('Wiener Schnitzel reservieren')" class="text-schmitz-green hover:underline text-xs font-bold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 2: Wiener Zwiebelrostbraten (MUST-HAVE) -->
+      <div class="schmitz-item bg-white border-2 border-schmitz-border hover:border-schmitz-green transition-all p-6 rounded-xs flex flex-col justify-between shadow-xs group" data-category="klassiker">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 bg-schmitz-oak/10 text-schmitz-oak border border-schmitz-oak/20">
+              Wirtshaus-Spezialität
+            </span>
+            <span class="font-serif text-2xl text-schmitz-dark font-medium">€ 19,80</span>
+          </div>
+          <h3 class="font-serif text-2xl text-schmitz-dark group-hover:text-schmitz-green transition-colors mb-2">
+            Wiener Zwiebelrostbraten
+          </h3>
+          <p class="text-xs text-schmitz-muted leading-relaxed font-light mb-4">
+            Zart abgelegener Rindsrostbraten in kräftigem Wurzelsaftl, reichlich garniert mit krossen Wiener Röstzwiebeln, serviert mit knusprigen Braterdäpfeln &amp; Senfgurke.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-schmitz-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-schmitz-muted uppercase">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Sellerie">L</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Senf">M</span>
+          </div>
+          <button onclick="openModal('Zwiebelrostbraten reservieren')" class="text-schmitz-green hover:underline text-xs font-bold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 3: Altwiener Rindsgulasch (MUST-HAVE) -->
+      <div class="schmitz-item bg-white border-2 border-schmitz-border hover:border-schmitz-green transition-all p-6 rounded-xs flex flex-col justify-between shadow-xs group" data-category="klassiker">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 bg-schmitz-green/10 text-schmitz-green border border-schmitz-green/20">
+              Echtes Beisl-Gulasch
+            </span>
+            <span class="font-serif text-2xl text-schmitz-dark font-medium">€ 14,20</span>
+          </div>
+          <h3 class="font-serif text-2xl text-schmitz-dark group-hover:text-schmitz-green transition-colors mb-2">
+            Altwiener Rindsgulasch mit Semmelknödel
+          </h3>
+          <p class="text-xs text-schmitz-muted leading-relaxed font-light mb-4">
+            Stundenlang langsam mit viel Zwiebeln und edelsüßem Paprika geschmortes Wadschunken-Rindfleisch mit tiefdunklem Saftl und fluffigem hausgemachtem Semmelknödel.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-schmitz-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-schmitz-muted uppercase">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Ei">C</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Milch">G</span>
+          </div>
+          <button onclick="openModal('Altwiener Gulasch reservieren')" class="text-schmitz-green hover:underline text-xs font-bold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 4: Gebackener Emmentaler (MUST-HAVE) -->
+      <div class="schmitz-item bg-white border-2 border-schmitz-border hover:border-schmitz-green transition-all p-6 rounded-xs flex flex-col justify-between shadow-xs group" data-category="vegetarisch">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 bg-amber-500/10 text-amber-800 border border-amber-500/20">
+              Vegetarisch
+            </span>
+            <span class="font-serif text-2xl text-schmitz-dark font-medium">€ 12,80</span>
+          </div>
+          <h3 class="font-serif text-2xl text-schmitz-dark group-hover:text-schmitz-green transition-colors mb-2">
+            Gebackener Emmentaler mit Preiselbeeren
+          </h3>
+          <p class="text-xs text-schmitz-muted leading-relaxed font-light mb-4">
+            Dicke Scheiben herzhaften Emmentalers, goldbraun in Semmelbröseln paniert und zart flüssig gebraten, serviert mit fruchtigen Wildpreiselbeeren und hausgemachter Sauce Tartare.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-schmitz-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-schmitz-muted uppercase">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Ei">C</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Milch">G</span>
+          </div>
+          <button onclick="openModal('Gebackenen Emmentaler reservieren')" class="text-schmitz-green hover:underline text-xs font-bold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 5: Kaiserschmarrn (MUST-HAVE) -->
+      <div class="schmitz-item bg-white border-2 border-schmitz-border hover:border-schmitz-green transition-all p-6 rounded-xs flex flex-col justify-between shadow-xs group" data-category="mehlspeis">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 bg-schmitz-oak/10 text-schmitz-oak border border-schmitz-oak/20">
+              Süßer Traum
+            </span>
+            <span class="font-serif text-2xl text-schmitz-dark font-medium">€ 10,50</span>
+          </div>
+          <h3 class="font-serif text-2xl text-schmitz-dark group-hover:text-schmitz-green transition-colors mb-2">
+            Kaiserschmarrn mit Zwetschkenröster
+          </h3>
+          <p class="text-xs text-schmitz-muted leading-relaxed font-light mb-4">
+            Frisch in der Eisenpfanne karamellisierter, herrlich fluffiger Schmarrn mit Staubzucker und warmem, zimtigem Zwetschkenröster aus österreichischen Zwetschken.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-schmitz-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-schmitz-muted uppercase">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Ei">C</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Milch">G</span>
+          </div>
+          <button onclick="openModal('Kaiserschmarrn bestellen')" class="text-schmitz-green hover:underline text-xs font-bold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 6: Rindsuppe mit Frittaten & Leberknödel -->
+      <div class="schmitz-item bg-white border-2 border-schmitz-border hover:border-schmitz-green transition-all p-6 rounded-xs flex flex-col justify-between shadow-xs group" data-category="suppe">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 bg-schmitz-green/10 text-schmitz-green border border-schmitz-green/20">
+              Aus dem Suppentopf
+            </span>
+            <span class="font-serif text-2xl text-schmitz-dark font-medium">€ 4,80</span>
+          </div>
+          <h3 class="font-serif text-2xl text-schmitz-dark group-hover:text-schmitz-green transition-colors mb-2">
+            Kräftige Wiener Rindsuppe
+          </h3>
+          <p class="text-xs text-schmitz-muted leading-relaxed font-light mb-4">
+            Traditionell gekochte klare Rinderbrühe mit reichlich Wurzelgemüse, Schnittlauch und Einlage nach Wahl: feine Frittatenstreifen oder hausgemachter Leberknödel.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-schmitz-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-schmitz-muted uppercase">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Ei">C</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Milch">G</span>
+            <span class="px-1.5 py-0.5 bg-schmitz-paper text-schmitz-dark text-[10px] font-mono font-bold border border-schmitz-border" title="Sellerie">L</span>
+          </div>
+          <button onclick="openModal('Suppe bestellen')" class="text-schmitz-green hover:underline text-xs font-bold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ALLERGEN LEGEND -->
+    <div class="mt-12 bg-schmitz-cardMuted border border-schmitz-border p-6 rounded-xs">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-schmitz-green font-bold text-xs">ℹ️ Österreichische Allergen-Kennzeichnung (Codex-Empfehlung):</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 text-[11px] text-schmitz-muted">
+        <div><strong class="text-schmitz-dark">A:</strong> Glutenhaltiges Getreide</div>
+        <div><strong class="text-schmitz-dark">C:</strong> Eier</div>
+        <div><strong class="text-schmitz-dark">D:</strong> Fisch</div>
+        <div><strong class="text-schmitz-dark">G:</strong> Milch &amp; Laktose</div>
+        <div><strong class="text-schmitz-dark">L:</strong> Sellerie</div>
+        <div><strong class="text-schmitz-dark">M:</strong> Senf</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DAS BEISL & DIE PHILOSOPHIE -->
+  <section id="wirtshaus" class="py-16 bg-[#f3ede3] border-y border-schmitz-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-4">
+          <span class="text-[10px] tracking-[0.25em] uppercase text-schmitz-oak font-bold">Wiener Gemütlichkeit</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-schmitz-dark font-normal">
+            Ein Ort, an dem Wien noch Wien ist.
+          </h2>
+          <p class="text-xs sm:text-sm text-schmitz-muted leading-relaxed font-light">
+            In der Nottendorfer Gasse 30 pflegen wir das, was in der modernen Hektik oft verloren geht: 
+            den Stammgästetisch, das persönliche Gespräch, die holzgetäfelte Wirtsstube und eine Speisekarte, 
+            auf der jedes Gericht frisch und mit Liebe zubereitet wird.
+          </p>
+          <p class="text-xs sm:text-sm text-schmitz-muted leading-relaxed font-light">
+            Egal ob schneller Mittagsteller zwischen Vorlesungen und Arbeitsschichten oder ein gemütlicher Feierabend bei Schnitzel und Bier – 
+            im Gasthaus Schmitzberger sind Sie immer herzlich willkommen.
+          </p>
+        </div>
+
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="p-6 bg-white border border-schmitz-border text-center">
+            <span class="text-3xl mb-2 block">🍺</span>
+            <h4 class="font-serif text-xl text-schmitz-dark">Frisches Fassbier</h4>
+            <p class="text-xs text-schmitz-muted mt-1">Perfekt temperiert und mit dichter Schaumkrone frisch gezapft.</p>
+          </div>
+          <div class="p-6 bg-white border border-schmitz-border text-center">
+            <span class="text-3xl mb-2 block">🥩</span>
+            <h4 class="font-serif text-xl text-schmitz-dark">Regionales Fleisch</h4>
+            <p class="text-xs text-schmitz-muted mt-1">Qualitätsfleisch aus heimischer Herkunft für Gulasch &amp; Schnitzel.</p>
+          </div>
+          <div class="p-6 bg-white border border-schmitz-border text-center">
+            <span class="text-3xl mb-2 block">🥔</span>
+            <h4 class="font-serif text-xl text-schmitz-dark">Echter Erdäpfelsalat</h4>
+            <p class="text-xs text-schmitz-muted mt-1">Täglich frisch mariniert nach überliefertem Wiener Hausrezept.</p>
+          </div>
+          <div class="p-6 bg-white border border-schmitz-border text-center">
+            <span class="text-3xl mb-2 block">🤝</span>
+            <h4 class="font-serif text-xl text-schmitz-dark">Familiäre Atmosphäre</h4>
+            <p class="text-xs text-schmitz-muted mt-1">Wiener Schmäh und aufmerksamer Service seit vielen Jahren.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT -->
+  <section id="kontakt" class="py-20 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+      <div class="lg:col-span-5 bg-white border-2 border-schmitz-border p-8 rounded-xs flex flex-col justify-between shadow-sm">
+        <div>
+          <span class="text-[10px] tracking-[0.25em] uppercase text-schmitz-green font-semibold">Besuchen Sie uns</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-schmitz-dark mt-1 mb-6">Gasthaus Schmitzberger</h2>
+
+          <div class="space-y-5 text-xs text-schmitz-dark">
+            <div class="flex items-start gap-3">
+              <span class="text-schmitz-green text-base mt-0.5">📍</span>
+              <div>
+                <strong class="text-schmitz-dark block text-sm">Adresse</strong>
+                Nottendorfer Gasse 30, 1030 Wien<br>
+                <span class="text-schmitz-green font-semibold">900 m von HTL Rennweg • Nottendorfer Gasse 30</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-schmitz-green text-base mt-0.5">🕒</span>
+              <div>
+                <strong class="text-schmitz-dark block text-sm">Öffnungszeiten</strong>
+                Montag bis Freitag: <strong>10:00 – 21:00 Uhr</strong><br>
+                <span class="text-schmitz-oak font-medium">Samstag, Sonntag &amp; Feiertage: Ruhetag</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-schmitz-green text-base mt-0.5">📞</span>
+              <div>
+                <strong class="text-schmitz-dark block text-sm">Telefon &amp; Tischreservierung</strong>
+                <a href="tel:+4317989168" class="text-schmitz-green font-bold text-sm hover:underline">+43 1 798 91 68</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-schmitz-green text-base mt-0.5">🚶</span>
+              <div>
+                <strong class="text-schmitz-dark block text-sm">Weg von HTL Rennweg (900 m)</strong>
+                Über Rennweg Richtung Baumgasse &bull; ca. 10–12 Minuten entspannter Fußweg oder mit U3 Erdberg.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 mt-6 border-t border-schmitz-border">
+          <button onclick="openModal('Tisch reservieren')" class="w-full py-3.5 bg-schmitz-green hover:bg-schmitz-greenDark text-white text-xs uppercase tracking-widest font-semibold transition-all">
+            Tisch reservieren / Menü vorbestellen
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-white border-2 border-schmitz-border overflow-hidden min-h-[380px] flex flex-col">
+        <div class="p-4 bg-schmitz-cardMuted border-b border-schmitz-border flex items-center justify-between text-xs">
+          <span class="font-medium text-schmitz-dark">Wegbeschreibung &bull; Nottendorfer Gasse 30, 1030 Wien</span>
+          <a href="https://maps.google.com/?q=Nottendorfer+Gasse+30,+1030+Wien" target="_blank" rel="noopener noreferrer" class="text-schmitz-green font-bold hover:underline">
+            In Google Maps öffnen ↗
+          </a>
+        </div>
+        <div class="flex-1 w-full relative">
+          <iframe 
+            src="https://maps.google.com/maps?q=Nottendorfer%20Gasse%2030,%201030%20Wien&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            class="w-full h-full border-0 min-h-[360px]" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-schmitz-greenDark text-slate-300 py-12 text-xs border-t-4 border-schmitz-oak">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 border border-white/30 bg-schmitz-green flex items-center justify-center text-white font-serif text-lg font-bold">
+          S
+        </div>
+        <div>
+          <span class="font-serif text-lg text-white block">Gasthaus Schmitzberger</span>
+          <span class="text-[10px] tracking-widest uppercase text-slate-400">Nottendorfer Gasse 30 • 1030 Wien</span>
+        </div>
+      </div>
+      <div class="text-center md:text-right text-[11px] space-y-1">
+        <p>© 2026 Gasthaus Schmitzberger. Alle Rechte vorbehalten.</p>
+        <p class="text-schmitz-gold font-medium">Konzeptentwurf &bull; Verifiziertes Vorstadt-Beisl für 1030 Wien</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div id="booking-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-white border-2 border-schmitz-green max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-schmitz-muted hover:text-schmitz-dark text-xl" aria-label="Schließen">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-widest text-schmitz-oak font-bold">Gasthaus Schmitzberger • Nottendorfer Gasse 30</span>
+        <h3 class="font-serif text-3xl text-schmitz-dark mt-1" id="modal-title">Tisch reservieren</h3>
+        <p class="text-xs text-schmitz-muted mt-1">Tel: +43 1 798 91 68 (Mo–Fr 10:00–21:00)</p>
+      </div>
+
+      <form id="reservation-form" onsubmit="handleReservationSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block text-schmitz-dark uppercase tracking-wider text-[10px] font-bold mb-1">Ihr Name *</label>
+          <input type="text" required placeholder="z.B. Franz Gruber" class="w-full px-3.5 py-2.5 bg-schmitz-paper border border-schmitz-border rounded-xs text-schmitz-dark focus:outline-none focus:border-schmitz-green">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-schmitz-dark uppercase tracking-wider text-[10px] font-bold mb-1">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43 ..." class="w-full px-3.5 py-2.5 bg-schmitz-paper border border-schmitz-border rounded-xs text-schmitz-dark focus:outline-none focus:border-schmitz-green">
+          </div>
+          <div>
+            <label class="block text-schmitz-dark uppercase tracking-wider text-[10px] font-bold mb-1">Personenanzahl</label>
+            <select class="w-full px-3.5 py-2.5 bg-schmitz-paper border border-schmitz-border rounded-xs text-schmitz-dark focus:outline-none focus:border-schmitz-green">
+              <option>1 Person</option>
+              <option selected>2 Personen</option>
+              <option>3–4 Personen</option>
+              <option>5–8 Personen (Stammtisch)</option>
+              <option>Mittagsmenü zum Mitnehmen</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-schmitz-dark uppercase tracking-wider text-[10px] font-bold mb-1">Datum (Mo–Fr) *</label>
+            <input type="date" required id="modal-date" class="w-full px-3.5 py-2.5 bg-schmitz-paper border border-schmitz-border rounded-xs text-schmitz-dark focus:outline-none focus:border-schmitz-green">
+          </div>
+          <div>
+            <label class="block text-schmitz-dark uppercase tracking-wider text-[10px] font-bold mb-1">Uhrzeit (10:00 - 20:30) *</label>
+            <input type="time" required value="12:00" class="w-full px-3.5 py-2.5 bg-schmitz-paper border border-schmitz-border rounded-xs text-schmitz-dark focus:outline-none focus:border-schmitz-green">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-schmitz-dark uppercase tracking-wider text-[10px] font-bold mb-1">Wunschgericht / Anmerkungen</label>
+          <textarea rows="2" placeholder="z.B. Wiener Schnitzel, Zwiebelrostbraten oder Vorbestellung Mittagsmenü..." class="w-full px-3.5 py-2.5 bg-schmitz-paper border border-schmitz-border rounded-xs text-schmitz-dark focus:outline-none focus:border-schmitz-green"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 bg-schmitz-green hover:bg-schmitz-greenDark text-white text-xs uppercase tracking-widest font-semibold transition-all">
+            Reservierung verbindlich absenden
+          </button>
+        </div>
+      </form>
+
+      <div id="success-message" class="hidden text-center py-8">
+        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+          ✓
+        </div>
+        <h4 class="font-serif text-2xl text-schmitz-dark mb-2">Vielen Dank für Ihre Reservierung!</h4>
+        <p class="text-xs text-schmitz-muted leading-relaxed">
+          Ihre Tischreservierung für das <strong>Gasthaus Schmitzberger</strong> wurde registriert. Wir freuen uns auf Ihren Besuch!
+        </p>
+        <button onclick="closeModal()" class="mt-5 px-6 py-2.5 bg-schmitz-green text-white text-xs uppercase tracking-wider font-semibold">
+          Schließen
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('modal-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+      }
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openModal(titleText = 'Tisch reservieren') {
+      const modal = document.getElementById('booking-modal');
+      const title = document.getElementById('modal-title');
+      const form = document.getElementById('reservation-form');
+      const success = document.getElementById('success-message');
+      
+      if (title) title.innerText = titleText;
+      if (form) form.classList.remove('hidden');
+      if (success) success.classList.add('hidden');
+      
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('booking-modal').classList.add('hidden');
+    }
+
+    function handleReservationSubmit(e) {
+      e.preventDefault();
+      document.getElementById('reservation-form').classList.add('hidden');
+      document.getElementById('success-message').classList.remove('hidden');
+    }
+
+    function filterSchmitz(category, btn) {
+      document.querySelectorAll('.schmitz-tab').forEach(b => {
+        b.classList.remove('bg-schmitz-green', 'text-white');
+        b.classList.add('bg-schmitz-card', 'text-schmitz-dark');
+      });
+      btn.classList.add('bg-schmitz-green', 'text-white');
+      btn.classList.remove('bg-schmitz-card', 'text-schmitz-dark');
+
+      const items = document.querySelectorAll('.schmitz-item');
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

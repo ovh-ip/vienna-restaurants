@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria Roma | Trattoria & Holzofenpizzeria • Fasangasse 33, 1030 Wien</title>
+  <meta name="description" content="Klassische italienische Holzofenpizzeria & Trattoria in der Fasangasse 33, 1030 Wien. Täglich 11:00–23:00 geöffnet. 500 m von der HTL Rennweg.">
+
+  <!-- Google Fonts: Instrument Serif & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            espresso: {
+              950: '#14110f',
+              900: '#1c1714',
+              850: '#231d19',
+              800: '#2c2420',
+              700: '#3d322c',
+              600: '#53453c',
+            },
+            terracotta: {
+              50: '#fbf5f2',
+              100: '#f6eae3',
+              200: '#edd4c5',
+              300: '#dfb49e',
+              400: '#cf8e71',
+              500: '#be6b48',
+              600: '#aa5433',
+              700: '#8e4125',
+              800: '#753520',
+              900: '#602d1d',
+            },
+            olive: {
+              50: '#f4f6f2',
+              100: '#e6ebe1',
+              200: '#ced9c5',
+              300: '#adc0a2',
+              400: '#89a27c',
+              500: '#6b855e',
+              600: '#536a48',
+              700: '#415339',
+              800: '#35432f',
+              900: '#2d3728',
+            },
+            parchment: {
+              50: '#fdfbf7',
+              100: '#f7f3ea',
+              200: '#ede6d6',
+              300: '#dfd4bd',
+              400: '#cbbaa0',
+              500: '#b09d81',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .bg-texture {
+      background-color: #1c1714;
+      background-image: radial-gradient(rgba(206, 178, 142, 0.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-texture text-parchment-100 font-sans antialiased selection:bg-terracotta-600 selection:text-white pb-20 md:pb-0">
+
+  <!-- TOP CONCEPT BANNER -->
+  <aside aria-label="Konzept-Status" class="bg-espresso-950 border-b border-terracotta-800/50 text-[11px] tracking-wider uppercase text-terracotta-200 py-2.5 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-medium text-parchment-100">Konzeptentwurf für Pizzeria Roma • Live Demo</span>
+      <span class="text-terracotta-400 hidden sm:inline">•</span>
+      <span class="text-parchment-300 hidden sm:inline">Fasangasse 33, 1030 Wien</span>
+    </div>
+  </aside>
+
+  <!-- VERIFIED LOCATION & HOURS TOP BAR -->
+  <div class="border-b border-white/10 bg-espresso-900 text-[11px] tracking-wide text-parchment-300/80 py-2.5 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-3 sm:space-x-4 flex-wrap">
+        <span class="text-parchment-100 font-medium">📍 Fasangasse 33, 1030 Wien</span>
+        <span class="text-white/20 hidden sm:inline">•</span>
+        <span class="text-olive-300 font-medium">500 m von HTL Rennweg • Fasangasse 33</span>
+      </div>
+      <div class="flex items-center space-x-4 sm:space-x-6">
+        <span class="text-parchment-300">🕒 Täglich 11:00–23:00</span>
+        <span class="text-white/20 hidden md:inline">•</span>
+        <a href="tel:+4317965610" class="text-terracotta-300 hover:text-white font-semibold transition-colors flex items-center gap-1.5">
+          <span>📞</span>
+          <span>+43 1 796 56 10</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-espresso-900/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col group">
+        <div class="flex items-baseline gap-2">
+          <span class="font-serif text-3xl sm:text-4xl tracking-wide text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Pizzeria Roma</span>
+          <span class="text-xs uppercase tracking-widest text-terracotta-400 font-serif italic">Trattoria</span>
+        </div>
+        <span class="text-[9px] tracking-[0.25em] uppercase text-parchment-400/80 font-sans">
+          Traditioneller Holzofen &bull; Pasta Fresca &bull; 1030 Wien
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-7 lg:space-x-9 text-xs tracking-[0.16em] uppercase font-medium text-parchment-300">
+        <a href="#holzofen" class="hover:text-terracotta-300 transition-colors">Holzofen</a>
+        <a href="#speisekarte" class="hover:text-terracotta-300 transition-colors">Speisekarte</a>
+        <a href="#allergene" class="hover:text-terracotta-300 transition-colors">Allergene</a>
+        <a href="#trattoria" class="hover:text-terracotta-300 transition-colors">Trattoria</a>
+        <a href="#kontakt" class="hover:text-terracotta-300 transition-colors">Anfahrt &amp; Kontakt</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-3">
+        <a href="tel:+4317965610" class="px-4 py-2 border border-white/20 hover:border-terracotta-400 text-parchment-200 text-xs tracking-wider uppercase font-medium transition-all">
+          01 796 56 10
+        </a>
+        <button onclick="openModal()" class="px-5 py-2.5 bg-terracotta-600 hover:bg-terracotta-500 text-white text-xs tracking-widest uppercase font-semibold transition-all shadow-sm">
+          Tisch reservieren
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-parchment-200 p-2" aria-label="Menü öffnen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-espresso-950 border-b border-white/10 px-6 py-6 space-y-4 text-xs tracking-widest uppercase">
+      <div class="p-3 bg-espresso-900 border border-olive-700/50 text-olive-300 text-[11px] font-medium text-center">
+        📍 500 m von HTL Rennweg • Fasangasse 33
+      </div>
+      <a href="#holzofen" onclick="toggleMobileMenu()" class="block py-1 hover:text-terracotta-300">Der echte Holzofen</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-terracotta-300">Speisekarte &amp; Pizza-Klassiker</a>
+      <a href="#allergene" onclick="toggleMobileMenu()" class="block py-1 hover:text-terracotta-300">Allergen-Kennzeichnung</a>
+      <a href="#trattoria" onclick="toggleMobileMenu()" class="block py-1 hover:text-terracotta-300">Über die Trattoria</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1 hover:text-terracotta-300">Standort Fasangasse 33</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <a href="tel:+4317965610" class="w-full py-3 text-center border border-white/20 text-parchment-200 font-semibold tracking-wider uppercase text-xs">
+          Anrufen: +43 1 796 56 10
+        </a>
+        <button onclick="toggleMobileMenu(); openModal();" class="w-full py-3 bg-terracotta-600 text-white font-semibold tracking-wider uppercase text-xs">
+          Tisch reservieren
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[82vh] flex items-center justify-center overflow-hidden border-b border-white/10">
+    <div class="absolute inset-0 z-0">
+      <!-- Atmospheric pizza oven & artisan food -->
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1920&q=85" alt="Knusprige Holzofenpizza Pizzeria Roma Fasangasse" class="w-full h-full object-cover opacity-25">
+      <div class="absolute inset-0 bg-gradient-to-t from-espresso-900 via-espresso-900/80 to-espresso-950/60"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 border border-terracotta-600/40 bg-espresso-950/80 text-parchment-200 text-[11px] tracking-[0.25em] uppercase">
+        <span class="text-terracotta-400">🔥</span>
+        <span>Traditioneller Buchenholzofen &bull; 48h Teigruhe</span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-parchment-50 font-normal leading-[1.08] tracking-tight max-w-4xl mx-auto">
+        Klassische Trattoria &amp; <span class="italic text-terracotta-400 font-normal">Holzofenpizza</span> im Fasangviertel.
+      </h1>
+
+      <p class="mt-6 text-base sm:text-lg text-parchment-300 max-w-2xl mx-auto font-light leading-relaxed">
+        Herzlich willkommen in der <strong class="text-white font-medium">Pizzeria Roma</strong> in der Fasangasse 33. Seit vielen Jahren backen wir unsere Pizzen im feurigen Holzofen bei über 450&nbsp;°C – mit sonnengereiften San Marzano Tomaten, cremigem Bufala und bester italienischer Pasta Fresca.
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center items-center gap-4">
+        <button onclick="openModal()" class="px-8 py-3.5 bg-terracotta-600 hover:bg-terracotta-500 text-white font-medium text-xs tracking-[0.2em] uppercase transition-all shadow-md">
+          Tisch reservieren
+        </button>
+        <a href="#speisekarte" class="px-8 py-3.5 border border-white/25 hover:border-terracotta-400 text-parchment-100 hover:text-white font-medium text-xs tracking-[0.2em] uppercase transition-all">
+          Speisekarte entdecken ↓
+        </a>
+      </div>
+
+      <!-- KEY FACTS CARDS -->
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto text-left">
+        <div class="p-4 bg-espresso-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-olive-300 block">Lage</span>
+          <span class="font-serif text-2xl text-parchment-100 font-normal mt-0.5 block">500 m</span>
+          <span class="text-[11px] text-parchment-400 block mt-0.5">von HTL Rennweg • 1030</span>
+        </div>
+        <div class="p-4 bg-espresso-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-terracotta-300 block">Backweise</span>
+          <span class="font-serif text-2xl text-parchment-100 font-normal mt-0.5 block">Holzofen</span>
+          <span class="text-[11px] text-parchment-400 block mt-0.5">450°C Buchenholzglut</span>
+        </div>
+        <div class="p-4 bg-espresso-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-olive-300 block">Öffnungszeiten</span>
+          <span class="font-serif text-2xl text-parchment-100 font-normal mt-0.5 block">11:00 – 23:00</span>
+          <span class="text-[11px] text-parchment-400 block mt-0.5">Täglich durchgehend warm</span>
+        </div>
+        <div class="p-4 bg-espresso-850/80 border border-white/10 backdrop-blur-xs">
+          <span class="text-[10px] uppercase tracking-widest text-terracotta-300 block">Reservierung</span>
+          <span class="font-serif text-2xl text-parchment-100 font-normal mt-0.5 block">01 796 56 10</span>
+          <span class="text-[11px] text-parchment-400 block mt-0.5">Telefonisch oder online</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHT: DER ECHTE HOLZOFEN -->
+  <section id="holzofen" class="py-20 lg:py-24 border-b border-white/10 bg-espresso-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-terracotta-400 font-semibold border-b border-terracotta-500 pb-1">
+              Das Geheimnis unseres Geschmacks
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-parchment-50 leading-[1.15]">
+            Ein echter Holzofen lässt sich durch keinen Elektroofen ersetzen.
+          </h2>
+
+          <p class="text-sm sm:text-base text-parchment-300 leading-relaxed font-light">
+            In unserer Pizzeria Roma in der Fasangasse brennt das Feuer noch mit echtem, trockenem Buchenholz. Die enorme Hitze von über 450&nbsp;Grad karamellisiert die Teigränder in nur 90 Sekunden: außen unwiderstehlich knusprig mit typischem Leopardenmuster, innen luftig-zart und leicht bekömmlich dank 48 Stunden schonender Teigfermentation.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+            <div class="p-4 border border-white/10 bg-espresso-900/60">
+              <span class="text-terracotta-400 font-serif text-xl block mb-1">Pomodori di San Marzano</span>
+              <p class="text-xs text-parchment-400 leading-relaxed">Fruchtig-süße Tomaten vom Fuße des Vesuvs, sonnengereift und schonend verarbeitet.</p>
+            </div>
+            <div class="p-4 border border-white/10 bg-espresso-900/60">
+              <span class="text-olive-300 font-serif text-xl block mb-1">Mozzarella di Bufala DOP</span>
+              <p class="text-xs text-parchment-400 leading-relaxed">Cremiger Büffelmozzarella und frischer Fior di Latte für die perfekte Schmelzstruktur.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="#speisekarte" class="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-terracotta-300 hover:text-white transition-colors">
+              <span>Zu unseren Pizza-Spezialitäten</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 relative">
+          <div class="relative overflow-hidden border border-white/15 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1000&q=85" alt="Traditionelle Holzofenpizza im Steinofen" class="w-full h-[460px] object-cover hover:scale-105 transition duration-700">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-espresso-950 via-espresso-950/80 to-transparent p-6">
+              <div class="flex items-center justify-between text-xs text-parchment-300">
+                <span>🔥 Gebacken auf feuerfestem Schamottstein</span>
+                <span class="text-olive-300 font-medium">Fasangasse 33</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE (MAIN MENU) -->
+  <section id="speisekarte" class="py-20 lg:py-28 border-b border-white/10 bg-espresso-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-[11px] tracking-[0.25em] uppercase text-terracotta-400 font-semibold block mb-2">Ausgewählte Spezialitäten &bull; Cucina Italiana</span>
+        <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-parchment-50 font-normal">
+          Unsere Speisekarte
+        </h2>
+        <p class="text-sm text-parchment-300 mt-3 font-light">
+          Alle Gerichte werden frisch mit besten italienischen Zutaten zubereitet. Allergen-Kennzeichnung gemäß österreichischer Verordnung [A, C, D, G, L...].
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <button onclick="filterDishes('all', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-terracotta-500 text-white transition-all">
+          Alle Gerichte
+        </button>
+        <button onclick="filterDishes('pizza', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-parchment-400 hover:text-white transition-all">
+          Pizza dal Forno
+        </button>
+        <button onclick="filterDishes('pasta', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-parchment-400 hover:text-white transition-all">
+          Pasta Fresca &amp; Primi
+        </button>
+        <button onclick="filterDishes('antipasti', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-parchment-400 hover:text-white transition-all">
+          Antipasti &amp; Insalate
+        </button>
+        <button onclick="filterDishes('dolci', this)" class="menu-tab px-5 py-2.5 text-xs uppercase tracking-wider font-semibold border-b-2 border-transparent text-parchment-400 hover:text-white transition-all">
+          Dolci &amp; Caffè
+        </button>
+      </div>
+
+      <!-- DISHES GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Pizza Roma (REQUIRED) -->
+        <article class="dish-item pizza bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-terracotta-900/60 border border-terracotta-700/50 text-[10px] uppercase tracking-wider text-terracotta-300 font-semibold mb-1">
+                  Haus-Spezialität
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Pizza Roma</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 14,80</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Cremiger Büffelmozzarella (Mozzarella di Bufala Campana DOP), fruchtige San Marzano Tomaten, frisches Basilikum, kaltgepresstes Olivenöl extra vergine.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold" title="Glutenhaltiges Getreide, Milch/Laktose">[A, G]</span>
+            <button onclick="openModal('Pizza Roma')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 2. Pizza Diavola (REQUIRED) -->
+        <article class="dish-item pizza bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-espresso-900 border border-white/10 text-[10px] uppercase tracking-wider text-parchment-400 font-medium mb-1">
+                  Pikant
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Pizza Diavola</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 13,90</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Pikante kalabrische Salami Piccante, San Marzano Tomatensauce, Fior di Latte Mozzarella, frischer Peperoncino und milde schwarze Oliven.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold" title="Glutenhaltiges Getreide, Milch/Laktose">[A, G]</span>
+            <button onclick="openModal('Pizza Diavola')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. Pizza Quattro Formaggi (REQUIRED) -->
+        <article class="dish-item pizza bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-espresso-900 border border-white/10 text-[10px] uppercase tracking-wider text-parchment-400 font-medium mb-1">
+                  Käse-Klassiker
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Pizza Quattro Formaggi</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 14,50</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Vier erlesene italienische Käsesorten: zarter Fior di Latte, würziger Gorgonzola DOP, milder Taleggio und feiner Grana Padano, abgerundet mit Walnuss-Splittern.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold" title="Glutenhaltiges Getreide, Milch/Laktose">[A, G]</span>
+            <button onclick="openModal('Pizza Quattro Formaggi')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. Tagliatelle ai Porcini (REQUIRED) -->
+        <article class="dish-item pasta bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-olive-900/60 border border-olive-700/50 text-[10px] uppercase tracking-wider text-olive-300 font-semibold mb-1">
+                  Pasta Fresca
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-olive-300 transition-colors">Tagliatelle ai Porcini</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 15,20</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Hausgemachte Eier-Tagliatelle mit aromatischen Steinpilzen (Porcini), sautiert in Knoblauch, feiner Butter, Weißwein, frischer Petersilie und Parmigiano Reggiano.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold" title="Glutenhaltiges Getreide, Ei, Milch/Laktose">[A, C, G]</span>
+            <button onclick="openModal('Tagliatelle ai Porcini')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. Vitello Tonnato (REQUIRED) -->
+        <article class="dish-item antipasti bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-espresso-900 border border-white/10 text-[10px] uppercase tracking-wider text-parchment-400 font-medium mb-1">
+                  Piemontesischer Klassiker
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Vitello Tonnato</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 13,80</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Hauchdünn aufgeschnittenes, zart rosa pochiertes Kalbfleisch mit samtiger Thunfisch-Kapern-Creme, großen Kapernäpfeln aus Pantelleria und Zitronenzeste.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold" title="Ei, Fisch, Milch/Laktose">[C, D, G]</span>
+            <button onclick="openModal('Vitello Tonnato')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 6. Hausgemachtes Tiramisu (REQUIRED) -->
+        <article class="dish-item dolci bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-espresso-900 border border-white/10 text-[10px] uppercase tracking-wider text-terracotta-400 font-medium mb-1">
+                  Hausgemacht
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Hausgemachtes Tiramisu</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 6,90</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Täglich frisch zubereitet nach venezianischem Familienrezept: Löffelbiskuits getränkt in kräftigem Espresso und Amaretto, geschichtet mit Mascarponecreme und Valrhona-Kakao.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold" title="Glutenhaltiges Getreide, Ei, Milch/Laktose">[A, C, G]</span>
+            <button onclick="openModal('Hausgemachtes Tiramisu')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 7. Pizza Margherita Tradizionale -->
+        <article class="dish-item pizza bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-espresso-900 border border-white/10 text-[10px] uppercase tracking-wider text-parchment-400 font-medium mb-1">
+                  Das Original
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Pizza Margherita</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 11,50</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              San Marzano D.O.P. Tomatensugo, saftiger Fior di Latte Mozzarella, frisches Basilikum und feinstes Olivenöl extra vergine. Schlichte Perfektion.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold">[A, G]</span>
+            <button onclick="openModal('Pizza Margherita')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 8. Spaghetti Carbonara alla Romana -->
+        <article class="dish-item pasta bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-espresso-900 border border-white/10 text-[10px] uppercase tracking-wider text-parchment-400 font-medium mb-1">
+                  Ohne Rahm
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-terracotta-300 transition-colors">Spaghetti alla Carbonara</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 14,20</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Klassisch römisch ohne Obers: Knusprig gebratener Guanciale aus Lazio, frisches Bio-Eigelb, Pecorino Romano DOP und viel grob geschroteter schwarzer Pfeffer.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold">[A, C, G]</span>
+            <button onclick="openModal('Spaghetti Carbonara')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+        <!-- 9. Antipasto Misto della Casa -->
+        <article class="dish-item antipasti bg-espresso-850 border border-white/10 p-6 flex flex-col justify-between hover:border-terracotta-500/50 transition-all duration-300 group">
+          <div>
+            <div class="flex justify-between items-start gap-4 mb-3">
+              <div>
+                <span class="inline-block px-2 py-0.5 bg-olive-900/60 border border-olive-700/50 text-[10px] uppercase tracking-wider text-olive-300 font-semibold mb-1">
+                  Ideal zum Teilen
+                </span>
+                <h3 class="font-serif text-2xl text-parchment-50 font-normal group-hover:text-olive-300 transition-colors">Antipasto Misto Roma</h3>
+              </div>
+              <span class="font-serif text-2xl text-parchment-50 font-semibold shrink-0">€ 15,90</span>
+            </div>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              24 Monate gereifter Prosciutto di Parma, Salame Milano, marinierte Artischockenherzen, gegrillte Zucchini, Oliven aus Gaeta und Mini-Mozzarella di Bufala.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-terracotta-300 font-semibold">[G]</span>
+            <button onclick="openModal('Antipasto Misto Roma')" class="text-xs uppercase tracking-wider text-parchment-400 hover:text-white transition-colors">
+              + Tisch anfragen
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Quick note on daily pizza special -->
+      <div class="mt-12 p-6 bg-espresso-950 border border-terracotta-700/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="font-serif text-xl text-parchment-100">Mittagsmenü &amp; Schüler-/Studenten-Special</h4>
+          <p class="text-xs text-parchment-400 mt-1">Montag bis Freitag 11:30–14:30 Uhr: Jede Pizza oder Pasta mit kleinem gemischten Salat oder Suppe um nur € 10,90. 500 m von der HTL Rennweg.</p>
+        </div>
+        <button onclick="openModal('Mittagsmenü Vorbestellung')" class="px-6 py-3 bg-terracotta-600 hover:bg-terracotta-500 text-white text-xs uppercase tracking-widest font-semibold shrink-0">
+          Vorbestellen
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALLERGEN CODEX SECTION (Österreichische Kennzeichnung) -->
+  <section id="allergene" class="py-16 border-b border-white/10 bg-espresso-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-8">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-olive-300 font-semibold block mb-1">Transparenz &amp; Information</span>
+        <h3 class="font-serif text-3xl sm:text-4xl text-parchment-50">Österreichische Allergen-Kennzeichnung</h3>
+        <p class="text-xs text-parchment-400 mt-2">
+          Gemäß der österreichischen Allergeninformationsverordnung (BGBl. II Nr. 175/2014) sind alle 14 Hauptallergene in unserer Speisekarte mit Buchstaben ausgewiesen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-xs">
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-terracotta-400 font-bold block mb-0.5">A</span>
+          <span class="text-parchment-200 block font-medium">Gluten</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Weizen, Roggen, Gerste</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-terracotta-400 font-bold block mb-0.5">B</span>
+          <span class="text-parchment-200 block font-medium">Krebstiere</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Garnelen, Scampi</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-terracotta-400 font-bold block mb-0.5">C</span>
+          <span class="text-parchment-200 block font-medium">Ei</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Eier & Eierzeugnisse</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-terracotta-400 font-bold block mb-0.5">D</span>
+          <span class="text-parchment-200 block font-medium">Fisch</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Alle Fischarten</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-terracotta-400 font-bold block mb-0.5">E</span>
+          <span class="text-parchment-200 block font-medium">Erdnuss</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Erdnüsse & Erzeugnisse</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-terracotta-400 font-bold block mb-0.5">F</span>
+          <span class="text-parchment-200 block font-medium">Soja</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Sojabohnen & Produkte</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-terracotta-400 font-bold block mb-0.5">G</span>
+          <span class="text-parchment-200 block font-medium">Milch / Laktose</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Milch, Mozzarella, Käse</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-olive-300 font-bold block mb-0.5">H</span>
+          <span class="text-parchment-200 block font-medium">Schalenfrüchte</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Mandeln, Walnüsse etc.</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-olive-300 font-bold block mb-0.5">L</span>
+          <span class="text-parchment-200 block font-medium">Sellerie</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Bleich- & Knollensellerie</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-olive-300 font-bold block mb-0.5">M</span>
+          <span class="text-parchment-200 block font-medium">Senf</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Senfkörner & Dressings</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-olive-300 font-bold block mb-0.5">N</span>
+          <span class="text-parchment-200 block font-medium">Sesam</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Sesamsamen</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-olive-300 font-bold block mb-0.5">O</span>
+          <span class="text-parchment-200 block font-medium">Sulfite</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Schwefeldioxid / Weine</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-olive-300 font-bold block mb-0.5">P</span>
+          <span class="text-parchment-200 block font-medium">Lupinen</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Lupinenmehl</span>
+        </div>
+        <div class="p-3 bg-espresso-900 border border-white/5">
+          <span class="font-mono text-olive-300 font-bold block mb-0.5">R</span>
+          <span class="text-parchment-200 block font-medium">Weichtiere</span>
+          <span class="text-[10px] text-parchment-400 block mt-0.5">Muscheln, Tintenfisch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRATTORIA & AMBIENTE -->
+  <section id="trattoria" class="py-20 lg:py-24 border-b border-white/10 bg-espresso-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 order-2 lg:order-1 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Italienisches Restaurant Ambiente" class="w-full h-64 object-cover border border-white/10">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Frische italienische Vorspeise Vitello Tonnato" class="w-full h-44 object-cover border border-white/10">
+          </div>
+          <div class="space-y-4 pt-8">
+            <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80" alt="Hausgemachtes Tiramisu Pizzeria Roma" class="w-full h-44 object-cover border border-white/10">
+            <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80" alt="Italienische Weinauswahl Chianti Classico" class="w-full h-64 object-cover border border-white/10">
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-olive-300 font-semibold border-b border-olive-500 pb-1">
+              Tradition &amp; Gastfreundschaft
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-parchment-50 leading-[1.15]">
+            Ein Stück Rom mitten im 3. Wiener Gemeindebezirk.
+          </h2>
+
+          <p class="text-sm sm:text-base text-parchment-300 leading-relaxed font-light">
+            In der Fasangasse 33 verbinden wir das lebendige Flair einer römischen Nachbarschafts-Trattoria mit Wiener Gemütlichkeit. Ob ein schnelles Mittagsessen in der Mittagspause, ein ausgiebiger Abend mit Freunden bei Holzofenpizza und Chianti oder ein feiner Espresso mit hausgemachtem Tiramisu – bei uns steht echte italienische Leidenschaft an erster Stelle.
+          </p>
+
+          <div class="space-y-3 pt-2 text-xs text-parchment-300">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-terracotta-900 border border-terracotta-700 flex items-center justify-center text-terracotta-300">✓</span>
+              <span>Täglich geöffnet von 11:00 bis 23:00 Uhr ohne Ruhetag</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-olive-900 border border-olive-700 flex items-center justify-center text-olive-300">✓</span>
+              <span>Nur 500 m zu Fuß vom HTL Rennweg Campus (Fasanviertel)</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-terracotta-900 border border-terracotta-700 flex items-center justify-center text-terracotta-300">✓</span>
+              <span>Alle Pizzen & Gerichte auch frisch zum Mitnehmen (Take Away)</span>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a href="tel:+4317965610" class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 hover:border-terracotta-400 text-white text-xs tracking-wider uppercase font-semibold transition-all">
+              <span>📞 Telefonisch bestellen: +43 1 796 56 10</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT, ANFAHRT & KONTAKT -->
+  <section id="kontakt" class="py-20 lg:py-24 border-b border-white/10 bg-espresso-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[11px] tracking-[0.25em] uppercase text-terracotta-400 font-semibold block mb-1">Standort &amp; Erreichbarkeit</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-parchment-50 font-normal">Besuchen Sie uns</h2>
+        <p class="text-xs text-parchment-400 mt-2 font-light">
+          Zentral gelegen in der Fasangasse 33, 1030 Wien. Straßenbahnlinien 71 und O halten direkt in Gehweite.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Info Card 1 -->
+        <div class="p-8 bg-espresso-900 border border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-2xl mb-3 block">📍</span>
+            <h3 class="font-serif text-2xl text-parchment-100 mb-2">Adresse &amp; Weg</h3>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light">
+              <strong class="text-white block font-medium">Pizzeria Roma</strong>
+              Fasangasse 33<br>
+              1030 Wien, Österreich
+            </p>
+            <div class="mt-4 p-3 bg-espresso-950 border border-olive-700/40 text-xs text-olive-300 font-medium">
+              🚶 500 m von HTL Rennweg (ca. 6 Gehminuten via Rennweg & Fasangasse)
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <a href="https://maps.google.com/?q=Fasangasse+33+1030+Wien" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-wider text-terracotta-300 hover:text-white transition-colors flex items-center gap-1">
+              <span>Google Maps öffnen</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Info Card 2 -->
+        <div class="p-8 bg-espresso-900 border border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-2xl mb-3 block">🕒</span>
+            <h3 class="font-serif text-2xl text-parchment-100 mb-2">Öffnungszeiten</h3>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Wir haben 7 Tage die Woche durchgehend für Sie geöffnet:
+            </p>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-parchment-400">Montag – Sonntag:</span>
+                <span class="text-parchment-100 font-medium">11:00 – 23:00 Uhr</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-parchment-400">Warme Küche:</span>
+                <span class="text-parchment-100 font-medium">Durchgehend</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-parchment-400">Feiertage:</span>
+                <span class="text-emerald-400 font-medium">Geöffnet</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <span class="text-[11px] text-parchment-400">Kein Ruhetag • Keine Reservierungspflicht</span>
+          </div>
+        </div>
+
+        <!-- Info Card 3 -->
+        <div class="p-8 bg-espresso-900 border border-white/10 flex flex-col justify-between">
+          <div>
+            <span class="text-2xl mb-3 block">📞</span>
+            <h3 class="font-serif text-2xl text-parchment-100 mb-2">Kontakt &amp; Tisch</h3>
+            <p class="text-xs text-parchment-300 leading-relaxed font-light mb-4">
+              Für Tischreservierungen, Vorbestellungen zum Abholen oder Fragen zu Allergenen stehen wir Ihnen jederzeit gerne zur Verfügung:
+            </p>
+            <div class="p-4 bg-espresso-950 border border-terracotta-800/40 space-y-1">
+              <span class="text-[10px] uppercase tracking-wider text-parchment-400 block">Telefon</span>
+              <a href="tel:+4317965610" class="text-lg font-serif text-terracotta-300 hover:text-white block font-semibold">+43 1 796 56 10</a>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10">
+            <button onclick="openModal()" class="w-full py-3 bg-terracotta-600 hover:bg-terracotta-500 text-white text-xs uppercase tracking-widest font-semibold transition-all">
+              Online Tisch reservieren
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-espresso-950 text-parchment-400 py-10 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+      <div>&copy; 2026 Pizzeria Roma &bull; Fasangasse 33, 1030 Wien. Alle Rechte vorbehalten.</div>
+      <div class="space-x-5">
+        <a href="#speisekarte" class="hover:text-parchment-200 transition-colors">Speisekarte</a>
+        <a href="#allergene" class="hover:text-parchment-200 transition-colors">Allergenverordnung</a>
+        <a href="tel:+4317965610" class="hover:text-parchment-200 transition-colors">+43 1 796 56 10</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-espresso-900 border border-white/15 max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-parchment-400 hover:text-white text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-terracotta-400 font-semibold">Tisch- &amp; Vorbestellung</span>
+        <h3 class="font-serif text-3xl font-normal text-parchment-50 mt-1">Pizzeria Roma</h3>
+        <p class="text-xs text-parchment-400 mt-1">Fasangasse 33, 1030 Wien • Täglich 11:00–23:00</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitReservation(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Ihr Name *</label>
+          <input type="text" required placeholder="Vor- und Nachname" class="w-full bg-espresso-950 border border-white/15 focus:border-terracotta-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43 1 ..." class="w-full bg-espresso-950 border border-white/15 focus:border-terracotta-500 px-4 py-3 text-white outline-none">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">E-Mail</label>
+            <input type="email" placeholder="name@beispiel.at" class="w-full bg-espresso-950 border border-white/15 focus:border-terracotta-500 px-4 py-3 text-white outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Datum</label>
+            <input type="date" required id="res-date" class="w-full bg-espresso-950 border border-white/15 focus:border-terracotta-500 px-3 py-3 text-white outline-none text-[11px]">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Uhrzeit</label>
+            <select class="w-full bg-espresso-950 border border-white/15 focus:border-terracotta-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>12:00 Mittag</option>
+              <option>13:00 Mittag</option>
+              <option>14:00 Nachmittag</option>
+              <option selected>18:30 Abend</option>
+              <option>19:30 Abend</option>
+              <option>20:30 Abend</option>
+              <option>21:30 Spät</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Personen</label>
+            <select class="w-full bg-espresso-950 border border-white/15 focus:border-terracotta-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>1 Person</option>
+              <option selected>2 Personen</option>
+              <option>3–4 Personen</option>
+              <option>5–6 Personen</option>
+              <option>Gruppe (7+)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block uppercase tracking-wider text-parchment-300 mb-1 text-[10px]">Gericht vorbestellen / Sonderwunsch</label>
+          <input type="text" id="special-dish" placeholder="z.B. Pizza Roma & Vitello Tonnato vorbestellen, Fensterplatz" class="w-full bg-espresso-950 border border-white/15 focus:border-terracotta-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-terracotta-600 hover:bg-terracotta-500 text-white font-semibold tracking-widest uppercase transition-all text-xs mt-3">
+          Reservierungsanfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-3xl text-parchment-100 mb-2">Grazie mille!</h4>
+        <p class="text-xs text-parchment-300 mb-6">Wir haben Ihre Reservierungsanfrage erhalten und rufen Sie bei Rückfragen unter Ihrer angegebenen Telefonnummer an.</p>
+        <button onclick="closeModal()" class="px-6 py-2.5 border border-terracotta-500 text-parchment-200 text-xs tracking-wider uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY CTA BAR (Bottom Navigation) -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-espresso-950/95 backdrop-blur-md border-t border-white/15 px-3 py-2.5 flex items-center justify-between gap-2">
+    <a href="tel:+4317965610" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-parchment-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📞</span>
+      <span>Anrufen</span>
+    </a>
+    <a href="#speisekarte" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-parchment-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>🍕</span>
+      <span>Karte</span>
+    </a>
+    <a href="https://maps.google.com/?q=Fasangasse+33+1030+Wien" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-parchment-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📍</span>
+      <span>Route</span>
+    </a>
+    <button onclick="openModal()" class="flex-1 py-2.5 bg-terracotta-600 text-white rounded text-center text-[11px] font-semibold tracking-wide">
+      Tisch
+    </button>
+  </div>
+
+  <script>
+    function filterDishes(cat, btn) {
+      document.querySelectorAll('.menu-tab').forEach(b => {
+        b.classList.remove('border-terracotta-500', 'text-white');
+        b.classList.add('border-transparent', 'text-parchment-400');
+      });
+      btn.classList.add('border-terracotta-500', 'text-white');
+      btn.classList.remove('border-transparent', 'text-parchment-400');
+
+      document.querySelectorAll('.dish-item').forEach(card => {
+        if (cat === 'all' || card.classList.contains(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(dish = '') {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      if (dish) {
+        document.getElementById('special-dish').value = 'Vorbestellung: ' + dish;
+      }
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitReservation(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

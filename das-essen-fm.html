@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Das Essen FM | Ukrainische Hausmannskost & Retro-Radios • Wien 1030</title>
+  <meta name="description" content="Authentische ukrainische Küche, handgemachte Varenyky, Borschtsch und 90er-Retro-Kultur in der Juchgasse 24, 1030 Wien. 400 m von der HTL Rennweg.">
+
+  <!-- Google Fonts: Instrument Serif & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            vintage: {
+              charcoal: '#181b1e',
+              slate: '#262c33',
+              clay: '#c45d3e',
+              clayDark: '#a3482d',
+              amber: '#d97736',
+              amberLight: '#f6ebd9',
+              cream: '#faf7f2',
+              linen: '#f3ede2',
+              border: '#e4dcce',
+              muted: '#7a766f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-serif-italic {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-style: italic;
+    }
+    /* Subtle paper texture feel */
+    .bg-paper {
+      background-color: #faf7f2;
+      background-image: radial-gradient(#d8cebe 0.75px, transparent 0.75px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-paper text-vintage-charcoal font-sans antialiased selection:bg-vintage-clay selection:text-white pb-20 md:pb-0">
+
+  <!-- TOP BANNER -->
+  <aside aria-label="Demo Status" class="bg-vintage-charcoal text-vintage-linen border-b border-vintage-slate py-2.5 px-4 text-xs tracking-wider uppercase">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-vintage-clay animate-pulse"></span>
+        <span class="font-medium text-white">Konzeptentwurf für Das Essen FM</span>
+        <span class="text-vintage-muted hidden sm:inline">•</span>
+        <span class="text-vintage-linen/80 hidden sm:inline">Live Demo Wien 1030</span>
+      </div>
+      <div class="flex items-center space-x-3 text-vintage-amberLight text-[11px] font-medium">
+        <span class="hidden md:inline">Top #1 Empfehlung • 4.9★ (800+ Bewertungen)</span>
+        <a href="#reservieren" onclick="openReservationModal()" class="underline hover:text-white transition">Tisch anfragen</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-vintage-cream/95 backdrop-blur-md border-b border-vintage-border transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo & Claim -->
+      <a href="#" class="group flex items-center space-x-3">
+        <div class="w-11 h-11 rounded-full bg-vintage-clay text-white flex items-center justify-center font-serif text-2xl shadow-sm group-hover:bg-vintage-clayDark transition-colors">
+          FM
+        </div>
+        <div>
+          <span class="block font-serif text-2xl sm:text-3xl text-vintage-charcoal leading-none tracking-tight">Das Essen FM</span>
+          <span class="block text-[11px] font-medium uppercase tracking-widest text-vintage-muted mt-0.5">Ukrainische Hausmannskost • 90s Retro</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-vintage-charcoal">
+        <a href="#philosophie" class="hover:text-vintage-clay transition-colors">Philosophie & Retro-Bar</a>
+        <a href="#speisekarte" class="hover:text-vintage-clay transition-colors">Speisekarte</a>
+        <a href="#allergene" class="hover:text-vintage-clay transition-colors">Allergene</a>
+        <a href="#galerie" class="hover:text-vintage-clay transition-colors">Ambiente</a>
+        <a href="#kontakt" class="hover:text-vintage-clay transition-colors">Anfahrt & Öffnungszeiten</a>
+      </nav>
+
+      <!-- CTA Action -->
+      <div class="hidden sm:flex items-center space-x-3">
+        <a href="tel:+436601681717" class="inline-flex items-center px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-vintage-slate border border-vintage-border rounded-full hover:bg-vintage-linen hover:border-vintage-slate transition">
+          <svg class="w-3.5 h-3.5 mr-1.5 text-vintage-clay" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          +43 660 1681717
+        </a>
+        <button onclick="openReservationModal()" class="inline-flex items-center px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white bg-vintage-clay rounded-full hover:bg-vintage-clayDark shadow-sm hover:shadow transition transform active:scale-95">
+          Tisch reservieren
+        </button>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-vintage-charcoal hover:bg-vintage-linen transition" aria-label="Menü öffnen">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-vintage-border bg-vintage-cream px-6 py-5 space-y-4">
+      <a href="#philosophie" onclick="toggleMobileMenu()" class="block text-base font-medium text-vintage-charcoal hover:text-vintage-clay">Philosophie & Retro-Bar</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block text-base font-medium text-vintage-charcoal hover:text-vintage-clay">Speisekarte</a>
+      <a href="#allergene" onclick="toggleMobileMenu()" class="block text-base font-medium text-vintage-charcoal hover:text-vintage-clay">Allergene Codex</a>
+      <a href="#galerie" onclick="toggleMobileMenu()" class="block text-base font-medium text-vintage-charcoal hover:text-vintage-clay">Ambiente & Fotos</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block text-base font-medium text-vintage-charcoal hover:text-vintage-clay">Anfahrt & Kontakt</a>
+      <div class="pt-4 border-t border-vintage-border flex flex-col space-y-3">
+        <a href="tel:+436601681717" class="text-center py-2.5 text-sm font-semibold rounded-xl border border-vintage-slate text-vintage-charcoal">Anrufen: +43 660 1681717</a>
+        <button onclick="toggleMobileMenu(); openReservationModal();" class="w-full py-3 text-sm font-semibold text-white bg-vintage-clay rounded-xl">Tisch online anfragen</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Badges Row -->
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-semibold bg-vintage-amberLight text-vintage-amber border border-vintage-amber/30">
+          <svg class="w-3.5 h-3.5 mr-1.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          4.9★ aus 800+ Bewertungen
+        </span>
+        <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-white text-vintage-slate border border-vintage-border shadow-xs">
+          📍 400 m von HTL Rennweg • Gegenüber Klinik Landstraße
+        </span>
+        <span class="inline-flex items-center px-3.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+          ● Heute geöffnet: Di–So 12:00–22:00
+        </span>
+      </div>
+
+      <!-- Main Headline Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <div class="lg:col-span-7">
+          <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl text-vintage-charcoal leading-[1.08] tracking-tight">
+            Echte ukrainische <span class="font-serif-italic text-vintage-clay">Hausmannskost</span> & der warme Klang der 90er.
+          </h1>
+          <p class="mt-6 text-lg sm:text-xl text-vintage-slate/85 max-w-2xl leading-relaxed font-normal">
+            Willkommen bei <strong class="text-vintage-charcoal font-semibold">Das Essen FM</strong> in der Juchgasse 24. Bei uns duftet es nach frischem Dill, langsam geschmortem Borschtsch und handgedrehten Varenyky – während im Hintergrund die Kassetten-Klassiker und UKW-Schätze der 90er-Jahre knistern.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <button onclick="openReservationModal()" class="px-7 py-3.5 rounded-full bg-vintage-clay text-white font-medium text-sm tracking-wide uppercase hover:bg-vintage-clayDark shadow-md hover:shadow-lg transition transform active:scale-95">
+              Tisch jetzt anfragen
+            </button>
+            <a href="#speisekarte" class="px-7 py-3.5 rounded-full bg-white text-vintage-charcoal border border-vintage-border font-medium text-sm tracking-wide uppercase hover:bg-vintage-linen hover:border-vintage-slate transition">
+              Speisekarte ansehen
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Juchgasse+24,+1030+Wien" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-medium text-vintage-clay hover:text-vintage-clayDark py-2">
+              <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Wegbeschreibung (4 Min.)
+            </a>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="mt-10 pt-8 border-t border-vintage-border grid grid-cols-3 gap-4 text-center sm:text-left">
+            <div>
+              <span class="block font-serif text-2xl sm:text-3xl text-vintage-charcoal">100%</span>
+              <span class="block text-xs uppercase tracking-wider text-vintage-muted mt-0.5">Handgemacht vor Ort</span>
+            </div>
+            <div>
+              <span class="block font-serif text-2xl sm:text-3xl text-vintage-charcoal">4.9 ★</span>
+              <span class="block text-xs uppercase tracking-wider text-vintage-muted mt-0.5">Wien-Favorit #1</span>
+            </div>
+            <div>
+              <span class="block font-serif text-2xl sm:text-3xl text-vintage-charcoal">90s FM</span>
+              <span class="block text-xs uppercase tracking-wider text-vintage-muted mt-0.5">Retro Radio Vibe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image Collage -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Main Hero Photo -->
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-vintage-linen relative">
+              <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80" alt="Traditioneller Borschtsch mit Schmand und frischen Kräutern" class="w-full h-full object-cover transform hover:scale-105 transition duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-vintage-charcoal/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 text-white">
+                <span class="text-xs uppercase tracking-widest text-vintage-amberLight font-semibold">Signature Dish</span>
+                <h3 class="font-serif text-2xl sm:text-3xl mt-1">Ukrainischer Borschtsch</h3>
+                <p class="text-xs text-vintage-linen/90 mt-1">Serviert mit warmem Knoblauch-Pampuschka & Schmand [A, G, L]</p>
+              </div>
+            </div>
+
+            <!-- Floating Card Badge -->
+            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-vintage-border max-w-[210px] hidden sm:block">
+              <div class="flex items-center space-x-2 text-vintage-amber mb-1">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span class="text-xs font-bold text-vintage-charcoal">Juchgasse 24, 1030</span>
+              </div>
+              <p class="text-[11px] text-vintage-muted leading-snug">Gegenüber Klinik Landstraße. Direkt an der Straßenbahnlinie 71 & O.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHIE & CONCEPT SECTION -->
+  <section id="philosophie" class="py-20 bg-white border-y border-vintage-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-2xl overflow-hidden aspect-square border border-vintage-border shadow-sm">
+              <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Handgemachte Varenyky Teigtaschen" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden aspect-square border border-vintage-border shadow-sm mt-6">
+              <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" alt="Schaschlik vom Grill" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden aspect-square border border-vintage-border shadow-sm">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Gemütliches Restaurant Ambiente" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            </div>
+            <div class="rounded-2xl overflow-hidden aspect-square border border-vintage-border shadow-sm mt-6">
+              <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80" alt="Fluffige Syrniki mit Beeren" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 order-1 lg:order-2">
+          <span class="text-xs font-semibold uppercase tracking-widest text-vintage-clay">Unsere Identität</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-vintage-charcoal mt-2 leading-tight">
+            Zwischen Kassettenband, warmem Licht & herzhafter Tradition.
+          </h2>
+          <div class="mt-6 space-y-4 text-vintage-slate text-base sm:text-lg leading-relaxed font-normal">
+            <p>
+              Warum <em>„Das Essen FM“</em>? Weil gutes Essen für uns immer mit Erinnerungen, Geschichten und dem richtigen Ton verbunden ist. In unserer Gaststube im dritten Wiener Gemeindebezirk haben wir eine Oase geschaffen, die an die gemütlichen Wohnzimmer Kiews und Lembergs der 90er erinnert.
+            </p>
+            <p>
+              Jeder Varenyk wird bei uns von Hand gefaltet, jede Portion Deruny frisch aus geriebenen Erdäpfeln knusprig ausgebacken und unser Borschtsch köchelt stundenlang auf kleiner Flamme, bis das Aroma vollendet ist. 
+            </p>
+            <p class="text-vintage-charcoal font-medium">
+              Kommen Sie vorbei, nehmen Sie Platz unter unseren Vintage-Radios und spüren Sie echte slawische Herzlichkeit mitten in Wien.
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-6 items-center">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-vintage-amberLight text-vintage-amber flex items-center justify-center font-bold">✓</div>
+              <div class="text-sm">
+                <span class="block font-semibold text-vintage-charcoal">Original-Rezepturen</span>
+                <span class="text-vintage-muted text-xs">Ohne Fertigpulver oder Zusätze</span>
+              </div>
+            </div>
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full bg-vintage-amberLight text-vintage-amber flex items-center justify-center font-bold">📻</div>
+              <div class="text-sm">
+                <span class="block font-semibold text-vintage-charcoal">90s Retro-Akustik</span>
+                <span class="text-vintage-muted text-xs">UKW-Radios & Kassetten-Klang</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE (MENU) SECTION -->
+  <section id="speisekarte" class="py-24 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-semibold uppercase tracking-widest text-vintage-clay">Unsere Spezialitäten</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-vintage-charcoal mt-2">Aus der ukrainischen Küche</h2>
+        <p class="mt-4 text-vintage-slate text-base sm:text-lg">
+          Täglich frisch zubereitet mit österreichischen Zutaten bester Herkunft. Alle Preise in Euro (€) inkl. aller Steuern.
+        </p>
+
+        <!-- Menu Filter Tabs -->
+        <div class="mt-8 inline-flex p-1.5 rounded-full bg-vintage-linen border border-vintage-border flex-wrap justify-center gap-1">
+          <button onclick="filterMenu('all', this)" class="menu-tab px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-vintage-clay text-white shadow-xs transition">Alle Gerichte</button>
+          <button onclick="filterMenu('suppe', this)" class="menu-tab px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-vintage-slate hover:text-vintage-charcoal transition">Suppen & Vorspeisen</button>
+          <button onclick="filterMenu('haupt', this)" class="menu-tab px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-vintage-slate hover:text-vintage-charcoal transition">Hauptgerichte & Teigtaschen</button>
+          <button onclick="filterMenu('dessert', this)" class="menu-tab px-5 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-vintage-slate hover:text-vintage-charcoal transition">Dessert & Getränke</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-items-grid">
+        
+        <!-- Dish 1: Borschtsch -->
+        <div class="menu-card suppe bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="suppe">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-vintage-clay/10 text-vintage-clay mb-2">Tradition #1</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Traditioneller Borschtsch</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 8,90</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Kräftige Rote-Bete-Suppe mit Rindfleisch, frischem Weißkraut, Erdäpfeln und Dill. Serviert mit einer warmen Knoblauch-Pirogge (Pampuschka) und kaltem Schmand.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[A, G, L]</strong></span>
+            <span class="text-vintage-clay font-medium">Hausrezept</span>
+          </div>
+        </div>
+
+        <!-- Dish 2: Varenyky Kartoffeln & Pilze -->
+        <div class="menu-card haupt bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="haupt">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-vintage-amber/15 text-vintage-amber mb-2">Hausgemacht</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Varenyky mit Waldpilzen</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 14,50</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Handgeformte Teigtaschen gefüllt mit cremigem Erdäpfelpüree und aromatischen Waldpilzen. Angeschwenkt in goldbraunen Röstzwiebeln und mit frischem Sauerrahm garniert.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[A, C, G]</strong></span>
+            <span class="text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded">Vegetarisch</span>
+          </div>
+        </div>
+
+        <!-- Dish 3: Deruny mit Lachs -->
+        <div class="menu-card suppe bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="suppe">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 mb-2">Beliebt</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Deruny mit gebeiztem Lachs</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 13,80</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Goldbraun gebratene ukrainische Erdäpfelpuffer (Reibekuchen), belegt mit feinem hausgebeiztem Lachs, Gurkenperlen, Dill und einem Klecks Crème Fraîche.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[D, G]</strong></span>
+            <span class="text-vintage-clay font-medium">Knusprig frisch</span>
+          </div>
+        </div>
+
+        <!-- Dish 4: Pelmeni in Butterbrühe -->
+        <div class="menu-card haupt bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="haupt">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-vintage-clay/10 text-vintage-clay mb-2">Klassiker</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Pelmeni in Kräuter-Butterbrühe</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 15,40</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Zarte kleine Teigtaschen gefüllt mit einer saftigen Mischung aus Rind- und Schweinefleisch, serviert in einer heißen, aromatischen Butter-Kräuterbrühe mit Essig-Dip & Pfeffer.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[A, C, G]</strong></span>
+            <span class="text-vintage-slate font-medium">Herzhaft</span>
+          </div>
+        </div>
+
+        <!-- Dish 5: Schaschlik vom Grill -->
+        <div class="menu-card haupt bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="haupt">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-800 mb-2">Vom Grill</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Schaschlik vom Holzkohlegrill</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 18,90</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Zart mariniertes Fleisch am Spieß gegrillt, serviert mit feinen eingelegten roten Zwiebeln, frischen Kräutern, Grilltomate und unserer pikanten Adschika-Sauce.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[L, M]</strong></span>
+            <span class="text-vintage-clay font-medium">Rauchig & zart</span>
+          </div>
+        </div>
+
+        <!-- Dish 6: Kiewer Torte -->
+        <div class="menu-card dessert bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="dessert">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 mb-2">Patisserie</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Hausgemachte Kiewer Torte</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 6,80</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Die legendäre Torte: Knusprige Baiser-Nuss-Schichten mit gerösteten Haselnüssen, umhüllt von einer samtigen Schokolade-Buttercreme. Nach Kiewer Originalrezept.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[A, C, G, H]</strong></span>
+            <span class="text-vintage-clay font-medium">Süße Legende</span>
+          </div>
+        </div>
+
+        <!-- Dish 7: Syrniki -->
+        <div class="menu-card dessert bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="dessert">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 mb-2">Süßspeise</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Syrniki mit Beeren-Coulis</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 7,20</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Warme, goldbraun gebackene Quarkküchlein aus traditionellem Twarog. Serviert mit hausgemachtem Waldbeeren-Coulis, Minze und frischem Schmand.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[A, C, G]</strong></span>
+            <span class="text-emerald-700 font-medium bg-emerald-50 px-2 py-0.5 rounded">Vegetarisch</span>
+          </div>
+        </div>
+
+        <!-- Dish 8: Varenyky Sauerkraut & Speck -->
+        <div class="menu-card haupt bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="haupt">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-vintage-amber/15 text-vintage-amber mb-2">Deftig</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Varenyky mit Sauerkraut & Speck</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 14,20</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Gefüllt mit geschmortem Sauerkraut, knusprigen Grieben und Speckwürfeln. Eine herrlich deftige Delikatesse der ukrainischen Karpaten.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[A, C, G]</strong></span>
+            <span class="text-vintage-slate font-medium">Deftig & Pikant</span>
+          </div>
+        </div>
+
+        <!-- Dish 9: Hausgemachter Uzvar & Kwas -->
+        <div class="menu-card dessert bg-white rounded-3xl p-6 border border-vintage-border shadow-xs hover:shadow-md transition flex flex-col justify-between" data-category="dessert">
+          <div>
+            <div class="flex items-start justify-between">
+              <div>
+                <span class="inline-block px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-amber-50 text-amber-700 mb-2">Erfrischung</span>
+                <h3 class="font-serif text-2xl text-vintage-charcoal">Hausgemachter Uzvar & Kwas</h3>
+              </div>
+              <span class="font-serif text-2xl font-bold text-vintage-clay">€ 4,20</span>
+            </div>
+            <p class="mt-2 text-sm text-vintage-slate leading-relaxed">
+              Traditionelles kaltes Kompott-Getränk aus getrockneten Äpfeln, Birnen, Pflaumen und Honig – oder ein Glas spritziger, kühler Brot-Kwas (0,4l).
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-vintage-border flex items-center justify-between text-xs">
+            <span class="text-vintage-muted">Allergene: <strong class="text-vintage-charcoal font-semibold">[A (bei Kwas)]</strong></span>
+            <span class="text-vintage-clay font-medium">Traditionell</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ALLERGEN CODEX SECTION -->
+  <section id="allergene" class="py-14 bg-vintage-linen border-y border-vintage-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-vintage-border shadow-sm">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-vintage-border pb-4">
+          <div>
+            <h3 class="font-serif text-2xl text-vintage-charcoal">Österreichische Allergen-Information</h3>
+            <p class="text-xs text-vintage-muted mt-1">Gemäß EU-Lebensmittelinformationsverordnung (LMIV) & österreichischem Lebensmittel-Codex</p>
+          </div>
+          <div class="text-xs text-vintage-slate bg-vintage-linen px-3.5 py-2 rounded-xl">
+            Fragen zu Unverträglichkeiten? Unser Service-Team berät Sie gerne vor Ort.
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 text-xs">
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[A]</strong> Gluten</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[B]</strong> Krebstiere</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[C]</strong> Ei</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[D]</strong> Fisch</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[E]</strong> Erdnuss</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[F]</strong> Soja</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[G]</strong> Milch / Laktose</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[H]</strong> Schalenfrüchte</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[L]</strong> Sellerie</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[M]</strong> Senf</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[N]</strong> Sesam</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[O]</strong> Sulfite</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[P]</strong> Lupinen</div>
+          <div class="p-2.5 rounded-xl bg-vintage-cream border border-vintage-border"><strong>[R]</strong> Weichtiere</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE SECTION -->
+  <section id="galerie" class="py-20 bg-paper">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-semibold uppercase tracking-widest text-vintage-clay">Einblicke</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-vintage-charcoal mt-2">Atmosphäre & Gerichte</h2>
+        <p class="mt-3 text-vintage-slate text-sm sm:text-base">Warme Gemütlichkeit, ehrliche Portionen und nostalgische Details der 90er-Jahre.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="aspect-square rounded-2xl overflow-hidden border border-vintage-border shadow-xs group">
+          <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=800&q=80" alt="Borschtsch frisch serviert" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-vintage-border shadow-xs group">
+          <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" alt="Varenyky mit Zwiebelschmelze" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-vintage-border shadow-xs group">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" alt="Schaschlik Spieß" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="aspect-square rounded-2xl overflow-hidden border border-vintage-border shadow-xs group">
+          <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=800&q=80" alt="Syrniki mit Schmand" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT & ANFAHRT SECTION -->
+  <section id="kontakt" class="py-20 bg-white border-t border-vintage-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Info Card -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-vintage-clay">Lage & Kontakt</span>
+            <h2 class="font-serif text-4xl text-vintage-charcoal mt-2">Kommen Sie vorbei</h2>
+            <p class="mt-2 text-vintage-slate text-sm">
+              Wir freuen uns auf Ihren Besuch in der Juchgasse im 3. Wiener Gemeindebezirk.
+            </p>
+          </div>
+
+          <!-- Quick facts -->
+          <div class="space-y-4">
+            <div class="flex items-start space-x-3.5 p-4 rounded-2xl bg-vintage-cream border border-vintage-border">
+              <span class="text-xl">📍</span>
+              <div>
+                <strong class="block text-sm font-semibold text-vintage-charcoal">Adresse</strong>
+                <span class="text-sm text-vintage-slate">Juchgasse 24, 1030 Wien</span>
+                <span class="block text-xs text-vintage-clay font-medium mt-1">400 m von HTL Rennweg • Gegenüber Klinik Landstraße</span>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3.5 p-4 rounded-2xl bg-vintage-cream border border-vintage-border">
+              <span class="text-xl">🕒</span>
+              <div>
+                <strong class="block text-sm font-semibold text-vintage-charcoal">Öffnungszeiten</strong>
+                <span class="text-sm text-vintage-slate block">Dienstag – Sonntag: 12:00 – 22:00 Uhr</span>
+                <span class="text-xs text-rose-700 font-medium block mt-0.5">Montag: Ruhetag</span>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3.5 p-4 rounded-2xl bg-vintage-cream border border-vintage-border">
+              <span class="text-xl">📞</span>
+              <div>
+                <strong class="block text-sm font-semibold text-vintage-charcoal">Telefon / Reservierung</strong>
+                <a href="tel:+436601681717" class="text-sm font-semibold text-vintage-clay hover:underline block">+43 660 1681717</a>
+                <span class="text-xs text-vintage-muted">Tischreservierung empfohlen</span>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-3.5 p-4 rounded-2xl bg-vintage-cream border border-vintage-border">
+              <span class="text-xl">🚋</span>
+              <div>
+                <strong class="block text-sm font-semibold text-vintage-charcoal">Öffentliche Anbindung</strong>
+                <span class="text-sm text-vintage-slate">Straßenbahn 71 & O (Station Heinrich-Drimmel-Platz / Rennweg), S-Bahn Rennweg (5 Min. Fußweg).</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Juchgasse+24,+1030+Wien" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full py-3.5 px-6 rounded-full bg-vintage-slate text-white text-sm font-medium hover:bg-vintage-charcoal transition shadow-sm">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              In Google Maps öffnen
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Interactive Map Mockup / Location Visual -->
+        <div class="lg:col-span-7 flex flex-col justify-between">
+          <div class="h-full min-h-[380px] rounded-3xl overflow-hidden border border-vintage-border shadow-sm bg-vintage-linen relative flex flex-col">
+            <!-- Map styling banner -->
+            <div class="p-6 bg-vintage-slate text-white flex items-center justify-between">
+              <div>
+                <span class="text-xs text-vintage-amber uppercase tracking-wider font-semibold">Landstraße 1030</span>
+                <h4 class="font-serif text-2xl">Das Essen FM • Juchgasse 24</h4>
+              </div>
+              <span class="bg-vintage-clay px-3 py-1 rounded-full text-xs font-semibold">4 Min. zu Fuß</span>
+            </div>
+
+            <div class="flex-1 p-8 flex flex-col justify-center items-center text-center space-y-4">
+              <div class="w-16 h-16 rounded-full bg-vintage-clay/10 text-vintage-clay flex items-center justify-center text-3xl">
+                🗺️
+              </div>
+              <div class="max-w-md">
+                <h5 class="font-serif text-2xl text-vintage-charcoal">Ideal erreichbar von der HTL Rennweg</h5>
+                <p class="text-sm text-vintage-slate mt-2">
+                  Verlassen Sie den Rennweg Richtung Juchgasse. In nur ca. 400 Metern erreichen Sie uns direkt gegenüber der Klinik Landstraße.
+                </p>
+              </div>
+
+              <!-- Route Card -->
+              <div class="w-full max-w-md bg-white p-4 rounded-2xl border border-vintage-border shadow-xs text-left text-xs space-y-2">
+                <div class="flex items-center space-x-2 text-vintage-charcoal font-semibold">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                  <span>Start: HTL Rennweg (Rennweg 89b)</span>
+                </div>
+                <div class="border-l-2 border-dashed border-vintage-border ml-1 pl-4 py-1 text-vintage-muted">
+                  400 m Fußweg entlang Fasangasse / Juchgasse (4 Min.)
+                </div>
+                <div class="flex items-center space-x-2 text-vintage-clay font-semibold">
+                  <span class="w-2.5 h-2.5 rounded-full bg-vintage-clay"></span>
+                  <span>Ziel: Das Essen FM (Juchgasse 24)</span>
+                </div>
+              </div>
+
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Juchgasse+24,+1030+Wien" target="_blank" rel="noopener noreferrer" class="mt-2 text-xs font-semibold text-vintage-clay hover:underline uppercase tracking-wider">
+                Interaktive Google Maps Route starten →
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-vintage-charcoal text-vintage-linen border-t border-vintage-slate py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <span class="font-serif text-2xl text-white">Das Essen FM</span>
+          <p class="text-xs text-vintage-muted mt-1">Ukrainische Hausmannskost & 90s Retro-Radios • Juchgasse 24, 1030 Wien</p>
+        </div>
+        <div class="flex items-center space-x-6 text-xs text-vintage-linen/80">
+          <a href="#speisekarte" class="hover:text-white transition">Speisekarte</a>
+          <a href="#allergene" class="hover:text-white transition">Allergene</a>
+          <a href="#kontakt" class="hover:text-white transition">Kontakt</a>
+          <a href="tel:+436601681717" class="hover:text-white transition">+43 660 1681717</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-vintage-slate/60 flex flex-col sm:flex-row items-center justify-between text-[11px] text-vintage-muted">
+        <p>© 2026 Das Essen FM Wien. Alle Rechte vorbehalten. Erstellt als Konzeptentwurf für die Gastronomie Wien 1030.</p>
+        <p class="mt-2 sm:mt-0">Di–So 12:00–22:00 Uhr • Mo Ruhetag</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA BAR (Bottom) -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-vintage-border py-2.5 px-4 md:hidden shadow-lg">
+    <div class="grid grid-cols-3 gap-2 text-center">
+      <a href="tel:+436601681717" class="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-vintage-cream border border-vintage-border text-vintage-charcoal hover:bg-vintage-linen active:scale-95 transition">
+        <svg class="w-4 h-4 text-vintage-clay mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span class="text-[10px] font-semibold uppercase tracking-wider">Anrufen</span>
+      </a>
+      <button onclick="openReservationModal()" class="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-vintage-clay text-white shadow-sm active:scale-95 transition">
+        <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span class="text-[10px] font-semibold uppercase tracking-wider">Reservieren</span>
+      </button>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Juchgasse+24,+1030+Wien" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-vintage-cream border border-vintage-border text-vintage-charcoal hover:bg-vintage-linen active:scale-95 transition">
+        <svg class="w-4 h-4 text-emerald-600 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span class="text-[10px] font-semibold uppercase tracking-wider">Route</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- TISCHRESERVIERUNG MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-vintage-border relative transform scale-95 transition-transform duration-300" id="modal-container">
+      
+      <!-- Close Button -->
+      <button onclick="closeReservationModal()" class="absolute top-6 right-6 p-2 rounded-full text-vintage-muted hover:text-vintage-charcoal hover:bg-vintage-linen transition" aria-label="Schließen">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="mb-6">
+        <span class="text-xs font-semibold uppercase tracking-widest text-vintage-clay">Tischreservierung</span>
+        <h3 class="font-serif text-3xl text-vintage-charcoal mt-1">Das Essen FM</h3>
+        <p class="text-xs text-vintage-muted mt-1">Juchgasse 24, 1030 Wien • Di–So 12:00–22:00</p>
+      </div>
+
+      <!-- Form -->
+      <form id="reservation-form" onsubmit="handleReservationSubmit(event)" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-vintage-charcoal uppercase tracking-wider mb-1">Ihr Name *</label>
+            <input type="text" required placeholder="z.B. Anna Steiner" class="w-full px-3.5 py-2.5 rounded-xl border border-vintage-border bg-vintage-cream text-vintage-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-vintage-clay/50">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-vintage-charcoal uppercase tracking-wider mb-1">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43 660 ..." class="w-full px-3.5 py-2.5 rounded-xl border border-vintage-border bg-vintage-cream text-vintage-charcoal text-sm focus:outline-none focus:ring-2 focus:ring-vintage-clay/50">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-vintage-charcoal uppercase tracking-wider mb-1">Datum *</label>
+            <input type="date" required class="w-full px-3 py-2.5 rounded-xl border border-vintage-border bg-vintage-cream text-vintage-charcoal text-xs focus:outline-none focus:ring-2 focus:ring-vintage-clay/50">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-vintage-charcoal uppercase tracking-wider mb-1">Uhrzeit *</label>
+            <select required class="w-full px-3 py-2.5 rounded-xl border border-vintage-border bg-vintage-cream text-vintage-charcoal text-xs focus:outline-none focus:ring-2 focus:ring-vintage-clay/50">
+              <option value="">Wählen</option>
+              <option value="12:00">12:00 Uhr</option>
+              <option value="13:00">13:00 Uhr</option>
+              <option value="14:00">14:00 Uhr</option>
+              <option value="18:00">18:00 Uhr</option>
+              <option value="19:00">19:00 Uhr</option>
+              <option value="20:00">20:00 Uhr</option>
+              <option value="21:00">21:00 Uhr</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-vintage-charcoal uppercase tracking-wider mb-1">Personen *</label>
+            <select required class="w-full px-3 py-2.5 rounded-xl border border-vintage-border bg-vintage-cream text-vintage-charcoal text-xs focus:outline-none focus:ring-2 focus:ring-vintage-clay/50">
+              <option value="2">2 Personen</option>
+              <option value="3">3 Personen</option>
+              <option value="4">4 Personen</option>
+              <option value="5">5 Personen</option>
+              <option value="6">6+ Personen</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-vintage-charcoal uppercase tracking-wider mb-1">Besondere Wünsche (optional)</label>
+          <textarea rows="2" placeholder="z.B. Kinderstuhl, ruhiger Tisch bei den Radios..." class="w-full px-3.5 py-2 rounded-xl border border-vintage-border bg-vintage-cream text-vintage-charcoal text-xs focus:outline-none focus:ring-2 focus:ring-vintage-clay/50"></textarea>
+        </div>
+
+        <div id="reservation-feedback" class="hidden p-3 rounded-xl text-xs"></div>
+
+        <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-full bg-vintage-clay text-white text-xs font-semibold uppercase tracking-wider hover:bg-vintage-clayDark shadow-md transition">
+          Reservierungsanfrage absenden
+        </button>
+
+        <p class="text-[11px] text-center text-vintage-muted">
+          Oder rufen Sie uns direkt an unter <a href="tel:+436601681717" class="text-vintage-clay font-medium underline">+43 660 1681717</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Mobile Drawer Toggle
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-nav-menu');
+      const openIcon = document.getElementById('menu-icon-open');
+      const closeIcon = document.getElementById('menu-icon-close');
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        openIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        openIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    // Menu Tab Filtering
+    function filterMenu(category, button) {
+      const tabs = document.querySelectorAll('.menu-tab');
+      tabs.forEach(tab => {
+        tab.classList.remove('bg-vintage-clay', 'text-white');
+        tab.classList.add('text-vintage-slate');
+      });
+      button.classList.add('bg-vintage-clay', 'text-white');
+      button.classList.remove('text-vintage-slate');
+
+      const cards = document.querySelectorAll('.menu-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Modal Control
+    const modal = document.getElementById('reservation-modal');
+    const modalContainer = document.getElementById('modal-container');
+
+    function openReservationModal() {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modalContainer.classList.remove('scale-95');
+        modalContainer.classList.add('scale-100');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeReservationModal() {
+      modal.classList.add('opacity-0');
+      modalContainer.classList.remove('scale-100');
+      modalContainer.classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    // Close on click outside modal
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeReservationModal();
+      }
+    });
+
+    // Close on ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeReservationModal();
+      }
+    });
+
+    // Handle Reservation Form Submit
+    function handleReservationSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const feedback = document.getElementById('reservation-feedback');
+      btn.disabled = true;
+      btn.innerText = 'Wird gesendet...';
+
+      setTimeout(() => {
+        feedback.classList.remove('hidden');
+        feedback.className = 'p-3 rounded-xl text-xs bg-emerald-50 text-emerald-800 border border-emerald-200';
+        feedback.innerHTML = '<strong>Vielen Dank!</strong> Ihre Reservierungsanfrage wurde weitergeleitet. Sie erhalten in Kürze eine Bestätigung per SMS oder E-Mail.';
+        btn.innerText = 'Erfolgreich übermittelt ✓';
+        btn.classList.remove('bg-vintage-clay');
+        btn.classList.add('bg-emerald-600');
+
+        setTimeout(() => {
+          closeReservationModal();
+          e.target.reset();
+          btn.disabled = false;
+          btn.innerText = 'Reservierungsanfrage absenden';
+          btn.classList.remove('bg-emerald-600');
+          btn.classList.add('bg-vintage-clay');
+          feedback.classList.add('hidden');
+        }, 2500);
+      }, 800);
+    }
+  </script>
+</body>
+</html>

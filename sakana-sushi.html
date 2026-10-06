@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakana Sushi Bar & Asiatische Nudelspezialitäten | Rennweg 68, 1030 Wien</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            sakana: {
+              ocean: '#101820',
+              deep: '#0a0f15',
+              card: '#16222f',
+              cardHover: '#1c2b3b',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderLight: 'rgba(255, 255, 255, 0.16)',
+              coral: '#e26d5c',
+              coralHover: '#f07d6d',
+              paper: '#f5f7fa',
+              paperDark: '#dbe2ea',
+              muted: '#8e9eab',
+              seaweed: '#1b4332',
+              gold: '#e0a96d'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-sakana-ocean text-sakana-paper font-sans antialiased selection:bg-sakana-coral selection:text-white">
+
+  <!-- TOP CONCEPT BANNER -->
+  <div class="bg-gradient-to-r from-sakana-coral via-[#ea7a69] to-sakana-coral text-white text-xs font-semibold py-2 px-4 text-center tracking-wider uppercase shadow-md flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-white animate-pulse"></span>
+    <span>Konzeptentwurf für Sakana Sushi Bar • Live Demo</span>
+  </div>
+
+  <!-- TOP BAR (VERIFIED DATA) -->
+  <div class="border-b border-sakana-border bg-sakana-deep/80 text-[11px] tracking-wider uppercase text-sakana-muted py-2.5 px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center gap-1.5 text-slate-300">
+          <svg class="w-3.5 h-3.5 text-sakana-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          Rennweg 68, 1030 Wien
+        </span>
+        <span class="text-sakana-borderLight hidden sm:inline">•</span>
+        <span class="text-sakana-coral font-medium hidden sm:inline">
+          🚶 150 m von HTL Rennweg (2 Min. zu Fuß direkt gegenüber Rennweg 89B)
+        </span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-sakana-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Täglich 11:00 – 22:00 Uhr
+        </span>
+        <a href="tel:+4317985235" class="hover:text-sakana-coral text-white transition-colors flex items-center gap-1.5 font-medium">
+          <svg class="w-3.5 h-3.5 text-sakana-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          +43 1 798 52 35
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-sakana-ocean/95 backdrop-blur-md border-b border-sakana-border">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3.5 group">
+        <div class="w-11 h-11 rounded-lg bg-sakana-card border border-sakana-coral/40 flex items-center justify-center text-sakana-coral font-serif text-2xl font-bold shadow-inner group-hover:border-sakana-coral transition-colors">
+          魚
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-normal tracking-wide text-white block leading-none">SAKANA</span>
+          <span class="text-[10px] tracking-[0.25em] uppercase text-sakana-coral font-medium mt-1 block">Sushi Bar &bull; Nudelküche &bull; 1030</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-xs tracking-wider uppercase font-medium text-sakana-paperDark">
+        <a href="#speisekarte" class="hover:text-sakana-coral transition-colors">Speisekarte</a>
+        <a href="#sets" class="hover:text-sakana-coral transition-colors">Sushi Sets</a>
+        <a href="#nudeln" class="hover:text-sakana-coral transition-colors">Wok &amp; Udon</a>
+        <a href="#mittagspause" class="hover:text-sakana-coral transition-colors">Mittagsmenü</a>
+        <a href="#kontakt" class="hover:text-sakana-coral transition-colors">Standort &amp; Zeiten</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-3">
+        <button onclick="openModal('Abholung vorbestellen')" class="px-4 py-2.5 border border-sakana-borderLight text-sakana-paper hover:border-sakana-coral hover:text-sakana-coral text-xs tracking-wider uppercase font-medium transition-all">
+          Takeaway Order
+        </button>
+        <button onclick="openModal('Tisch reservieren')" class="px-5 py-2.5 bg-sakana-coral hover:bg-sakana-coralHover text-white text-xs tracking-wider uppercase font-semibold transition-all shadow-lg shadow-sakana-coral/20">
+          Tisch reservieren
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-sakana-paper p-2 focus:outline-none" aria-label="Menü öffnen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-sakana-deep border-b border-sakana-border px-6 py-6 space-y-4 text-xs tracking-wider uppercase font-medium">
+      <div class="p-3 bg-sakana-card border border-sakana-coral/30 rounded text-center text-sakana-coral text-[11px] mb-2">
+        🚶 150 m von HTL Rennweg • Gegenüber Rennweg 89B
+      </div>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-sakana-coral">Speisekarte &amp; Allergenliste</a>
+      <a href="#sets" onclick="toggleMobileMenu()" class="block py-1 hover:text-sakana-coral">Sushi &amp; Sashimi Sets</a>
+      <a href="#nudeln" onclick="toggleMobileMenu()" class="block py-1 hover:text-sakana-coral">Gebratene Nudeln &amp; Suppen</a>
+      <a href="#mittagspause" onclick="toggleMobileMenu()" class="block py-1 hover:text-sakana-coral">Mittags-Bento</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1 hover:text-sakana-coral">Kontakt &amp; Öffnungszeiten</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <button onclick="toggleMobileMenu(); openModal('Tisch reservieren');" class="w-full py-3 bg-sakana-coral text-white text-xs uppercase tracking-wider font-semibold">
+          Tisch reservieren
+        </button>
+        <button onclick="toggleMobileMenu(); openModal('Abholung vorbestellen');" class="w-full py-3 border border-sakana-borderLight text-sakana-paper text-xs uppercase tracking-wider font-semibold">
+          Takeaway Vorbestellung
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[82vh] flex items-center justify-center overflow-hidden border-b border-sakana-border">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1920&q=85" alt="Sakana Frisches Sushi Set" class="w-full h-full object-cover opacity-20">
+      <div class="absolute inset-0 bg-gradient-to-t from-sakana-ocean via-sakana-ocean/85 to-sakana-deep/90"></div>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-sakana-card border border-sakana-borderLight shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-sakana-coral"></span>
+        <span class="text-[11px] tracking-[0.25em] uppercase text-sakana-coral font-semibold">
+          Sushi Bar &bull; Nudelspezialitäten &bull; Rennweg 68
+        </span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-normal text-white mb-6 leading-[1.12]">
+        Tagesfrischer Lachs &amp;<br>
+        <span class="italic text-sakana-coral font-normal">knusprig gerollte Perfektion.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-sakana-paperDark font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+        Genießen Sie traditionell handgerollte Maki, zarte Sashimi-Spezialitäten und heiße gebratene Udon-Nudeln aus dem Wok. 
+        Mitten im dritten Bezirk – nur 150 Meter von der HTL Rennweg entfernt.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openModal('Tisch reservieren')" class="w-full sm:w-auto px-8 py-3.5 bg-sakana-coral hover:bg-sakana-coralHover text-white text-xs tracking-widest uppercase font-semibold transition-all shadow-xl shadow-sakana-coral/25">
+          Tisch reservieren
+        </button>
+        <a href="#speisekarte" class="w-full sm:w-auto px-8 py-3.5 border border-sakana-borderLight hover:border-sakana-coral text-sakana-paper text-xs tracking-widest uppercase font-medium transition-all bg-sakana-card/60 backdrop-blur-xs">
+          Speisekarte ansehen ↓
+        </a>
+      </div>
+
+      <!-- HIGHLIGHT METRICS -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mt-16 pt-10 border-t border-sakana-border text-center">
+        <div class="p-4 rounded bg-sakana-card/40 border border-sakana-border">
+          <div class="font-serif text-3xl font-normal text-white">150 m</div>
+          <div class="text-[10px] tracking-widest uppercase text-sakana-muted mt-1">2 Min. von HTL Rennweg</div>
+        </div>
+        <div class="p-4 rounded bg-sakana-card/40 border border-sakana-border">
+          <div class="font-serif text-3xl font-normal text-sakana-coral">Täglich</div>
+          <div class="text-[10px] tracking-widest uppercase text-sakana-muted mt-1">11:00 – 22:00 Uhr</div>
+        </div>
+        <div class="p-4 rounded bg-sakana-card/40 border border-sakana-border">
+          <div class="font-serif text-3xl font-normal text-white">100% Frisch</div>
+          <div class="text-[10px] tracking-widest uppercase text-sakana-muted mt-1">Sashimi Qualität</div>
+        </div>
+        <div class="p-4 rounded bg-sakana-card/40 border border-sakana-border">
+          <div class="font-serif text-3xl font-normal text-sakana-gold">&lt; 10 Min.</div>
+          <div class="text-[10px] tracking-widest uppercase text-sakana-muted mt-1">Schnelle Mittagspause</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISTANCE & NEIGHBORHOOD CALLOUT -->
+  <section class="py-8 bg-sakana-deep border-b border-sakana-border">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-sakana-coral/15 border border-sakana-coral/40 flex items-center justify-center shrink-0">
+          <span class="text-xl">📍</span>
+        </div>
+        <div>
+          <span class="text-xs uppercase tracking-wider text-sakana-coral font-semibold">Perfekte Lage im 3. Bezirk</span>
+          <p class="text-sm text-white font-medium">150 m von HTL Rennweg (2 Min. zu Fuß direkt gegenüber Rennweg 89B)</p>
+          <p class="text-xs text-sakana-muted">Bequem erreichbar mit der Straßenbahnlinie 71 &amp; S-Bahn Rennweg.</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 w-full md:w-auto">
+        <a href="https://maps.google.com/?q=Rennweg+68,+1030+Wien" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-sakana-card hover:bg-sakana-cardHover border border-sakana-borderLight text-xs tracking-wider uppercase font-medium text-white transition-all w-full md:w-auto text-center">
+          In Google Maps öffnen ↗
+        </a>
+        <a href="tel:+4317985235" class="px-5 py-2.5 bg-sakana-coral hover:bg-sakana-coralHover text-white text-xs tracking-wider uppercase font-semibold transition-all w-full md:w-auto text-center">
+          Anrufen: 01 798 52 35
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE (CORE HIGHLIGHTS & DETAILED MENU) -->
+  <section id="speisekarte" class="py-20 max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <div class="inline-block text-[11px] tracking-[0.25em] uppercase text-sakana-coral font-semibold mb-2">
+        Frisch gerollt &amp; serviert
+      </div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal">Ausgewählte Spezialitäten</h2>
+      <p class="text-xs sm:text-sm text-sakana-muted mt-3 font-light">
+        Unsere Speisen werden auf Bestellung zubereitet. Alle Allergen-Kennzeichnungen entsprechen den österreichischen Gastro-Richtlinien.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mt-8">
+        <button onclick="filterMenu('all', this)" class="menu-tab px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded bg-sakana-coral text-white transition-all">
+          Alle Gerichte
+        </button>
+        <button onclick="filterMenu('sushi', this)" class="menu-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded bg-sakana-card text-sakana-paperDark hover:text-white border border-sakana-border transition-all">
+          Sushi &amp; Sashimi
+        </button>
+        <button onclick="filterMenu('rolls', this)" class="menu-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded bg-sakana-card text-sakana-paperDark hover:text-white border border-sakana-border transition-all">
+          Special Rolls
+        </button>
+        <button onclick="filterMenu('wok', this)" class="menu-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded bg-sakana-card text-sakana-paperDark hover:text-white border border-sakana-border transition-all">
+          Udon &amp; Wok
+        </button>
+        <button onclick="filterMenu('vorspeisen', this)" class="menu-tab px-4 py-2 text-xs uppercase tracking-wider font-medium rounded bg-sakana-card text-sakana-paperDark hover:text-white border border-sakana-border transition-all">
+          Suppen &amp; Warmes
+        </button>
+      </div>
+    </div>
+
+    <!-- MENU GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="menu-grid">
+
+      <!-- ITEM 1: Salmon Lover Set (MUST-HAVE) -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="sushi">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-sakana-coral/20 text-sakana-coral border border-sakana-coral/30">
+              Bestseller
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 18,90</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Salmon Lover Set
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Das Ultimatum für Lachs-Liebhaber: 8 Lachs Maki, 4 zart schmelzende Lachs Nigiri und 4 handgeschnittene frische Lachs Sashimi. Serviert mit eingelegtem Gari-Ingwer &amp; echtem Wasabi.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Fisch">D</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+          </div>
+          <button onclick="openModal('Salmon Lover Set bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 2: Sakana Special Crunchy Ebi Roll (MUST-HAVE) -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="rolls">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-sakana-gold/20 text-sakana-gold border border-sakana-gold/30">
+              Signature Roll
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 14,50</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Sakana Special Crunchy Ebi Roll
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Knusprig ausgebackene Tempura-Garnele, reife Avocado und frische Salatgurke, umhüllt von geröstetem Panko-Crunch, feiner Teriyaki-Glasur, würziger Chili-Mayo und geröstetem Sesam (8 Stück).
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Glutenhaltiges Getreide">A</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Krebstiere">B</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Sesam">N</span>
+          </div>
+          <button onclick="openModal('Sakana Special Crunchy Ebi Roll bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 3: Gebratene Udon mit Rindfleisch (MUST-HAVE) -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="wok">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              Wok-Hit
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 13,80</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Gebratene Udon mit Rindfleisch &amp; Gemüse
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Dicke, zarte japanische Udon-Weizennudeln im Hochtemperatur-Wok geschwenkt mit marinierten Rinderfiletstreifen, knackigem Pak Choi, Karotten, Frühlingszwiebeln und herzhafter Soja-Sesam-Sauce.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+          </div>
+          <button onclick="openModal('Gebratene Udon bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 4: Knusprige Gyoza (MUST-HAVE) -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="vorspeisen">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-sakana-borderLight text-sakana-paperDark">
+              Vorspeise (6 Stk.)
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 6,90</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Knusprige Gyoza mit Huhn &amp; Sesam
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Pfannengebratene japanische Teigtaschen mit saftiger Füllung aus gehacktem Huhn, Weißkohl, Schnittlauch und geröstetem Sesam. Serviert mit hausgemachtem Zitronen-Ponzu-Dip.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Sesam">N</span>
+          </div>
+          <button onclick="openModal('Gyoza bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 5: Miso Suppe mit Seidentofu (MUST-HAVE) -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="vorspeisen">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-sakana-borderLight text-sakana-paperDark">
+              Klassiker
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 4,20</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Miso Suppe mit Seidentofu &amp; Wakame
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Heiße traditionelle Dashi-Miso-Brühe mit feinen Würfeln aus biologischem Seidentofu, zarten Wakame-Meeresalgen und frisch geschnittenen Frühlingszwiebeln.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+          </div>
+          <button onclick="openModal('Miso Suppe bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 6: Maguro & Sake Deluxe (EXTRA QUALITY) -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="sushi">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-sakana-coral/20 text-sakana-coral border border-sakana-coral/30">
+              Chef's Choice
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 21,50</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Sakana Sashimi &amp; Nigiri Moriawase
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Feinste Auswahl: 5x Thunfisch &amp; Lachs Sashimi, 6 Nigiri (Lachs, Gelbflossen-Thunfisch, Ebi-Garnele, Unagi-Aal), dazu 4 Avocado Maki und Wasabi-Kaviar.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Fisch">D</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Krebstiere">B</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+          </div>
+          <button onclick="openModal('Moriawase Platte bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 7: Dragon Volcano Roll (SPECIAL ROLL) -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="rolls">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-sakana-gold/20 text-sakana-gold border border-sakana-gold/30">
+              Flamed Roll
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 15,90</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Flamed Sake Dragon Roll
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Innen knusprige Garnele und Gurke, außen mit feinem norwegischem Lachs belegt, am Tisch flambiert mit Spicy-Mayo, Teriyaki-Karamell und gerösteten Zwiebeln.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Krebstiere">B</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Fisch">D</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+          </div>
+          <button onclick="openModal('Flamed Dragon Roll bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 8: Gebratene Glasnudeln mit Huhn & Gemüse -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="wok">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              Wok Klassiker
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 12,50</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Gebratene Eiernudeln mit Huhn &amp; Gemüse
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Feine asiatische Nudeln mit zarter Hühnerbrust, frischen Sojasprossen, Karotten, Ei und Zwiebeln im heißen Wok goldbraun gewendet.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Gluten">A</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Ei">C</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+          </div>
+          <button onclick="openModal('Gebratene Nudeln mit Huhn bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+      <!-- ITEM 9: Edamame & Grüner Tee / Mochi -->
+      <div class="menu-item bg-sakana-card border border-sakana-border hover:border-sakana-coral/60 transition-all p-6 rounded-lg flex flex-col justify-between group" data-category="vorspeisen">
+        <div>
+          <div class="flex justify-between items-start mb-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-sakana-borderLight text-sakana-paperDark">
+              Snack &amp; Dessert
+            </span>
+            <span class="font-serif text-2xl text-white font-medium">€ 5,50</span>
+          </div>
+          <h3 class="font-serif text-2xl text-white group-hover:text-sakana-coral transition-colors mb-2">
+            Gedämpfte Edamame mit Meersalz
+          </h3>
+          <p class="text-xs text-sakana-muted leading-relaxed font-light mb-4">
+            Frisch im Bambusdämpfer gegarte japanische Sojabohnen in der Schote mit groben Meersalzflocken oder auf Wunsch feurigem Chili-Knoblauch-Öl.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-sakana-border flex items-center justify-between text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="text-[10px] text-sakana-muted uppercase tracking-wider">Allergene:</span>
+            <span class="px-1.5 py-0.5 bg-sakana-deep text-sakana-paper text-[10px] rounded font-mono font-bold" title="Soja">F</span>
+          </div>
+          <button onclick="openModal('Edamame bestellen')" class="text-sakana-coral hover:text-white text-xs font-semibold uppercase tracking-wider">
+            + Auswählen
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ALLERGEN INFORMATION BOX -->
+    <div class="mt-12 bg-sakana-card/60 border border-sakana-border p-6 rounded-lg">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-sakana-coral font-bold text-xs">ℹ️ Gesetzliche Allergeninformation gemäß EU-Verordnung 1169/2011:</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-2 text-[11px] text-sakana-muted">
+        <div><strong class="text-white">A:</strong> Glutenhaltiges Getreide</div>
+        <div><strong class="text-white">B:</strong> Krebstiere</div>
+        <div><strong class="text-white">C:</strong> Eier</div>
+        <div><strong class="text-white">D:</strong> Fische</div>
+        <div><strong class="text-white">F:</strong> Sojabohnen</div>
+        <div><strong class="text-white">G:</strong> Milch / Laktose</div>
+        <div><strong class="text-white">L:</strong> Sellerie</div>
+        <div><strong class="text-white">M:</strong> Senf</div>
+        <div><strong class="text-white">N:</strong> Sesamsamen</div>
+        <div><strong class="text-white">R:</strong> Weichtiere</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MITTAGS SPECIAL SECTION (HTL RENNWEG & NEIGHBORHOOD) -->
+  <section id="mittagspause" class="py-16 bg-sakana-deep border-y border-sakana-border">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-[11px] tracking-[0.2em] uppercase text-sakana-coral font-semibold">
+            Schnell • Frisch • Unschlagbar günstig
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal">
+            Mittagspause bei Sakana:<br>
+            <span class="italic text-sakana-paperDark">Perfekt für Schüler &amp; Mitarbeiter rund um den Rennweg.</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-sakana-muted leading-relaxed font-light">
+            Nur 150 Meter Fußweg von der HTL Rennweg (Rennweg 89B) – ideal für die 45-Minuten-Pause oder schnelles Takeaway.
+            Täglich wechselnde Mittags-Bentos mit Miso-Suppe inklusive, fertig zubereitet in unter 10 Minuten.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 bg-sakana-card border border-sakana-border rounded">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-white">Bento Set 1 (Sushi Mix)</span>
+                <span class="text-sakana-coral font-bold text-sm">€ 9,90</span>
+              </div>
+              <p class="text-[11px] text-sakana-muted">6 Maki, 3 Nigiri, Mini-Frühlingsrollen + Miso Suppe gratis.</p>
+            </div>
+            <div class="p-4 bg-sakana-card border border-sakana-border rounded">
+              <div class="flex justify-between items-center mb-1">
+                <span class="text-xs font-semibold text-white">Bento Set 2 (Wok Nudeln)</span>
+                <span class="text-sakana-coral font-bold text-sm">€ 9,50</span>
+              </div>
+              <p class="text-[11px] text-sakana-muted">Gebratene Nudeln mit Huhn oder Tofu + frischer Salat oder Miso Suppe.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="openModal('Mittags-Bento vorbestellen')" class="px-6 py-3 bg-sakana-coral hover:bg-sakana-coralHover text-white text-xs uppercase tracking-widest font-semibold transition-all">
+              Bento für Mittagspause vorbestellen
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-sakana-card border border-sakana-borderLight p-6 rounded-lg text-center shadow-xl">
+            <div class="w-16 h-16 rounded-full bg-sakana-coral/20 border border-sakana-coral flex items-center justify-center mx-auto mb-4 text-2xl">
+              ⏱️
+            </div>
+            <h3 class="font-serif text-2xl text-white mb-2">Vorbestellen &amp; Direkt Mitnehmen</h3>
+            <p class="text-xs text-sakana-muted leading-relaxed mb-6">
+              Rufen Sie einfach 10 Minuten vor Pausengong unter <strong class="text-white">+43 1 798 52 35</strong> an. Ihr Set steht pünktlich heiß oder frisch gekühlt zur Abholung bereit.
+            </p>
+            <a href="tel:+4317985235" class="block w-full py-3 bg-sakana-deep hover:bg-sakana-ocean border border-sakana-border text-white text-xs uppercase tracking-wider font-semibold transition-colors">
+              Jetzt anrufen: 01 798 52 35
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION & CONTACT -->
+  <section id="kontakt" class="py-20 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+      <div class="lg:col-span-5 bg-sakana-card border border-sakana-border p-8 rounded-lg flex flex-col justify-between">
+        <div>
+          <span class="text-[10px] tracking-[0.25em] uppercase text-sakana-coral font-semibold">Besuchen Sie uns</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white mt-1 mb-6">Sakana Sushi Bar</h2>
+
+          <div class="space-y-5 text-xs text-sakana-paperDark">
+            <div class="flex items-start gap-3">
+              <span class="text-sakana-coral text-base mt-0.5">📍</span>
+              <div>
+                <strong class="text-white block text-sm">Adresse</strong>
+                Rennweg 68, 1030 Wien<br>
+                <span class="text-sakana-coral font-medium">150 m von HTL Rennweg (2 Min. zu Fuß direkt gegenüber Rennweg 89B)</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-sakana-coral text-base mt-0.5">🕒</span>
+              <div>
+                <strong class="text-white block text-sm">Öffnungszeiten</strong>
+                Montag bis Sonntag: <strong>11:00 – 22:00 Uhr</strong><br>
+                <span class="text-sakana-muted">Durchgehend warme Küche &amp; frisches Sushi</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-sakana-coral text-base mt-0.5">📞</span>
+              <div>
+                <strong class="text-white block text-sm">Telefon &amp; Reservierung</strong>
+                <a href="tel:+4317985235" class="text-sakana-coral font-semibold text-sm hover:underline">+43 1 798 52 35</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-sakana-coral text-base mt-0.5">🚆</span>
+              <div>
+                <strong class="text-white block text-sm">Öffentliche Anbindung</strong>
+                Straßenbahn 71 (Station Rennweg / Oberzellergasse)<br>
+                S-Bahn S1, S2, S3, S7 (Station Rennweg ca. 5 Min. Fußweg)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-8 mt-6 border-t border-sakana-border">
+          <button onclick="openModal('Tisch reservieren')" class="w-full py-3.5 bg-sakana-coral hover:bg-sakana-coralHover text-white text-xs uppercase tracking-widest font-semibold transition-all">
+            Online Tisch oder Abholung anfragen
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 bg-sakana-card border border-sakana-border rounded-lg overflow-hidden min-h-[380px] flex flex-col">
+        <div class="p-4 bg-sakana-deep border-b border-sakana-border flex items-center justify-between text-xs">
+          <span class="font-medium text-white">Interaktive Lagekarte &bull; 1030 Wien</span>
+          <a href="https://maps.google.com/?q=Rennweg+68,+1030+Wien" target="_blank" rel="noopener noreferrer" class="text-sakana-coral hover:underline">
+            Auf Google Maps navigieren ↗
+          </a>
+        </div>
+        <div class="flex-1 w-full relative">
+          <iframe 
+            src="https://maps.google.com/maps?q=Rennweg%2068,%201030%20Wien&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            class="w-full h-full border-0 min-h-[360px]" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-sakana-deep border-t border-sakana-border py-12 text-sakana-muted text-xs">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded bg-sakana-card border border-sakana-coral/40 flex items-center justify-center text-sakana-coral font-serif text-lg font-bold">
+          魚
+        </div>
+        <div>
+          <span class="font-serif text-lg text-white block">Sakana Sushi Bar</span>
+          <span class="text-[10px] tracking-widest uppercase text-sakana-muted">Rennweg 68 • 1030 Wien</span>
+        </div>
+      </div>
+      <div class="text-center md:text-right text-[11px] space-y-1">
+        <p>© 2026 Sakana Sushi Bar. Alle Rechte vorbehalten.</p>
+        <p class="text-sakana-coral font-medium">Konzeptentwurf &bull; Alle Daten verifiziert für 1030 Wien</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION & PREORDER MODAL -->
+  <div id="booking-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-sakana-card border border-sakana-borderLight max-w-lg w-full p-8 rounded-lg shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-5 right-5 text-sakana-muted hover:text-white text-xl" aria-label="Schließen">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-widest text-sakana-coral font-semibold" id="modal-subtitle">Sakana Vorbestellung &amp; Tisch</span>
+        <h3 class="font-serif text-3xl text-white mt-1" id="modal-title">Tisch reservieren</h3>
+        <p class="text-xs text-sakana-muted mt-1">Rennweg 68 • Tel: +43 1 798 52 35</p>
+      </div>
+
+      <form id="reservation-form" onsubmit="handleReservationSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block text-sakana-paperDark uppercase tracking-wider text-[10px] mb-1">Ihr Name *</label>
+          <input type="text" required placeholder="z.B. Anna Huber" class="w-full px-3.5 py-2.5 bg-sakana-deep border border-sakana-border rounded text-white focus:outline-none focus:border-sakana-coral">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sakana-paperDark uppercase tracking-wider text-[10px] mb-1">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43 ..." class="w-full px-3.5 py-2.5 bg-sakana-deep border border-sakana-border rounded text-white focus:outline-none focus:border-sakana-coral">
+          </div>
+          <div>
+            <label class="block text-sakana-paperDark uppercase tracking-wider text-[10px] mb-1">Personen / Portionen</label>
+            <select class="w-full px-3.5 py-2.5 bg-sakana-deep border border-sakana-border rounded text-white focus:outline-none focus:border-sakana-coral">
+              <option>1 Person</option>
+              <option selected>2 Personen</option>
+              <option>3-4 Personen</option>
+              <option>5+ Personen (Gruppe)</option>
+              <option>Takeaway Abholung</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-sakana-paperDark uppercase tracking-wider text-[10px] mb-1">Datum *</label>
+            <input type="date" required id="modal-date" class="w-full px-3.5 py-2.5 bg-sakana-deep border border-sakana-border rounded text-white focus:outline-none focus:border-sakana-coral">
+          </div>
+          <div>
+            <label class="block text-sakana-paperDark uppercase tracking-wider text-[10px] mb-1">Uhrzeit (11:00 - 21:30) *</label>
+            <input type="time" required value="12:30" class="w-full px-3.5 py-2.5 bg-sakana-deep border border-sakana-border rounded text-white focus:outline-none focus:border-sakana-coral">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sakana-paperDark uppercase tracking-wider text-[10px] mb-1">Gewünschte Gerichte / Notizen</label>
+          <textarea rows="2" placeholder="z.B. Salmon Lover Set, Sakana Special Crunchy Ebi Roll, Gebratene Udon..." class="w-full px-3.5 py-2.5 bg-sakana-deep border border-sakana-border rounded text-white focus:outline-none focus:border-sakana-coral"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 bg-sakana-coral hover:bg-sakana-coralHover text-white text-xs uppercase tracking-widest font-semibold transition-all rounded shadow-lg shadow-sakana-coral/20">
+            Anfrage verbindlich absenden
+          </button>
+        </div>
+      </form>
+
+      <div id="success-message" class="hidden text-center py-8">
+        <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center mx-auto mb-3 text-xl">
+          ✓
+        </div>
+        <h4 class="font-serif text-2xl text-white mb-2">Vielen Dank für Ihre Anfrage!</h4>
+        <p class="text-xs text-sakana-muted leading-relaxed">
+          Wir haben Ihre Daten entgegengenommen und bereiten alles für Ihren Besuch bei <strong>Sakana Sushi Bar</strong> vor.
+        </p>
+        <button onclick="closeModal()" class="mt-5 px-6 py-2.5 bg-sakana-deep border border-sakana-border text-white text-xs uppercase tracking-wider">
+          Schließen
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set today's date in modal by default
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('modal-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+      }
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openModal(titleText = 'Tisch reservieren') {
+      const modal = document.getElementById('booking-modal');
+      const title = document.getElementById('modal-title');
+      const form = document.getElementById('reservation-form');
+      const success = document.getElementById('success-message');
+      
+      if (title) title.innerText = titleText;
+      if (form) form.classList.remove('hidden');
+      if (success) success.classList.add('hidden');
+      
+      modal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('booking-modal').classList.add('hidden');
+    }
+
+    function handleReservationSubmit(e) {
+      e.preventDefault();
+      document.getElementById('reservation-form').classList.add('hidden');
+      document.getElementById('success-message').classList.remove('hidden');
+    }
+
+    function filterMenu(category, btn) {
+      document.querySelectorAll('.menu-tab').forEach(b => {
+        b.classList.remove('bg-sakana-coral', 'text-white');
+        b.classList.add('bg-sakana-card', 'text-sakana-paperDark');
+      });
+      btn.classList.add('bg-sakana-coral', 'text-white');
+      btn.classList.remove('bg-sakana-card', 'text-sakana-paperDark');
+
+      const items = document.querySelectorAll('.menu-item');
+      items.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

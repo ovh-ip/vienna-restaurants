@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria Al Quattro | Steinofenpizzeria &amp; Ristorante • Erdbergstraße Wien 1030</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            pomodoro: {
+              50: '#fbf3f2',
+              100: '#f7e5e3',
+              200: '#efcdca',
+              300: '#e1aba5',
+              400: '#cf7b72',
+              500: '#c0392b', // Specified Tomato Red #c0392b
+              600: '#a92f23',
+              700: '#8e271c',
+              800: '#762218',
+              900: '#621f18',
+              950: '#380c07',
+            },
+            slatecustom: {
+              950: '#0f1115',
+              900: '#171a20',
+              850: '#1e222a',
+              800: '#272c36',
+              700: '#373e4b',
+              600: '#4e5768',
+            },
+            crust: {
+              100: '#fbf8f3',
+              200: '#f4ede1',
+              300: '#ebdcc7',
+              400: '#ddc4a4',
+              500: '#caa37a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+  </style>
+</head>
+<body class="bg-slatecustom-950 text-slate-200 font-sans antialiased selection:bg-pomodoro-500 selection:text-white pb-20 md:pb-0">
+
+  <!-- TOP CONCEPT BANNER -->
+  <aside aria-label="Konzept-Status" class="bg-pomodoro-900 border-b border-pomodoro-700/60 text-[11px] tracking-wider uppercase text-pomodoro-100 py-2 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-medium">Konzeptentwurf für Pizzeria Al Quattro • Live Demo</span>
+      <span class="text-pomodoro-400 hidden sm:inline">•</span>
+      <span class="text-crust-200 hidden sm:inline">Erdbergstraße 93, 1030 Wien</span>
+    </div>
+  </aside>
+
+  <!-- VERIFIED LOCATION & HOURS TOP BAR -->
+  <div class="border-b border-white/5 bg-slatecustom-900 text-[11px] tracking-wide text-slate-400 py-2.5 px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-4 flex-wrap">
+        <span class="text-slate-300">📍 Erdbergstraße 93, 1030 Wien (nahe Kardinal-Nagl-Platz)</span>
+        <span class="text-slate-700 hidden sm:inline">•</span>
+        <span class="text-pomodoro-300 font-medium">800 m von HTL Rennweg (ca. 10 Gehminuten)</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span class="text-amber-400 font-medium">★ Google 4.4★ (500+ Bewertungen)</span>
+        <span class="text-slate-700 hidden md:inline">•</span>
+        <span class="hidden lg:inline text-slate-300">🕒 Täglich 11:00–22:30 Uhr durchgehend geöffnet</span>
+        <span class="text-slate-700 hidden lg:inline">•</span>
+        <a href="tel:+4317180415" class="text-white hover:text-pomodoro-300 font-medium transition-colors flex items-center gap-1.5">
+          <span>📞</span>
+          <span>+43 1 718 04 15</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-slatecustom-950/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3.5">
+        <div class="w-10 h-10 border border-pomodoro-500/50 bg-pomodoro-950 flex items-center justify-center font-serif text-2xl text-pomodoro-400 font-bold">
+          4
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-3xl tracking-wide text-white font-normal leading-none">Al Quattro</span>
+          <span class="text-[9px] tracking-[0.25em] uppercase text-pomodoro-300 font-sans mt-0.5">
+            Steinofenpizzeria &bull; Ristorante Erdberg
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-9 text-xs tracking-[0.18em] uppercase font-medium text-slate-300">
+        <a href="#steinofen" class="hover:text-pomodoro-400 transition-colors">Der Steinofen</a>
+        <a href="#speisekarte" class="hover:text-pomodoro-400 transition-colors">Speisekarte</a>
+        <a href="#teig" class="hover:text-pomodoro-400 transition-colors">48h Reifeteig</a>
+        <a href="#standort" class="hover:text-pomodoro-400 transition-colors">Lage &amp; Kontakt</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <button onclick="openModal()" class="px-5 py-2.5 bg-pomodoro-500 hover:bg-pomodoro-600 text-white text-xs tracking-widest uppercase font-semibold transition-all shadow-md shadow-pomodoro-950/50">
+          Tisch anfragen
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 p-2" aria-label="Menü öffnen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slatecustom-900 border-b border-white/10 px-6 py-6 space-y-4 text-xs tracking-widest uppercase">
+      <a href="#steinofen" onclick="toggleMobileMenu()" class="block py-1 hover:text-pomodoro-400">Steinofen-Spezialitäten</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-pomodoro-400">Speisekarte &amp; Pasta</a>
+      <a href="#teig" onclick="toggleMobileMenu()" class="block py-1 hover:text-pomodoro-400">Das Teig-Geheimnis</a>
+      <a href="#standort" onclick="toggleMobileMenu()" class="block py-1 hover:text-pomodoro-400">Standort Erdbergstraße</a>
+      <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-3 py-3 bg-pomodoro-500 text-white font-semibold tracking-widest uppercase text-xs">
+        Tisch reservieren
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=1920&q=85" alt="Pizzeria Al Quattro Steinofen Atmosphäre" class="w-full h-full object-cover opacity-25">
+      <div class="absolute inset-0 bg-gradient-to-t from-slatecustom-950 via-slatecustom-950/80 to-slatecustom-950/45"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 border border-pomodoro-500/40 bg-pomodoro-950/70 text-pomodoro-200 text-[11px] tracking-[0.25em] uppercase">
+        <span>🍕</span>
+        <span>Forno a Legna &bull; Erdbergstraße 93 Wien 1030</span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-normal tracking-normal text-white mb-8 leading-[1.12]">
+        Glühender Steinofen.<br>
+        <span class="italic text-pomodoro-400">Echte neapolitanische Leidenschaft.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-slate-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+        Knusprig-luftiger Pizzarand, handgepflückte sonnengereifte San Marzano Tomaten und zart schmelzender Fior di Latte Mozzarella. Bei über 400°C im traditionellen Steinofen gebacken – unkompliziert, herzlich und authentisch.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openModal()" class="w-full sm:w-auto px-9 py-4 bg-pomodoro-500 hover:bg-pomodoro-600 text-white text-xs tracking-[0.2em] uppercase font-semibold transition-all shadow-lg shadow-pomodoro-950/60">
+          Tisch reservieren
+        </button>
+        <a href="#speisekarte" class="w-full sm:w-auto px-9 py-4 border border-white/20 hover:border-pomodoro-400 text-slate-200 hover:text-white text-xs tracking-[0.2em] uppercase transition-all bg-black/20">
+          Speisekarte ansehen
+        </a>
+      </div>
+
+      <!-- KEY FACTS BADGES -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-16 pt-8 border-t border-white/10 text-center">
+        <div class="p-3">
+          <div class="font-serif text-2xl text-pomodoro-300">450°C</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">Echter Steinofen</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-white">4.4 ★</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">Google Rezensionen</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-emerald-400">800 m</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">von HTL Rennweg</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-white">Täglich</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">11:00–22:30 durchgehend</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEINOFEN HIGHLIGHT SECTION -->
+  <section id="steinofen" class="py-16 bg-slatecustom-900 border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="border border-pomodoro-500/30 bg-slatecustom-850 p-8 sm:p-12 relative overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-8 space-y-4">
+            <div class="flex items-center gap-2 text-pomodoro-400 text-[10px] uppercase tracking-[0.25em] font-semibold">
+              <span>Spezialität des Hauses &bull; Forno a Legna</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal">
+              Pizza Parma con Rucola &amp; Grana
+            </h2>
+
+            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+              Knusprig im Steinofen gebackener Boden mit fruchtiger San Marzano Tomatensauce und Fior di Latte Mozzarella, nach dem Backen üppig belegt mit 24 Monate gereiftem Prosciutto di Parma, frischem Baby-Rucola und feinsten Hobeln von Grana Padano DOP.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-1">
+              <span>Allergene: <strong class="text-slate-200">[A, G]</strong></span>
+              <span>•</span>
+              <span class="text-pomodoro-300 font-medium">Bestseller von Gästen &amp; Stammkunden</span>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 flex flex-col md:items-end justify-between gap-4">
+            <div class="text-left md:text-right">
+              <span class="font-serif text-3xl text-pomodoro-300">€ 16,50</span>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-400 mt-0.5">33 cm Durchmesser</span>
+            </div>
+            <button onclick="openModal('Pizza Parma con Rucola')" class="px-6 py-3 bg-pomodoro-500 hover:bg-pomodoro-600 text-white text-xs tracking-widest uppercase font-semibold transition-all">
+              Tisch vormerken
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE SECTION -->
+  <section id="speisekarte" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-[10px] tracking-[0.3em] uppercase text-pomodoro-400 font-semibold mb-2">Unsere Karte</div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-white font-light">Pizzen &amp; Hausgemachte Klassiker</h2>
+      <p class="text-xs sm:text-sm text-slate-400 mt-4 font-light leading-relaxed">
+        Aus dem Steinofen frisch serviert. Alle Gerichte mit klar ausgewiesener österreichischer Allergenkennzeichnung.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex justify-center flex-wrap gap-2 mt-10 border-b border-white/10 pb-4">
+        <button onclick="filterDishes('all', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-pomodoro-500 text-white font-medium">Alle Speisen</button>
+        <button onclick="filterDishes('pizza', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-white">Steinofen-Pizzen</button>
+        <button onclick="filterDishes('pasta', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-white">Pasta &amp; al Forno</button>
+        <button onclick="filterDishes('dolci', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-white">Dolci / Dessert</button>
+      </div>
+    </div>
+
+    <!-- Dishes Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Dish 1: Pizza Quattro Stagioni -->
+      <div class="dish-item pizza bg-slatecustom-900 border border-white/10 p-6 flex flex-col justify-between hover:border-pomodoro-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=350&q=80" alt="Pizza Quattro Stagioni" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Pizza Quattro Stagioni</h3>
+                <span class="font-serif text-xl text-pomodoro-300 ml-3">€ 14,80</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Der neapolitanische Klassiker in vier Vierteln: San Marzano Tomatensauce, Fior di Latte Mozzarella, zarte Artischockenherzen, Taggiasca-Oliven, frische Champignons und Prosciutto Cotto.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A, G]</strong></span>
+          <span class="text-pomodoro-400 font-medium">Steinofen-Hit</span>
+        </div>
+      </div>
+
+      <!-- Dish 2: Pizza Parma con Rucola & Grana -->
+      <div class="dish-item pizza bg-slatecustom-900 border border-white/10 p-6 flex flex-col justify-between hover:border-pomodoro-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=350&q=80" alt="Pizza Parma con Rucola & Grana" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Pizza Parma con Rucola</h3>
+                <span class="font-serif text-xl text-pomodoro-300 ml-3">€ 16,50</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                San Marzano Tomaten, Fior di Latte, garniert mit feinstem Prosciutto di Parma (24 Monate gereift), frischem knackigem Baby-Rucola und handgehobelten Splittern von Grana Padano DOP.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A, G]</strong></span>
+          <span class="text-amber-400 font-medium">Kundenliebling</span>
+        </div>
+      </div>
+
+      <!-- Dish 3: Pizza Calzone Farcito -->
+      <div class="dish-item pizza bg-slatecustom-900 border border-white/10 p-6 flex flex-col justify-between hover:border-pomodoro-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=350&q=80" alt="Pizza Calzone Farcito" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Pizza Calzone Farcito</h3>
+                <span class="font-serif text-xl text-pomodoro-300 ml-3">€ 15,20</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Goldgelb aufgegangene Teigtasche aus dem Steinofen: gefüllt mit saftigem Prosciutto Cotto, feiner Ricotta fresca, Fior di Latte Mozzarella, Salami Milano, Basilikum und Tomatensauce.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A, G]</strong></span>
+          <span class="text-pomodoro-300 font-medium">Gefüllte Spezialität</span>
+        </div>
+      </div>
+
+      <!-- Dish 4: Lasagne al Forno Emiliana -->
+      <div class="dish-item pasta bg-slatecustom-900 border border-white/10 p-6 flex flex-col justify-between hover:border-pomodoro-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=350&q=80" alt="Lasagne al Forno Emiliana" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Lasagne al Forno Emiliana</h3>
+                <span class="font-serif text-xl text-pomodoro-300 ml-3">€ 14,50</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Im Steinofen goldbraun gratiniert: handgemachte Schichten pasta all'uovo, traditionell geschmortes Ragù Bolognese vom Rind, samtige Béchamelsauce und Parmigiano Reggiano.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A, C, G, L]</strong></span>
+          <span class="text-emerald-400 font-medium">Hausgemacht al Forno</span>
+        </div>
+      </div>
+
+      <!-- Dish 5: Penne all'Arrabbiata con Peperoncino -->
+      <div class="dish-item pasta bg-slatecustom-900 border border-white/10 p-6 flex flex-col justify-between hover:border-pomodoro-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=350&q=80" alt="Penne all'Arrabbiata con Peperoncino" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Penne all'Arrabbiata</h3>
+                <span class="font-serif text-xl text-pomodoro-300 ml-3">€ 12,20</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Bissfeste Penne Rigate in pikant-würziger Sauce aus San Marzano Tomaten, feinem Knoblauch, feurig-frischem Peperoncino, nativem Olivenöl extra und glatter Blattpetersilie.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A]</strong></span>
+          <span class="text-pomodoro-400 font-medium">Pikant &amp; Vegetarisch</span>
+        </div>
+      </div>
+
+      <!-- Dish 6: Torta della Nonna -->
+      <div class="dish-item dolci bg-slatecustom-900 border border-white/10 p-6 flex flex-col justify-between hover:border-pomodoro-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=350&q=80" alt="Torta della Nonna" class="w-24 h-24 object-cover shrink-0 border border-white/10">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Torta della Nonna</h3>
+                <span class="font-serif text-xl text-pomodoro-300 ml-3">€ 7,80</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Traditioneller toskanischer Mürbteigkuchen nach altem Familienrezept, gefüllt mit feiner Zitronen-Crema pasticcera, getoppt mit gerösteten Pinienkernen und Puderzucker.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A, C, G]</strong></span>
+          <span class="text-crust-400 font-medium">Dolce Finale</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ALLERGEN LEGEND -->
+    <div class="mt-12 p-6 bg-slatecustom-900 border border-white/5 text-[11px] text-slate-400 leading-relaxed">
+      <div class="font-semibold text-white uppercase tracking-widest text-[10px] mb-2">Österreichische Allergenkennzeichnung:</div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
+        <span><strong>A:</strong> Gluten</span>
+        <span><strong>B:</strong> Krebstiere</span>
+        <span><strong>C:</strong> Ei</span>
+        <span><strong>D:</strong> Fisch</span>
+        <span><strong>G:</strong> Milch / Laktose</span>
+        <span><strong>L:</strong> Sellerie</span>
+        <span><strong>R:</strong> Weichtiere</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 48H REIFETEIG & OFEN-PHILOSOPHIE -->
+  <section id="teig" class="py-20 bg-slatecustom-900 border-y border-white/10 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-pomodoro-400 font-semibold border-b border-pomodoro-500/30 pb-1">
+              Das Teig-Geheimnis &bull; Forno Napoletano
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal leading-tight">
+            48 Stunden Ruhezeit.<br>
+            <span class="italic text-pomodoro-400">Für unvergleichliche Bekömmlichkeit.</span>
+          </h2>
+
+          <p class="text-sm text-slate-300 leading-relaxed font-light">
+            Eine echte neapolitanische Pizza verlangt Geduld. Unser Teig reift volle 48 Stunden bei kontrollierter Temperatur. Dadurch entwickelt er seine charakteristischen feinen Aromen und wird wunderbar bekömmlich und luftig. Bei 450°C reicht eine knappe Minute im Steinofen für den typisch leopardengefleckten, krossen Rand.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 pt-4 border-t border-white/10 text-xs">
+            <div>
+              <div class="font-serif text-xl text-white">San Marzano Tomaten</div>
+              <p class="text-slate-400 mt-1">Ausschließlich fruchtig-süße Tomaten vom Fuße des Vesuvs.</p>
+            </div>
+            <div>
+              <div class="font-serif text-xl text-pomodoro-300">Fior di Latte Mozzarella</div>
+              <p class="text-slate-400 mt-1">Täglich frisch geliefert für die perfekte saftige Schmelze.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="border border-white/10 bg-slatecustom-950 p-4 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=800&q=80" alt="Pizzaiolo formt Pizzateig mit Handwerkskunst" class="w-full h-80 object-cover">
+            <div class="p-4 text-center">
+              <span class="font-serif italic text-crust-300 text-sm">„Mehl, Wasser, Hefe, Meersalz und pure Leidenschaft – mehr braucht eine ehrliche Pizza nicht.“</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT & KONTAKT -->
+  <section id="standort" class="py-20 bg-slatecustom-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-pomodoro-400 font-semibold">Besuchen Sie uns</span>
+          <h2 class="font-serif text-4xl text-white mt-2 mb-6">Erdbergstraße 93</h2>
+          
+          <div class="space-y-4 text-xs font-light text-slate-300">
+            <p><strong class="text-white font-semibold">Adresse:</strong> Erdbergstraße 93, 1030 Wien (nahe Kardinal-Nagl-Platz)</p>
+            <p><strong class="text-pomodoro-300 font-semibold">Fußweg:</strong> ca. 800 Meter (ca. 10 Gehminuten) von der HTL Rennweg</p>
+            <p><strong class="text-white font-semibold">Öffentlich:</strong> U3 Station Kardinal-Nagl-Platz (nur 2 Gehminuten) oder Bus 77A</p>
+            <p><strong class="text-white font-semibold">Telefon:</strong> <a href="tel:+4317180415" class="text-pomodoro-300 underline">+43 1 718 04 15</a></p>
+            <p><strong class="text-white font-semibold">Öffnungszeiten:</strong><br>
+              Täglich (Montag bis Sonntag): 11:00 – 22:30 Uhr durchgehend geöffnet
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://maps.google.com/?q=Erdbergstra%C3%9Fe+93+1030+Wien" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-slate-900 text-xs uppercase tracking-widest font-semibold hover:bg-slate-200 transition-all">
+              Route in Google Maps ↗
+            </a>
+            <button onclick="openModal()" class="px-6 py-3 border border-pomodoro-500/80 hover:bg-pomodoro-500 text-white text-xs uppercase tracking-widest font-medium transition-all">
+              Tisch reservieren
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-slatecustom-900 border border-white/10 p-8 flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif text-2xl text-white mb-3">Tisch oder Abholung bestellen</h3>
+            <p class="text-xs text-slate-300 font-light leading-relaxed mb-6">
+              Planen Sie einen gemütlichen Abend mit Freunden, eine Feier oder möchten Sie Ihre Lieblingspizza frisch aus dem Steinofen abholen? Rufen Sie uns einfach an oder nutzen Sie das Online-Formular.
+            </p>
+            <div class="p-4 bg-slatecustom-950 border border-pomodoro-500/30 text-xs text-slate-200 space-y-1">
+              <div class="text-pomodoro-300">📞 Schnelle telefonische Auskunft &amp; Reservierung:</div>
+              <a href="tel:+4317180415" class="text-sm font-serif text-white block font-semibold">+43 1 718 04 15</a>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-white/10 text-[11px] text-slate-400">
+            Täglich durchgehend warmes Steinofen-Essen von 11:00 bis 22:30 Uhr.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-slatecustom-950 text-slate-500 py-10 text-xs">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+      <div>&copy; 2026 Pizzeria Al Quattro • Erdbergstraße 93, 1030 Wien. Alle Rechte vorbehalten.</div>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-slate-300 transition-colors">Impressum</a>
+        <a href="#" class="hover:text-slate-300 transition-colors">Datenschutz</a>
+        <a href="#" class="hover:text-slate-300 transition-colors">Allergenverordnung</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-slatecustom-900 border border-white/15 max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-pomodoro-400 font-semibold">Tisch- &amp; Platzreservierung</span>
+        <h3 class="font-serif text-3xl font-normal text-white mt-1">Pizzeria Al Quattro</h3>
+        <p class="text-xs text-slate-400 mt-1">Erdbergstraße 93 • Schnelle telefonische Rückbestätigung.</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitReservation(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Ihr Name *</label>
+          <input type="text" required placeholder="Vor- und Nachname" class="w-full bg-slatecustom-950 border border-white/15 focus:border-pomodoro-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43 1..." class="w-full bg-slatecustom-950 border border-white/15 focus:border-pomodoro-500 px-4 py-3 text-white outline-none">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">E-Mail</label>
+            <input type="email" placeholder="name@beispiel.at" class="w-full bg-slatecustom-950 border border-white/15 focus:border-pomodoro-500 px-4 py-3 text-white outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Datum</label>
+            <input type="date" required id="res-date" class="w-full bg-slatecustom-950 border border-white/15 focus:border-pomodoro-500 px-3 py-3 text-white outline-none text-[11px]">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Uhrzeit</label>
+            <select class="w-full bg-slatecustom-950 border border-white/15 focus:border-pomodoro-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>12:00 Mittag</option>
+              <option>13:00 Mittag</option>
+              <option selected>18:00 Abend</option>
+              <option>19:00 Abend</option>
+              <option>20:00 Abend</option>
+              <option>21:00 Spät</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Gäste</label>
+            <select class="w-full bg-slatecustom-950 border border-white/15 focus:border-pomodoro-500 px-3 py-3 text-white outline-none text-[11px]">
+              <option>2 Personen</option>
+              <option>3–4 Personen</option>
+              <option>5–6 Personen</option>
+              <option>Gruppe 7+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Gericht vorbestellen / Sonderwunsch</label>
+          <input type="text" id="special-dish" placeholder="z.B. Pizza Calzone, Lasagne al Forno vorbestellen" class="w-full bg-slatecustom-950 border border-white/15 focus:border-pomodoro-500 px-4 py-3 text-white outline-none">
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-pomodoro-500 hover:bg-pomodoro-600 text-white font-semibold tracking-widest uppercase transition-all text-xs mt-3">
+          Reservierungsanfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-3xl text-white mb-2">Vielen Dank!</h4>
+        <p class="text-xs text-slate-300 mb-6">Wir haben Ihre Reservierungsanfrage erhalten und melden uns zur Bestätigung.</p>
+        <button onclick="closeModal()" class="px-6 py-2.5 border border-pomodoro-500 text-pomodoro-300 text-xs tracking-wider uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY CTA BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-slatecustom-950/95 backdrop-blur-md border-t border-white/15 px-3 py-2.5 flex items-center justify-between gap-2">
+    <a href="tel:+4317180415" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-slate-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📞</span>
+      <span>Anrufen</span>
+    </a>
+    <a href="#speisekarte" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-slate-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>🍕</span>
+      <span>Karte</span>
+    </a>
+    <a href="https://maps.google.com/?q=Erdbergstra%C3%9Fe+93+1030+Wien" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-slate-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📍</span>
+      <span>800 m</span>
+    </a>
+    <button onclick="openModal()" class="flex-1 py-2.5 bg-pomodoro-500 text-white rounded text-center text-[11px] font-semibold tracking-wide">
+      Tisch
+    </button>
+  </div>
+
+  <script>
+    function filterDishes(cat, btn) {
+      document.querySelectorAll('.menu-tab').forEach(b => {
+        b.classList.remove('border-pomodoro-500', 'text-white', 'font-medium');
+        b.classList.add('border-transparent', 'text-slate-400');
+      });
+      btn.classList.add('border-pomodoro-500', 'text-white', 'font-medium');
+      btn.classList.remove('border-transparent', 'text-slate-400');
+
+      document.querySelectorAll('.dish-item').forEach(card => {
+        if (cat === 'all' || card.classList.contains(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(dish = '') {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      if (dish) {
+        document.getElementById('special-dish').value = 'Vorbestellung: ' + dish;
+      }
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitReservation(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

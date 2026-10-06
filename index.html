@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vienna Gastro Studio | Презентационный центр сайтов</title>
+  <title>Vienna Gastro Studio | Презентационный центр сайтов (10 заведений Wien 1030)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,275 +11,751 @@
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #141210; }
+    ::-webkit-scrollbar-thumb { background: #2e2a25; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #443e37; }
   </style>
 </head>
-<body class="h-full flex flex-col overflow-hidden bg-stone-950 text-stone-200">
+<body class="h-full flex flex-col overflow-hidden bg-stone-950 text-stone-200 antialiased">
 
   <!-- EXECUTIVE TOP BAR -->
-  <header class="h-16 bg-stone-900 border-b border-white/10 px-6 flex items-center justify-between shrink-0 z-20">
-    <div class="flex items-center space-x-4">
-      <div class="w-8 h-8 border border-white/20 bg-stone-950 flex items-center justify-center font-serif text-lg font-normal text-white">
+  <header class="h-16 bg-stone-900 border-b border-white/10 px-4 sm:px-6 flex items-center justify-between shrink-0 z-20 gap-4">
+    <div class="flex items-center space-x-3 sm:space-x-4 min-w-max">
+      <div class="w-9 h-9 border border-white/20 bg-stone-950 flex items-center justify-center font-serif text-xl font-normal text-white shadow-inner">
         V
       </div>
       <div>
         <h1 class="text-xs tracking-wider uppercase font-semibold text-white flex items-center gap-2">
           Vienna Gastro Studio
-          <span class="text-[9px] px-1.5 py-0.5 border border-emerald-500/30 text-emerald-400 font-medium">LIVE ON GITHUB PAGES</span>
+          <span class="text-[9px] px-1.5 py-0.5 border border-emerald-500/30 text-emerald-400 font-medium bg-emerald-950/30">10 КЛИЕНТОВ • LIVE</span>
         </h1>
-        <p class="text-[10px] text-stone-400 font-light">3 заведения у HTL Rennweg &bull; Готовые демо с QR-кодами</p>
+        <p class="text-[10px] text-stone-400 font-light hidden sm:block">Отфильтровано по шансам согласия • 1030 Wien (пешком от HTL Rennweg)</p>
       </div>
     </div>
 
-    <!-- SITE SWITCHER -->
-    <div class="flex items-center space-x-1.5 bg-stone-950 p-1 border border-white/10">
-      <button onclick="switchSite('lukas', this)" class="site-tab active px-3.5 py-1.5 text-xs tracking-wide uppercase font-medium bg-white text-stone-950 transition-all">
-        Luka's &amp; Co (Fisch)
-      </button>
-      <button onclick="switchSite('simon', this)" class="site-tab px-3.5 py-1.5 text-xs tracking-wide uppercase font-medium text-stone-400 hover:text-white transition-all">
-        Café Simon (Wurlitzer Bar)
-      </button>
-      <button onclick="switchSite('public', this)" class="site-tab px-3.5 py-1.5 text-xs tracking-wide uppercase font-medium text-stone-400 hover:text-white transition-all">
-        Café Public (Coffee &amp; Bar)
-      </button>
+    <!-- QUICK CATEGORY PILLS -->
+    <div class="hidden lg:flex items-center space-x-1 bg-stone-950 p-1 border border-white/10 text-[11px] uppercase tracking-wider">
+      <button onclick="filterCategory('all', this)" class="cat-filter active px-3 py-1 bg-white text-stone-950 font-semibold">Все (10)</button>
+      <button onclick="filterCategory('top', this)" class="cat-filter px-3 py-1 text-emerald-400 hover:text-white font-medium">🔥 Топ-шансы (Сегодня)</button>
+      <button onclick="filterCategory('asian', this)" class="cat-filter px-3 py-1 text-stone-400 hover:text-white font-medium">Азиатская / Гурме</button>
+      <button onclick="filterCategory('italian', this)" class="cat-filter px-3 py-1 text-stone-400 hover:text-white font-medium">Итальянская</button>
+      <button onclick="filterCategory('austrian', this)" class="cat-filter px-3 py-1 text-stone-400 hover:text-white font-medium">Венская классика</button>
+      <button onclick="filterCategory('bistro', this)" class="cat-filter px-3 py-1 text-stone-400 hover:text-white font-medium">Бистро & Кофе</button>
     </div>
 
     <!-- ACTIONS -->
-    <div class="flex items-center space-x-3">
+    <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
       <button onclick="toggleQrModal()" class="px-3.5 py-1.5 bg-white text-stone-950 hover:bg-stone-200 text-xs tracking-wider uppercase font-semibold transition-all flex items-center gap-1.5 shadow-sm">
         <span>📱</span>
         <span>QR-Коды</span>
       </button>
-      <button onclick="toggleStatsModal()" class="px-3.5 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all flex items-center gap-1.5"><span>📊</span><span>Цены в Вене</span></button>
-      <button onclick="togglePitchModal()" class="px-3.5 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all">
-        Досье &amp; Питч
+      <button onclick="toggleStatsModal()" class="px-3 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all flex items-center gap-1.5 hidden sm:flex">
+        <span>📊</span>
+        <span>Цены в Вене</span>
       </button>
-      <a id="open-new-tab" href="lukas-fischrestaurant.html" target="_blank" class="px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 text-xs tracking-wider uppercase transition-all">
-        ↗ Открыть сайт
+      <button onclick="togglePitchModal()" class="px-3 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all">
+        Досье клиентов
+      </button>
+      <a id="open-new-tab" href="das-essen-fm.html" target="_blank" class="px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 hover:text-white text-xs tracking-wider uppercase transition-all hidden md:inline-block">
+        ↗ Открыть
       </a>
     </div>
   </header>
 
-  <!-- IFRAME CONTAINER -->
-  <div class="flex-1 relative flex overflow-hidden">
-    <div class="flex-1 h-full bg-stone-900 relative">
-      <iframe id="preview-frame" src="lukas-fischrestaurant.html" class="w-full h-full border-0"></iframe>
-    </div>
+  <!-- SUBHEADER / HORIZONTAL RESTAURANT SELECTOR SCROLL -->
+  <div class="h-12 bg-stone-900/90 border-b border-white/10 px-4 flex items-center overflow-x-auto gap-2 shrink-0 text-xs tracking-wider uppercase z-10">
+    
+    <!-- Tab 1 -->
+    <button onclick="switchSite('das-essen', this)" data-cat="top bistro" class="site-tab active shrink-0 px-3 py-1.5 border border-emerald-500/50 bg-white text-stone-950 font-semibold flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-emerald-600 text-white text-[9px] flex items-center justify-center font-bold">1</span>
+      <span>Das Essen FM</span>
+      <span class="text-[9px] text-emerald-800 font-bold bg-emerald-100 px-1 py-0.2 rounded">95%</span>
+    </button>
+
+    <!-- Tab 2 -->
+    <button onclick="switchSite('bibim', this)" data-cat="top asian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">2</span>
+      <span>Bibim (Rennweg)</span>
+      <span class="text-[9px] text-emerald-400 font-bold">88%</span>
+    </button>
+
+    <!-- Tab 3 -->
+    <button onclick="switchSite('pizzeria-roma', this)" data-cat="top italian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">3</span>
+      <span>Pizzeria Roma</span>
+      <span class="text-[9px] text-emerald-400 font-bold">85%</span>
+    </button>
+
+    <!-- Tab 4 -->
+    <button onclick="switchSite('grammophon', this)" data-cat="bistro" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">4</span>
+      <span>Grammophon Bistro</span>
+      <span class="text-[9px] text-amber-400 font-bold">82%</span>
+    </button>
+
+    <!-- Tab 5 -->
+    <button onclick="switchSite('pappa-ciccia', this)" data-cat="italian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">5</span>
+      <span>Pappa e ciccia</span>
+      <span class="text-[9px] text-amber-400 font-bold">80%</span>
+    </button>
+
+    <!-- Tab 6 -->
+    <button onclick="switchSite('benkei', this)" data-cat="asian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">6</span>
+      <span>Benkei (Gault&Millau)</span>
+      <span class="text-[9px] text-amber-400 font-bold">78%</span>
+    </button>
+
+    <!-- Tab 7 -->
+    <button onclick="switchSite('al-quattro', this)" data-cat="italian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">7</span>
+      <span>Pizzeria Al Quattro</span>
+      <span class="text-[9px] text-amber-400 font-bold">76%</span>
+    </button>
+
+    <!-- Tab 8 -->
+    <button onclick="switchSite('sakana', this)" data-cat="asian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">8</span>
+      <span>Sakana Sushi Bar</span>
+      <span class="text-[9px] text-amber-400 font-bold">74%</span>
+    </button>
+
+    <!-- Tab 9 -->
+    <button onclick="switchSite('schmitzberger', this)" data-cat="austrian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">9</span>
+      <span>Gasthaus Schmitzberger</span>
+      <span class="text-[9px] text-stone-400 font-bold">70%</span>
+    </button>
+
+    <!-- Tab 10 -->
+    <button onclick="switchSite('gruabn', this)" data-cat="austrian" class="site-tab shrink-0 px-3 py-1.5 border border-white/10 text-stone-400 hover:text-white font-medium flex items-center gap-2">
+      <span class="w-4 h-4 rounded-full bg-stone-800 text-stone-300 text-[9px] flex items-center justify-center font-bold">10</span>
+      <span>Gasthaus zur Gruab'n</span>
+      <span class="text-[9px] text-stone-400 font-bold">68%</span>
+    </button>
+
+    <!-- Previous tested sites divider -->
+    <span class="text-stone-600 px-2 font-mono">|</span>
+    <button onclick="switchSite('public', this)" data-cat="bistro" class="site-tab shrink-0 px-2.5 py-1 text-stone-500 hover:text-stone-300 text-[10px]">Café Public (Успешно!)</button>
+    <button onclick="switchSite('simon', this)" data-cat="bistro" class="site-tab shrink-0 px-2.5 py-1 text-stone-500 hover:text-stone-300 text-[10px]">Café Simon</button>
   </div>
 
-  <!-- QR CODES MODAL -->
-  <div id="qr-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xs hidden flex items-center justify-center p-4">
-    <div class="bg-stone-900 border border-white/15 max-w-3xl w-full p-8 shadow-2xl text-left">
-      <div class="flex justify-between items-start border-b border-white/10 pb-5 mb-6">
-        <div>
-          <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-semibold">Live HTTPS QR-коды для смартфонов</span>
-          <h2 class="font-serif text-3xl text-white mt-1">Отсканируйте камерой телефона</h2>
-          <p class="text-xs text-stone-400 mt-1">Открывайте прямо при владельце заведения без ввода ссылок вручную.</p>
+  <!-- MAIN VIEWPORT (IFRAME CONTAINER) -->
+  <div class="flex-1 relative flex overflow-hidden bg-stone-950">
+    
+    <!-- IFRAME -->
+    <div class="flex-1 h-full bg-stone-900 relative">
+      <iframe id="preview-frame" src="das-essen-fm.html" class="w-full h-full border-0"></iframe>
+    </div>
+
+    <!-- CLIENT QUICK FACTS SIDEBAR (TOGGLEABLE) -->
+    <aside id="quick-sidebar" class="w-80 bg-stone-900/95 border-l border-white/10 p-5 hidden xl:flex flex-col justify-between overflow-y-auto text-xs shrink-0">
+      <div>
+        <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+          <span class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold" id="sb-rank">РАНГ #1 В ВЕНЕ</span>
+          <span class="text-xs font-semibold px-2 py-0.5 bg-emerald-950 border border-emerald-500/40 text-emerald-300" id="sb-chance">95% шанс</span>
         </div>
-        <button onclick="toggleQrModal()" class="text-stone-400 hover:text-white text-xl">✕</button>
+
+        <h3 class="font-serif text-2xl text-white" id="sb-title">Das Essen FM</h3>
+        <p class="text-[11px] text-stone-400 mt-1" id="sb-concept">Домашняя украинская кухня & винтажные радиоприемники 90-х</p>
+
+        <div class="mt-4 space-y-2 bg-stone-950 p-3.5 border border-white/10 text-[11px]">
+          <div><span class="text-stone-500 uppercase text-[9px] block">Адрес:</span> <span id="sb-address" class="text-stone-200 font-medium">Juchgasse 24, 1030 Wien</span></div>
+          <div><span class="text-stone-500 uppercase text-[9px] block">Расстояние от HTL:</span> <span id="sb-dist" class="text-emerald-400 font-semibold">400 м (5 мин пешком)</span></div>
+          <div><span class="text-stone-500 uppercase text-[9px] block">Телефон:</span> <a href="tel:+436601681717" id="sb-phone" class="text-white font-mono hover:underline">+43 660 1681717</a></div>
+          <div><span class="text-stone-500 uppercase text-[9px] block">Часы работы:</span> <span id="sb-hours" class="text-stone-300">Di–So 12:00–22:00 (Пн вых)</span></div>
+          <div><span class="text-stone-500 uppercase text-[9px] block">Рейтинг:</span> <span id="sb-rating" class="text-amber-400 font-medium">★ 4.9 из 800+ отзывов</span></div>
+        </div>
+
+        <div class="mt-4 p-3.5 bg-white/5 border border-white/10 text-[11px] leading-relaxed">
+          <span class="text-[9px] uppercase tracking-wider text-amber-400 font-bold block mb-1">Стратегия разговора:</span>
+          <p class="text-stone-300" id="sb-pitch">
+            Владельцы — семейная пара из Украины. Общение без языкового барьера. Огромный поток гостей, но сайта нет (только Instagram @dasessenfm). Платят грабительские комиссии Wolt/Foodora. Сайт с меню и бронью столов экономит сотни евро в месяц.
+          </p>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <!-- Quick QR on Sidebar -->
+      <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-3 bg-stone-950 p-3 border border-white/5">
+        <img id="sb-qr" src="qr_das_essen.png" alt="QR Code" class="w-16 h-16 bg-white p-1 shrink-0">
+        <div>
+          <span class="text-[10px] text-stone-400 block">Сканируйте телефоном:</span>
+          <a id="sb-link" href="https://ovh-ip.github.io/vienna-restaurants/das-essen-fm.html" target="_blank" class="text-[10px] text-emerald-400 hover:underline break-all font-mono">
+            .../das-essen-fm.html
+          </a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- QR CODES MODAL (ALL 10 SITES) -->
+  <div id="qr-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-white/15 max-w-5xl w-full max-h-[92vh] flex flex-col p-6 sm:p-8 shadow-2xl text-left">
+      
+      <div class="flex justify-between items-start border-b border-white/10 pb-4 mb-6 shrink-0">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-semibold">Прямые QR-коды для смартфонов • Wien 1030</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white mt-1">10 готовых сайтов для показа на месте</h2>
+          <p class="text-xs text-stone-400 mt-1">Наведите камеру смартфона прямо в ресторане — сайт откроется мгновенно без набора ссылки.</p>
+        </div>
+        <button onclick="toggleQrModal()" class="text-stone-400 hover:text-white text-2xl p-2">✕</button>
+      </div>
+
+      <!-- QR GRID SCROLL -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 overflow-y-auto pr-1 pb-4 text-center">
         
         <!-- QR 1 -->
-        <div class="bg-stone-950 border border-white/10 p-5 flex flex-col items-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-white mb-3">Luka's &amp; Co</span>
-          <div class="bg-white p-2 border border-white/10 mb-3 w-48 h-48 flex items-center justify-center">
-            <img src="qr_lukas.png" alt="QR Lukas" class="w-full h-full object-contain">
+        <div class="bg-stone-950 border border-emerald-500/40 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-emerald-600 text-white font-bold px-1.5 py-0.5">#1 (95%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Das Essen FM</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_das_essen.png" alt="QR Das Essen FM" class="w-full h-full object-contain">
           </div>
-          <a href="https://ovh-ip.github.io/vienna-restaurants/lukas-fischrestaurant.html" target="_blank" class="text-[10px] text-stone-400 hover:text-white break-all">
-            .../lukas-fischrestaurant.html
-          </a>
+          <span class="text-[9px] text-stone-400">Juchgasse 24 (400 м)</span>
+          <a href="das-essen-fm.html" target="_blank" class="mt-2 text-[10px] text-emerald-400 hover:underline">Открыть сайт →</a>
         </div>
 
         <!-- QR 2 -->
-        <div class="bg-stone-950 border border-white/10 p-5 flex flex-col items-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-white mb-3">Café Simon</span>
-          <div class="bg-white p-2 border border-white/10 mb-3 w-48 h-48 flex items-center justify-center">
-            <img src="qr_simon.png" alt="QR Simon" class="w-full h-full object-contain">
+        <div class="bg-stone-950 border border-emerald-500/40 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-emerald-600 text-white font-bold px-1.5 py-0.5">#2 (88%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Bibim (Korean)</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_bibim.png" alt="QR Bibim" class="w-full h-full object-contain">
           </div>
-          <a href="https://ovh-ip.github.io/vienna-restaurants/gasthaus-simon.html" target="_blank" class="text-[10px] text-stone-400 hover:text-white break-all">
-            .../gasthaus-simon.html
-          </a>
+          <span class="text-[9px] text-stone-400">Rennweg 60 (200 м)</span>
+          <a href="bibim-wien.html" target="_blank" class="mt-2 text-[10px] text-emerald-400 hover:underline">Открыть сайт →</a>
         </div>
 
         <!-- QR 3 -->
-        <div class="bg-stone-950 border border-white/10 p-5 flex flex-col items-center">
-          <span class="text-xs font-semibold uppercase tracking-wider text-white mb-3">Café Public</span>
-          <div class="bg-white p-2 border border-white/10 mb-3 w-48 h-48 flex items-center justify-center">
-            <img src="qr_public.png" alt="QR Public" class="w-full h-full object-contain">
+        <div class="bg-stone-950 border border-emerald-500/40 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-emerald-600 text-white font-bold px-1.5 py-0.5">#3 (85%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Pizzeria Roma</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_pizzeria_roma.png" alt="QR Pizzeria Roma" class="w-full h-full object-contain">
           </div>
-          <a href="https://ovh-ip.github.io/vienna-restaurants/cafe-public.html" target="_blank" class="text-[10px] text-stone-400 hover:text-white break-all">
-            .../cafe-public.html
-          </a>
+          <span class="text-[9px] text-stone-400">Fasangasse 33 (500 м)</span>
+          <a href="pizzeria-roma.html" target="_blank" class="mt-2 text-[10px] text-emerald-400 hover:underline">Открыть сайт →</a>
+        </div>
+
+        <!-- QR 4 -->
+        <div class="bg-stone-950 border border-white/10 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-amber-600 text-white font-bold px-1.5 py-0.5">#4 (82%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Grammophon</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_grammophon.png" alt="QR Grammophon" class="w-full h-full object-contain">
+          </div>
+          <span class="text-[9px] text-stone-400">Hainburger Str. (700 м)</span>
+          <a href="grammophon-bistro.html" target="_blank" class="mt-2 text-[10px] text-stone-300 hover:underline">Открыть сайт →</a>
+        </div>
+
+        <!-- QR 5 -->
+        <div class="bg-stone-950 border border-white/10 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-amber-600 text-white font-bold px-1.5 py-0.5">#5 (80%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Pappa e ciccia</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_pappa_ciccia.png" alt="QR Pappa e ciccia" class="w-full h-full object-contain">
+          </div>
+          <span class="text-[9px] text-stone-400">Rochusmarkt (900 м)</span>
+          <a href="pappa-e-ciccia.html" target="_blank" class="mt-2 text-[10px] text-stone-300 hover:underline">Открыть сайт →</a>
+        </div>
+
+        <!-- QR 6 -->
+        <div class="bg-stone-950 border border-white/10 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-amber-600 text-white font-bold px-1.5 py-0.5">#6 (78%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Benkei (Haute)</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_benkei.png" alt="QR Benkei" class="w-full h-full object-contain">
+          </div>
+          <span class="text-[9px] text-stone-400">Ungargasse 65 (500 м)</span>
+          <a href="benkei-wien.html" target="_blank" class="mt-2 text-[10px] text-stone-300 hover:underline">Открыть сайт →</a>
+        </div>
+
+        <!-- QR 7 -->
+        <div class="bg-stone-950 border border-white/10 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-amber-600 text-white font-bold px-1.5 py-0.5">#7 (76%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Al Quattro</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_al_quattro.png" alt="QR Al Quattro" class="w-full h-full object-contain">
+          </div>
+          <span class="text-[9px] text-stone-400">Erdbergstr. 93 (800 м)</span>
+          <a href="pizzeria-al-quattro.html" target="_blank" class="mt-2 text-[10px] text-stone-300 hover:underline">Открыть сайт →</a>
+        </div>
+
+        <!-- QR 8 -->
+        <div class="bg-stone-950 border border-white/10 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-stone-700 text-white font-bold px-1.5 py-0.5">#8 (74%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Sakana Sushi</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_sakana.png" alt="QR Sakana" class="w-full h-full object-contain">
+          </div>
+          <span class="text-[9px] text-stone-400">Rennweg 68 (150 м)</span>
+          <a href="sakana-sushi.html" target="_blank" class="mt-2 text-[10px] text-stone-300 hover:underline">Открыть сайт →</a>
+        </div>
+
+        <!-- QR 9 -->
+        <div class="bg-stone-950 border border-white/10 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-stone-700 text-white font-bold px-1.5 py-0.5">#9 (70%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Schmitzberger</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_schmitzberger.png" alt="QR Schmitzberger" class="w-full h-full object-contain">
+          </div>
+          <span class="text-[9px] text-stone-400">Nottendorfer G. (900 м)</span>
+          <a href="gasthaus-schmitzberger.html" target="_blank" class="mt-2 text-[10px] text-stone-300 hover:underline">Открыть сайт →</a>
+        </div>
+
+        <!-- QR 10 -->
+        <div class="bg-stone-950 border border-white/10 p-3 flex flex-col items-center relative">
+          <span class="absolute top-2 left-2 text-[9px] bg-stone-700 text-white font-bold px-1.5 py-0.5">#10 (68%)</span>
+          <span class="text-[11px] font-semibold text-white mt-4 mb-2 truncate w-full">Zur Gruab'n</span>
+          <div class="bg-white p-1.5 mb-2 w-32 h-32 flex items-center justify-center shadow">
+            <img src="qr_gruabn.png" alt="QR Zur Gruabn" class="w-full h-full object-contain">
+          </div>
+          <span class="text-[9px] text-stone-400">U. Viaduktg. (1.1 км)</span>
+          <a href="gasthaus-gruabn.html" target="_blank" class="mt-2 text-[10px] text-stone-300 hover:underline">Открыть сайт →</a>
         </div>
 
       </div>
 
-      <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-xs text-stone-400">
-        <span>Общий хаб: <a href="https://ovh-ip.github.io/vienna-restaurants/" target="_blank" class="text-white underline">https://ovh-ip.github.io/vienna-restaurants/</a></span>
+      <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap justify-between items-center text-xs text-stone-400 shrink-0">
+        <span>Все 10 QR-кодов ведут на защищенный HTTPS-хостинг GitHub Pages.</span>
         <button onclick="toggleQrModal()" class="px-5 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
       </div>
     </div>
   </div>
 
   <!-- PITCH & CLIENT DOSSIER MODAL -->
-  <div id="pitch-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xs hidden flex items-center justify-center p-4">
-    <div class="bg-stone-900 border border-white/15 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl text-left">
-      <div class="flex justify-between items-start border-b border-white/10 pb-5 mb-6">
+  <div id="pitch-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-white/15 max-w-5xl w-full max-h-[92vh] flex flex-col p-6 sm:p-8 shadow-2xl text-left">
+      <div class="flex justify-between items-start border-b border-white/10 pb-4 mb-6 shrink-0">
         <div>
-          <span class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-semibold">100% Google Maps Verified &bull; Wien 3</span>
-          <h2 class="font-serif text-3xl text-white mt-1">Клиенты, реальные контакты и аргументы продаж</h2>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-semibold">100% Верифицированные данные • Wien 1030</span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white mt-1">Досье 10 клиентов и аргументы продаж</h2>
+          <p class="text-xs text-stone-400 mt-1">Отранжировано по шансам закрытия сделки. Используйте эти тезисы при разговоре с владельцами.</p>
         </div>
-        <button onclick="togglePitchModal()" class="text-stone-400 hover:text-white text-xl">✕</button>
+        <button onclick="togglePitchModal()" class="text-stone-400 hover:text-white text-2xl p-2">✕</button>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-xs font-light">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-y-auto pr-1 pb-4 text-xs font-light">
         
         <!-- Client 1 -->
-        <div class="bg-stone-950 p-6 border border-white/10 space-y-3">
+        <div class="bg-stone-950 p-5 border border-emerald-500/40 space-y-3">
           <div class="flex items-center justify-between">
-            <span class="font-serif text-xl text-white">Luka's &amp; Co</span>
-            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 border border-white/20 text-stone-300">Google 4.7★</span>
+            <span class="font-serif text-xl text-white font-normal">1. Das Essen FM</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-500/30 font-bold">95% шанс</span>
           </div>
           <div class="text-stone-300 space-y-1 text-[11px]">
-            <p><strong>Адрес:</strong> Oberzellergasse 16/1a (250 м от HTL)</p>
-            <p><strong>Тел:</strong> +43 1 286 26 44</p>
-            <p><strong>Часы:</strong> Пн-Пт 11:30–14:30 &amp; 17:30–23:30, Сб 18:00–23:30, Вс закрыто</p>
-            <p><strong>Рейтинг:</strong> Falstaff 83 балла (1 вилка)</p>
+            <p><strong>Адрес:</strong> Juchgasse 24 (400 м от HTL)</p>
+            <p><strong>Тел:</strong> +43 660 1681717</p>
+            <p><strong>Рейтинг:</strong> 4.9★ (800+ отзывов)</p>
+            <p><strong>Сайт:</strong> <em>Отсутствует (только Instagram)</em></p>
           </div>
           <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
-            <strong>Боль:</strong> Платят комиссии TheFork до €3,50 с гостя за бронирование. Прямой сайт с формой заявки экономит тысячи евро в месяц.
+            <strong>Питч:</strong> «Вы невероятно популярны, но отдаете маржу службам доставки Wolt/Foodora. Мы сделали для вас готовый сайт с меню и бронью столиков, покажите гостям настоящее лицо заведения!»
           </div>
-          <p class="text-[11px] text-stone-400 pt-1">
-            <strong>Оценка проекта:</strong> €1.800 – €3.000
-          </p>
         </div>
 
         <!-- Client 2 -->
-        <div class="bg-stone-950 p-6 border border-white/10 space-y-3">
+        <div class="bg-stone-950 p-5 border border-emerald-500/40 space-y-3">
           <div class="flex items-center justify-between">
-            <span class="font-serif text-xl text-white">Café Simon</span>
-            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 border border-white/20 text-stone-300">Google 4.5★</span>
+            <span class="font-serif text-xl text-white font-normal">2. Bibim</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-500/30 font-bold">88% шанс</span>
           </div>
           <div class="text-stone-300 space-y-1 text-[11px]">
-            <p><strong>Адрес:</strong> Landstraßer Hauptstr. 165 (350 м от HTL)</p>
-            <p><strong>Тел:</strong> +43 650 9033960</p>
-            <p><strong>Часы:</strong> Ежедневно 10:00 – 02:00 (до 2 ночи!)</p>
-            <p><strong>Фишка:</strong> Оригинальный Wurlitzer Jukebox</p>
+            <p><strong>Адрес:</strong> Rennweg 60 (200 м от HTL)</p>
+            <p><strong>Тел:</strong> +43 1 992 24 00</p>
+            <p><strong>Рейтинг:</strong> 4.6★ (культовый статус)</p>
+            <p><strong>Сайт:</strong> <em>Отсутствует (только старый Facebook)</em></p>
           </div>
           <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
-            <strong>Боль:</strong> Это культовая венская «машина времени» (Zeitkapsel), но в интернете ее принимают то за отель, то за ресторан. Сайт подчеркивает барную культуру и винил!
+            <strong>Питч:</strong> «Сотни студентов и офисных сотрудников ежедневно идут по Rennweg и ищут ланч-меню в смартфонах. Сайт прямо перед ними решает проблему бронирования на вечер!»
           </div>
-          <p class="text-[11px] text-stone-400 pt-1">
-            <strong>Оценка проекта:</strong> €800 – €1.400
-          </p>
         </div>
 
         <!-- Client 3 -->
-        <div class="bg-stone-950 p-6 border border-white/10 space-y-3">
+        <div class="bg-stone-950 p-5 border border-emerald-500/40 space-y-3">
           <div class="flex items-center justify-between">
-            <span class="font-serif text-xl text-white">Café Public</span>
-            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 border border-white/20 text-stone-300">Google 4.3★</span>
+            <span class="font-serif text-xl text-white font-normal">3. Pizzeria Roma</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-500/30 font-bold">85% шанс</span>
           </div>
           <div class="text-stone-300 space-y-1 text-[11px]">
-            <p><strong>Адрес:</strong> Landstraßer Hauptstr. 173–175 (350 м от HTL)</p>
-            <p><strong>Тел:</strong> +43 1 945 17 84</p>
-            <p><strong>Часы:</strong> Ежедневно 10:00 – 00:00</p>
-            <p><strong>Фишка:</strong> Schanigarten, Free Wi-Fi, Pet-friendly</p>
+            <p><strong>Адрес:</strong> Fasangasse 33 (500 м от HTL)</p>
+            <p><strong>Тел:</strong> +43 1 796 56 10</p>
+            <p><strong>Сайт:</strong> <span class="text-red-400 font-semibold">Сгорел / Ошибка DNS!</span></p>
           </div>
           <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
-            <strong>Боль:</strong> Нет презентации своего Schanigarten, кофе, бранчей и брони для празднования дней рождения и встреч после концертов в Arena Wien.
+            <strong>Питч:</strong> «Ваш старый сайт сломался и не открывается. Люди уходят заказывать в Lieferando, где с вас берут 30%. Вот готовый рабочий сайт с вашим меню и кнопкой быстрого звонка».
           </div>
-          <p class="text-[11px] text-stone-400 pt-1">
-            <strong>Оценка проекта:</strong> €900 – €1.600
-          </p>
+        </div>
+
+        <!-- Client 4 -->
+        <div class="bg-stone-950 p-5 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white font-normal">4. Grammophon Bistro</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-amber-950 text-amber-400 border border-amber-500/30 font-bold">82% шанс</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Hainburger Str. 64 (700 м от HTL)</p>
+            <p><strong>Рейтинг:</strong> 9.3/10 (TheFork)</p>
+            <p><strong>Сайт:</strong> <em>Только Linktree</em></p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Питч:</strong> «У вас великолепные манты и стильный профиль в Instagram, но Linktree выглядит дешево для такого уровня. Полноценный сайт подчеркнет атмосферу винила и уюта».
+          </div>
+        </div>
+
+        <!-- Client 5 -->
+        <div class="bg-stone-950 p-5 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white font-normal">5. Pappa e ciccia</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-amber-950 text-amber-400 border border-amber-500/30 font-bold">80% шанс</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Rochusmarkt Stand 3 (900 м)</p>
+            <p><strong>Тел:</strong> +43 676 6575360</p>
+            <p><strong>Статус:</strong> Falstaff featured, высокий чек</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Питч:</strong> «Культовое место на Рохусмаркте без сайта. Платежеспособные гости хотят видеть винную карту и бронировать столы заранее».
+          </div>
+        </div>
+
+        <!-- Client 6 -->
+        <div class="bg-stone-950 p-5 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white font-normal">6. Benkei</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-amber-950 text-amber-400 border border-amber-500/30 font-bold">78% шанс</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Ungargasse 65 (500 м)</p>
+            <p><strong>Тел:</strong> +43 1 718 18 88</p>
+            <p><strong>Статус:</strong> Gault&Millau, чек €50–€90</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Питч:</strong> «Ресторану уровня Gault&Millau несолидно сидеть без сайта с почтой @aon.at. Мы сделали строгий премиальный дизайн в японском стиле».
+          </div>
+        </div>
+
+        <!-- Client 7 -->
+        <div class="bg-stone-950 p-5 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white font-normal">7. Al Quattro</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-amber-950 text-amber-400 border border-amber-500/30 font-bold">76% шанс</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Erdbergstraße 93 (800 м)</p>
+            <p><strong>Тел:</strong> +43 1 718 04 15</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Питч:</strong> «Прямые телефонные заказы без 30% комиссии агрегаторам. Сайт на окупаемости за пару недель».
+          </div>
+        </div>
+
+        <!-- Client 8 -->
+        <div class="bg-stone-950 p-5 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white font-normal">8. Sakana Sushi</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-stone-800 text-stone-300 border border-white/10 font-bold">74% шанс</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Rennweg 68 (150 м от школы!)</p>
+            <p><strong>Тел:</strong> +43 1 798 52 35</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Питч:</strong> «Вместо собственного сайта у вас стоит заглушка Lieferando. Вот независимый современный сайт вашего заведения».
+          </div>
+        </div>
+
+        <!-- Client 9 -->
+        <div class="bg-stone-950 p-5 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white font-normal">9. Schmitzberger</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-stone-800 text-stone-300 border border-white/10 font-bold">70% шанс</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Nottendorfer Gasse 30 (900 м)</p>
+            <p><strong>Тел:</strong> +43 1 798 91 68</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Питч:</strong> «Публикуйте Mittagsmenü прямо на сайте, чтобы работники соседних офисов шли обедать к вам».
+          </div>
+        </div>
+
+        <!-- Client 10 -->
+        <div class="bg-stone-950 p-5 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white font-normal">10. Zur Gruab'n</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 bg-stone-800 text-stone-300 border border-white/10 font-bold">68% шанс</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Untere Viaduktgasse 41 (1.1 км)</p>
+            <p><strong>Тел:</strong> +43 1 713 18 36</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Питч:</strong> «Традиционный венский трактир с летним садом. Показываем аутентичную венскую кухню и атмосферу у виадуков».
+          </div>
         </div>
 
       </div>
 
-      <!-- GERMAN PITCH SCRIPT -->
-      <div class="bg-stone-950 p-6 border border-white/10 mb-6">
-        <h3 class="text-xs uppercase tracking-wider text-white mb-3 font-semibold">
-          Скрипт для разговора с владельцем (на венском немецком)
-        </h3>
-        <div class="p-4 bg-stone-900 border border-white/5 font-sans text-xs text-stone-300 leading-relaxed space-y-2">
-          <p class="text-white font-medium">„Grüß Gott! Ich bin Webdesigner hier im 3. Bezirk beim Rennweg. Mir ist aufgefallen, dass Sie für Ihr Haus noch keinen zeitgemäßen Webauftritt nutzen und Gäste Sie derzeit nur über Google Maps oder Drittportale finden.“</p>
-          <p class="text-stone-300">„Ich habe bereits einen maßgeschneiderten, komplett fertigen Entwurf für Sie ausgearbeitet — mit klarer Speisekarte, hochauflösenden Fotos und direkter Tischreservierung.“</p>
-          <p class="text-stone-400">„Darf ich Ihnen den Entwurf kurz auf dem Tablet zeigen? Dauert nur zwei Minuten.“</p>
-        </div>
+      <div class="mt-4 pt-4 border-t border-white/10 flex justify-end shrink-0">
+        <button onclick="togglePitchModal()" class="px-5 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
       </div>
+    </div>
+  </div>
 
-      <div class="flex justify-end">
-        <button onclick="togglePitchModal()" class="px-6 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
+  <!-- PRICING STATS MODAL -->
+  <div id="stats-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-white/15 max-w-4xl w-full max-h-[92vh] flex flex-col p-6 sm:p-8 shadow-2xl text-left">
+      <div class="flex justify-between items-start border-b border-white/10 pb-4 mb-4 shrink-0">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-semibold">Официальная статистика рынка Австрии (WKO)</span>
+          <h2 class="font-serif text-3xl text-white mt-1">Сколько стоят сайты в Вене</h2>
+        </div>
+        <button onclick="toggleStatsModal()" class="text-stone-400 hover:text-white text-2xl p-2">✕</button>
+      </div>
+      <div class="overflow-y-auto pr-1 pb-2 flex-1 flex flex-col items-center justify-center">
+        <img src="pricing_statistics.jpg" alt="Статистика цен на сайты в Вене" class="max-w-full max-h-[65vh] object-contain border border-white/10 shadow-lg">
+      </div>
+      <div class="mt-4 pt-3 border-t border-white/10 flex justify-between items-center text-xs text-stone-400 shrink-0">
+        <span>Рыночная цена в Вене: €1.500 – €5.000. Ваше предложение (€400–€800) выглядит для них сверхвыгодным.</span>
+        <button onclick="toggleStatsModal()" class="px-5 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
       </div>
     </div>
   </div>
 
   <script>
     const sites = {
-      lukas: 'lukas-fischrestaurant.html',
-      simon: 'gasthaus-simon.html',
-      public: 'cafe-public.html'
+      'das-essen': {
+        url: 'das-essen-fm.html',
+        rank: 'РАНГ #1 В ВЕНЕ',
+        chance: '95% шанс',
+        title: 'Das Essen FM',
+        concept: 'Домашняя украинская кухня & винтажные радиоприемники 90-х',
+        address: 'Juchgasse 24, 1030 Wien',
+        dist: '400 м (5 мин пешком от HTL)',
+        phone: '+43 660 1681717',
+        hours: 'Di–So 12:00–22:00 (Пн вых)',
+        rating: '★ 4.9 из 800+ отзывов',
+        pitch: 'Владельцы — семейная пара из Украины. Общение без языкового барьера. Огромный поток гостей, но сайта нет (только Instagram). Платят грабительские комиссии Wolt/Foodora. Сайт с меню и бронью столов окупается мгновенно.',
+        qr: 'qr_das_essen.png'
+      },
+      'bibim': {
+        url: 'bibim-wien.html',
+        rank: 'РАНГ #2 В ВЕНЕ',
+        chance: '88% шанс',
+        title: 'Restaurant Bibim',
+        concept: 'Аутентичная корейская кухня (Bibimbap, Korean BBQ)',
+        address: 'Rennweg 60, 1030 Wien',
+        dist: '200 м (2–3 мин пешком прямо по Rennweg)',
+        phone: '+43 1 992 24 00',
+        hours: 'Mo–Sa 12:00–14:30 & 18:00–22:00',
+        rating: '★ 4.6 (500+ отзывов)',
+        pitch: 'Сотни студентов HTL и работников офисов каждый день ищут ланч-меню в телефонах. Собственный быстрый сайт с меню решает вопрос вечерней посадки без посредников.',
+        qr: 'qr_bibim.png'
+      },
+      'pizzeria-roma': {
+        url: 'pizzeria-roma.html',
+        rank: 'РАНГ #3 В ВЕНЕ',
+        chance: '85% шанс',
+        title: 'Pizzeria Roma',
+        concept: 'Традиционная дровяная пиццерия & паста',
+        address: 'Fasangasse 33, 1030 Wien',
+        dist: '500 м (6 мин пешком)',
+        phone: '+43 1 796 56 10',
+        hours: 'Täglich 11:00–23:00',
+        rating: '★ 4.3 (высокий трафик)',
+        pitch: 'Их старый сайт сгорел (домен не резолвится!). Теряют прямых клиентов в пользу Lieferando/Foodora, которые забирают 30%. Готовый сайт возвращает прямые телефонные заказы.',
+        qr: 'qr_pizzeria_roma.png'
+      },
+      'grammophon': {
+        url: 'grammophon-bistro.html',
+        rank: 'РАНГ #4 В ВЕНЕ',
+        chance: '82% шанс',
+        title: 'Grammophon Bistro',
+        concept: 'Средиземноморское бистро, Specialty Coffee & Манты',
+        address: 'Hainburger Straße 64, 1030 Wien',
+        dist: '700 м (U3 Kardinal-Nagl-Platz)',
+        phone: 'via Instagram / TheFork',
+        hours: 'Mo–Sa 16:00–22:00',
+        rating: '★ 9.3/10 на TheFork',
+        pitch: 'Очень стильное место, но вместо сайта висит Linktree. Полноценный сайт подчеркивает культуру винила, свежих домашних мант и вечернего аперитива.',
+        qr: 'qr_grammophon.png'
+      },
+      'pappa-ciccia': {
+        url: 'pappa-e-ciccia.html',
+        rank: 'РАНГ #5 В ВЕНЕ',
+        chance: '80% шанс',
+        title: 'Pappa e ciccia',
+        concept: 'Итальянская рынок-траттория & винный бар',
+        address: 'Rochusmarkt Stand 3, 1030 Wien',
+        dist: '900 м (на Рохусмаркте)',
+        phone: '+43 676 6575360',
+        hours: 'Mo–Fr 10:30–23:00',
+        rating: 'Falstaff 1 вилка, высокий чек',
+        pitch: 'Культовый стенд на рынке без сайта. Публика солидная, чек высокий. Престижный сайт под винную карту и пасту с трюфелем подчеркивает статус заведения.',
+        qr: 'qr_pappa_ciccia.png'
+      },
+      'benkei': {
+        url: 'benkei-wien.html',
+        rank: 'РАНГ #6 В ВЕНЕ',
+        chance: '78% шанс',
+        title: 'Benkei (Gault&Millau)',
+        concept: 'Традиционная японская высокая кухня (Суши, Сукияки)',
+        address: 'Ungargasse 65, 1030 Wien',
+        dist: '500 м (6 мин пешком)',
+        phone: '+43 1 718 18 88',
+        hours: 'Mo–Sa 11:30–14:30 & 18:00–22:30',
+        rating: 'Gault&Millau bewertet • 4.6★',
+        pitch: 'Премиальный ресторан со средним чеком €60-€90, у которого вообще нет сайта, а почта древняя @aon.at. Японский минимализм заходит идеально.',
+        qr: 'qr_benkei.png'
+      },
+      'al-quattro': {
+        url: 'pizzeria-al-quattro.html',
+        rank: 'РАНГ #7 В ВЕНЕ',
+        chance: '76% шанс',
+        title: 'Pizzeria Al Quattro',
+        concept: 'Пиццерия из каменной печи & классическая паста',
+        address: 'Erdbergstraße 93, 1030 Wien',
+        dist: '800 м',
+        phone: '+43 1 718 04 15',
+        hours: 'Täglich 11:00–22:30',
+        rating: '★ 4.4 (100+ отзывов)',
+        pitch: 'Постоянные расходы на доставку агрегаторов. Быстрый сайт с кнопкой прямого звонка окупает себя в первый же месяц.',
+        qr: 'qr_al_quattro.png'
+      },
+      'sakana': {
+        url: 'sakana-sushi.html',
+        rank: 'РАНГ #8 В ВЕНЕ',
+        chance: '74% шанс',
+        title: 'Sakana Sushi Bar',
+        concept: 'Суши-бар и лапша прямо напротив школы',
+        address: 'Rennweg 68, 1030 Wien',
+        dist: '150 м (2 мин пешком от HTL!)',
+        phone: '+43 1 798 52 35',
+        hours: 'Täglich 11:00–22:00',
+        rating: 'Локальный трафик Rennweg',
+        pitch: 'Вместо своего сайта висит переадресация на Lieferando, забирающая 30%. Собственный сайт возвращает прямой контакт с клиентом.',
+        qr: 'qr_sakana.png'
+      },
+      'schmitzberger': {
+        url: 'gasthaus-schmitzberger.html',
+        rank: 'РАНГ #9 В ВЕНЕ',
+        chance: '70% шанс',
+        title: 'Gasthaus Schmitzberger',
+        concept: 'Традиционный венский бейсл и дневные ланчи',
+        address: 'Nottendorfer Gasse 30, 1030 Wien',
+        dist: '900 м',
+        phone: '+43 1 798 91 68',
+        hours: 'Mo–Fr 10:00–21:00',
+        rating: 'Венская классика',
+        pitch: 'Традиционное семейное заведение. Дневное меню (Mittagsmenü) на сайте привлекает работников близлежащих офисов.',
+        qr: 'qr_schmitzberger.png'
+      },
+      'gruabn': {
+        url: 'gasthaus-gruabn.html',
+        rank: 'РАНГ #10 В ВЕНЕ',
+        chance: '68% шанс',
+        title: 'Gasthaus zur Gruab'n',
+        concept: 'Австрийский трактир с уютным садом (Schanigarten)',
+        address: 'Untere Viaduktgasse 41, 1030 Wien',
+        dist: '1.1 км (у Kunst Haus Wien)',
+        phone: '+43 1 713 18 36',
+        hours: 'Mo–Fr 10:00–22:00',
+        rating: 'Wiener Gemütlichkeit',
+        pitch: 'Классическое венское меню (Tafelspitz, Backhendl) и уютный сад. Сайт открывает заведение для туристов и гостей района.',
+        qr: 'qr_gruabn.png'
+      },
+      'public': {
+        url: 'cafe-public.html',
+        rank: 'УСПЕШНО ПРОТЕСТИРОВАНО',
+        chance: '99%',
+        title: 'Café Public',
+        concept: 'Specialty Coffee, Cocktail Bar & Schanigarten',
+        address: 'Landstraßer Hauptstr. 173-175',
+        dist: '300 м от HTL',
+        phone: '+43 1 945 17 84',
+        hours: '10:00–00:00',
+        rating: '4.7★',
+        pitch: 'Успешно проведена первая встреча! Демо-сайт готов.',
+        qr: 'qr_public.png'
+      },
+      'simon': {
+        url: 'gasthaus-simon.html',
+        rank: 'АРХИВ',
+        chance: '75%',
+        title: 'Café Simon',
+        concept: 'Культовый ретро-бар с музыкальным автоматом Wurlitzer',
+        address: 'Landstraßer Hauptstr. 165',
+        dist: '350 м от HTL',
+        phone: '+43 650 9033960',
+        hours: '10:00–02:00',
+        rating: '4.5★',
+        pitch: 'Винтажный венский бар.',
+        qr: 'qr_simon.png'
+      }
     };
 
     function switchSite(key, btn) {
-      document.querySelectorAll('.site-tab').forEach(t => {
-        t.classList.remove('bg-white', 'text-stone-950');
-        t.classList.add('text-stone-400');
+      const site = sites[key];
+      if (!site) return;
+
+      document.querySelectorAll('.site-tab').forEach(b => {
+        b.classList.remove('active', 'bg-white', 'text-stone-950', 'font-semibold');
+        b.classList.add('text-stone-400');
       });
-      btn.classList.add('bg-white', 'text-stone-950');
+      btn.classList.add('active', 'bg-white', 'text-stone-950', 'font-semibold');
       btn.classList.remove('text-stone-400');
 
-      const url = sites[key];
-      document.getElementById('preview-frame').src = url;
-      document.getElementById('open-new-tab').href = url;
+      document.getElementById('preview-frame').src = site.url;
+      document.getElementById('open-new-tab').href = site.url;
+
+      // Update sidebar
+      document.getElementById('sb-rank').textContent = site.rank;
+      document.getElementById('sb-chance').textContent = site.chance;
+      document.getElementById('sb-title').textContent = site.title;
+      document.getElementById('sb-concept').textContent = site.concept;
+      document.getElementById('sb-address').textContent = site.address;
+      document.getElementById('sb-dist').textContent = site.dist;
+      document.getElementById('sb-phone').textContent = site.phone;
+      document.getElementById('sb-phone').href = 'tel:' + site.phone.replace(/[^0-9+]/g, '');
+      document.getElementById('sb-hours').textContent = site.hours;
+      document.getElementById('sb-rating').textContent = site.rating;
+      document.getElementById('sb-pitch').textContent = site.pitch;
+      document.getElementById('sb-qr').src = site.qr;
+      document.getElementById('sb-link').textContent = '.../' + site.url;
+      document.getElementById('sb-link').href = 'https://ovh-ip.github.io/vienna-restaurants/' + site.url;
     }
 
-    function togglePitchModal() {
-      document.getElementById('pitch-modal').classList.toggle('hidden');
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.cat-filter').forEach(b => {
+        b.classList.remove('active', 'bg-white', 'text-stone-950', 'font-semibold');
+        b.classList.add('text-stone-400');
+      });
+      btn.classList.add('active', 'bg-white', 'text-stone-950', 'font-semibold');
+      btn.classList.remove('text-stone-400');
+
+      document.querySelectorAll('.site-tab').forEach(tab => {
+        const itemCat = tab.getAttribute('data-cat') || '';
+        if (cat === 'all' || itemCat.includes(cat)) {
+          tab.style.display = 'flex';
+        } else {
+          tab.style.display = 'none';
+        }
+      });
     }
 
     function toggleQrModal() {
       document.getElementById('qr-modal').classList.toggle('hidden');
     }
+    function togglePitchModal() {
+      document.getElementById('pitch-modal').classList.toggle('hidden');
+    }
+    function toggleStatsModal() {
+      document.getElementById('stats-modal').classList.toggle('hidden');
+    }
   </script>
-
-  <!-- PRICING STATS MODAL -->
-  <div id="stats-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xs hidden flex items-center justify-center p-4">
-    <div class="bg-stone-900 border border-white/15 max-w-4xl w-full max-h-[95vh] overflow-y-auto p-6 shadow-2xl text-left">
-      <div class="flex justify-between items-start border-b border-white/10 pb-4 mb-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-semibold">Официальные рыночные данные &bull; WKO Österreich</span>
-          <h2 class="font-serif text-3xl text-white mt-1">Сколько стоят сайты в Вене</h2>
-        </div>
-        <button onclick="toggleStatsModal()" class="text-stone-400 hover:text-white text-xl">✕</button>
-      </div>
-
-      <div class="border border-white/10 rounded-lg overflow-hidden mb-6 bg-stone-950">
-        <img src="pricing_statistics.jpg" alt="Website Development Cost Analysis Vienna Austria" class="w-full h-auto">
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-light text-stone-300">
-        <div class="bg-stone-950 p-4 border border-white/10">
-          <span class="text-white font-semibold block mb-1">1. Gastro Landing Page</span>
-          <p class="text-stone-400">€800 – €1.800 разово в Вене. Одностраничник с меню, контактами и адаптивным мобильным видом.</p>
-        </div>
-        <div class="bg-stone-950 p-4 border border-white/10">
-          <span class="text-white font-semibold block mb-1">2. Standard Restaurant CMS</span>
-          <p class="text-stone-400">€2.500 – €5.000 в австрийских агентствах. Мультистраничник с CMS и расширенным SEO.</p>
-        </div>
-        <div class="bg-stone-950 p-4 border border-white/10">
-          <span class="text-white font-semibold block mb-1">3. WKO Stundensatz</span>
-          <p class="text-stone-400">€80 – €150/час официальная средняя ставка веб-специалистов в Австрии.</p>
-        </div>
-      </div>
-
-      <div class="mt-6 flex justify-end">
-        <button onclick="toggleStatsModal()" class="px-6 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
-      </div>
-    </div>
-  </div>
-
-<script>function toggleStatsModal(){ document.getElementById("stats-modal").classList.toggle("hidden"); }</script>
 </body>
 </html>

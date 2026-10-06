@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benkei Wien | Traditionelle japanische Haute Cuisine &amp; Sushi • Ungargasse 1030</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            sumi: {
+              950: '#090a0d',
+              900: '#101217',
+              850: '#161920',
+              800: '#1d212b',
+              700: '#2a2f3d',
+            },
+            hinoki: {
+              900: '#231b14',
+              800: '#32271d',
+              700: '#46372a',
+              600: '#644e3b',
+              400: '#9b7e61',
+            },
+            gold: {
+              300: '#edd585',
+              400: '#e0c365',
+              500: '#d4af37', // Mattes Blattgold
+              600: '#b89224',
+              700: '#957418',
+            },
+            washi: {
+              50: '#faf8f3',
+              100: '#f4f1e7',
+              200: '#eae4d3',
+              300: '#ded5bd',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .kanji-watermark {
+      font-family: serif;
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-sumi-950 text-slate-200 font-sans antialiased selection:bg-gold-500 selection:text-sumi-950 pb-20 md:pb-0">
+
+  <!-- TOP CONCEPT BANNER -->
+  <aside aria-label="Konzept-Status" class="bg-sumi-900 border-b border-gold-500/30 text-[11px] tracking-wider uppercase text-gold-300 py-2 px-4 text-center">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-gold-400"></span>
+      <span class="font-medium">Konzeptentwurf für Benkei • Live Demo • Gault&amp;Millau Empfehlung</span>
+      <span class="text-gold-500/50 hidden sm:inline">•</span>
+      <span class="text-slate-400 hidden sm:inline">Ungargasse 65, 1030 Wien</span>
+    </div>
+  </aside>
+
+  <!-- VERIFIED LOCATION & RATING TOP BAR -->
+  <div class="border-b border-white/5 bg-sumi-900/70 text-[11px] tracking-wider uppercase text-slate-400 py-2.5 px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-4 flex-wrap">
+        <span class="text-slate-300">📍 Ungargasse 65, 1030 Wien</span>
+        <span class="text-slate-700 hidden sm:inline">•</span>
+        <span class="text-gold-400 font-medium">500 m von HTL Rennweg (nur 6 Gehminuten)</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span class="hidden md:inline text-gold-300 font-medium">★ Gault&amp;Millau &bull; Google 4.6★ (350+ Bewertungen)</span>
+        <span class="text-slate-700 hidden md:inline">•</span>
+        <span class="hidden lg:inline">Mo–Sa: 11:30–14:30 &amp; 18:00–22:30 | So Ruhetag</span>
+        <span class="text-slate-700 hidden lg:inline">•</span>
+        <a href="tel:+4317181888" class="text-gold-400 hover:text-gold-300 font-medium transition-colors">
+          📞 +43 1 718 18 88
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-sumi-950/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3.5">
+        <div class="w-10 h-10 border border-gold-500/40 bg-sumi-900 flex items-center justify-center text-gold-400 font-serif text-xl tracking-tighter">
+          弁
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl tracking-[0.12em] text-white font-normal uppercase">Benkei</span>
+          <span class="text-[9px] tracking-[0.3em] uppercase text-gold-400/80 font-sans">
+            Japanese Haute Cuisine &bull; Seit 1993
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] uppercase font-medium text-slate-300">
+        <a href="#omakase" class="hover:text-gold-400 transition-colors">Omakase &amp; Menüs</a>
+        <a href="#speisekarte" class="hover:text-gold-400 transition-colors">Speisekarte</a>
+        <a href="#philosophie" class="hover:text-gold-400 transition-colors">Shokunin-Kultur</a>
+        <a href="#sake" class="hover:text-gold-400 transition-colors">Sake &amp; Tee</a>
+        <a href="#kontakt" class="hover:text-gold-400 transition-colors">Anfahrt</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <button onclick="openModal()" class="px-5 py-2.5 border border-gold-500/70 hover:border-gold-400 bg-gold-500/10 hover:bg-gold-500 text-gold-300 hover:text-sumi-950 text-xs tracking-[0.18em] uppercase font-semibold transition-all duration-300">
+          Tisch reservieren
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 p-2" aria-label="Menü öffnen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-sumi-900 border-b border-white/10 px-6 py-6 space-y-4 text-xs tracking-[0.18em] uppercase">
+      <a href="#omakase" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold-400">Omakase &amp; Menüs</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold-400">Speisekarte &amp; Allergene</a>
+      <a href="#philosophie" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold-400">Shokunin-Philosophie</a>
+      <a href="#sake" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold-400">Sake Begleitung</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold-400">Standort Ungargasse</a>
+      <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-3 py-3 bg-gold-500 text-sumi-950 font-semibold tracking-widest uppercase text-xs">
+        Tisch reservieren
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <!-- Kanji watermark background -->
+    <div class="absolute inset-0 flex items-center justify-center kanji-watermark text-[40vw] text-white">
+      弁慶
+    </div>
+
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=1920&q=85" alt="Benkei Restaurant Atmosphäre Wien" class="w-full h-full object-cover opacity-25">
+      <div class="absolute inset-0 bg-gradient-to-t from-sumi-950 via-sumi-950/80 to-sumi-950/40"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 border border-gold-500/30 bg-sumi-900/80 text-gold-300 text-[11px] tracking-[0.25em] uppercase">
+        <span>⛩️</span>
+        <span>Traditionelle Haute Cuisine &bull; Gault&amp;Millau Empfehlung</span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-light tracking-normal text-white mb-8 leading-[1.12]">
+        Die Kunst der Stille.<br>
+        <span class="italic font-normal text-gold-300">Meisterhafte japanische Kulinarik.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-slate-300 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+        Seit über drei Jahrzehnten das Refugium für Kenner traditioneller japanischer Küche in Wien. Präzise geschnittene Grand Cru Sashimi, authentisches Sukiyaki im Gußeisentopf und handgeformte Nigiri nach den strengen Regeln der Tokioter Handwerkskunst.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openModal()" class="w-full sm:w-auto px-9 py-4 bg-gold-500 hover:bg-gold-400 text-sumi-950 text-xs tracking-[0.2em] uppercase font-semibold transition-all shadow-lg shadow-gold-950/50">
+          Tisch reservieren
+        </button>
+        <a href="#speisekarte" class="w-full sm:w-auto px-9 py-4 border border-white/20 hover:border-gold-500 text-slate-200 hover:text-white text-xs tracking-[0.2em] uppercase transition-all bg-black/20">
+          Speisekarte &amp; Omakase
+        </a>
+      </div>
+
+      <!-- KEY AWARDS & FACTS -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-16 pt-8 border-t border-white/10 text-center">
+        <div class="p-3">
+          <div class="font-serif text-2xl text-gold-300">Gault&amp;Millau</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">Ausgezeichnete Küche</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-white">4.6 ★</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">Google (350+ Bewertungen)</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-gold-300">500 m</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">von HTL Rennweg</div>
+        </div>
+        <div class="p-3">
+          <div class="font-serif text-2xl text-white">Seit 1993</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">30+ Jahre Tradition</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OMAKASE & MEISTER HIGHLIGHT -->
+  <section id="omakase" class="py-16 bg-sumi-900 border-y border-white/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="border border-gold-500/30 bg-sumi-850 p-8 sm:p-12 relative overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-8 space-y-4">
+            <div class="flex items-center gap-2 text-gold-400 text-[10px] uppercase tracking-[0.25em] font-semibold">
+              <span>Chef's Choice &bull; Omakase Experience</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal">
+              Omakase Nigiri Selection (8 Meisterstücke)
+            </h2>
+
+            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+              Jedes Nigiri wird vom Sushi-Meister einzeln temperiert, mit fangfrischem Fisch belegt und mit hausgemachter Nikiri-Sojasauce glasiert: Balfegó Maguro, zarter Hamachi, flambierter Lachs, Jakobsmuschel und Unagi auf perfekt gesäuertem Koshihikari-Reis.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-1">
+              <span>Allergene: <strong class="text-slate-200">[D, F]</strong></span>
+              <span>•</span>
+              <span class="text-gold-300 font-medium">Mit echtem Shizuoka Wasabi serviert</span>
+            </div>
+          </div>
+
+          <div class="md:col-span-4 flex flex-col md:items-end justify-between gap-4">
+            <div class="text-left md:text-right">
+              <span class="font-serif text-3xl text-gold-300">€ 42,00</span>
+              <span class="block text-[10px] uppercase tracking-wider text-slate-400 mt-0.5">8 selektierte Stücke</span>
+            </div>
+            <button onclick="openModal('Omakase Nigiri Selection')" class="px-6 py-3 border border-gold-500 hover:bg-gold-500 hover:text-sumi-950 text-gold-300 text-xs tracking-widest uppercase font-semibold transition-all duration-300">
+              Vorbestellen
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE (AUTHENTIC BENKEI MENU) -->
+  <section id="speisekarte" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <div class="text-[10px] tracking-[0.3em] uppercase text-gold-400 font-semibold mb-2">Exquisite Auswahl</div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-white font-light">Authentische Meisterküche</h2>
+      <p class="text-xs sm:text-sm text-slate-400 mt-4 font-light leading-relaxed">
+        Jedes Gericht folgt den traditionellen Prinzipien der Ausgewogenheit, Saisonalität und reinsten Zutatenqualität. Allergenkennzeichnung nach österreichischem Recht.
+      </p>
+
+      <div class="flex justify-center flex-wrap gap-2 mt-10 border-b border-white/10 pb-4">
+        <button onclick="filterDishes('all', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-gold-500 text-white font-medium">Alle Spezialitäten</button>
+        <button onclick="filterDishes('sashimi-sushi', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-white">Sashimi &amp; Sushi</button>
+        <button onclick="filterDishes('warme-kueche', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-white">Warme Spezialitäten</button>
+        <button onclick="filterDishes('dessert', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-white">Dessert &amp; Tee</button>
+      </div>
+    </div>
+
+    <!-- Dishes Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- Dish 1: Sashimi Moriawase Grand Cru -->
+      <div class="dish-item sashimi-sushi bg-sumi-900/80 border border-white/10 p-6 flex flex-col justify-between hover:border-gold-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=350&q=80" alt="Sashimi Moriawase Grand Cru" class="w-24 h-24 object-cover shrink-0 border border-gold-500/20">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Sashimi Moriawase Grand Cru</h3>
+                <span class="font-serif text-xl text-gold-300 ml-3">€ 38,50</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Edelste Auswahl aus atlantischem Wildlachs, Balfegó Maguro-Thunfisch und japanischer Gelbschwanzmakrele (Hamachi). Serviert auf Eisscholle mit frischem Shizuoka-Wasabi und Shiso-Kresse.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[D]</strong></span>
+          <span class="text-gold-400 font-medium">Sashimi Güteklasse 1</span>
+        </div>
+      </div>
+
+      <!-- Dish 2: Sukiyaki Rindfleischtopf -->
+      <div class="dish-item warme-kueche bg-sumi-900/80 border border-white/10 p-6 flex flex-col justify-between hover:border-gold-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=350&q=80" alt="Sukiyaki Rindfleischtopf" class="w-24 h-24 object-cover shrink-0 border border-gold-500/20">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Sukiyaki Rindfleischtopf</h3>
+                <span class="font-serif text-xl text-gold-300 ml-3">€ 34,90</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Klassischer japanischer Feinschmeckereintopf im heißen Gußeisentopf: hauchfein geschnittenes marmoriertes Rindfleisch, frische Shiitake- und Enoki-Pilze, Tofu, Shirataki-Nudeln und Lauch in süßlich-aromatischer Warishita-Brühe.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[F, A]</strong></span>
+          <span class="text-amber-300 font-medium">Gault&amp;Millau Klassiker</span>
+        </div>
+      </div>
+
+      <!-- Dish 3: Omakase Nigiri Selection -->
+      <div class="dish-item sashimi-sushi bg-sumi-900/80 border border-white/10 p-6 flex flex-col justify-between hover:border-gold-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=350&q=80" alt="Omakase Nigiri Selection" class="w-24 h-24 object-cover shrink-0 border border-gold-500/20">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Omakase Nigiri Selection</h3>
+                <span class="font-serif text-xl text-gold-300 ml-3">€ 42,00</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                8 handgeformte Meisterstücke nach Tagesfang: Maguro, Toro, Hamachi, Hotate (Jakobsmuschel), Ebi, Unagi und marinierter Lachs mit feiner Soja-Pinselung.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[D, F]</strong></span>
+          <span class="text-gold-400 font-medium">Meister-Selektion</span>
+        </div>
+      </div>
+
+      <!-- Dish 4: Tempura Ebi Moriawase -->
+      <div class="dish-item warme-kueche bg-sumi-900/80 border border-white/10 p-6 flex flex-col justify-between hover:border-gold-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1581184953963-d15972933db1?auto=format&fit=crop&w=350&q=80" alt="Tempura Ebi Moriawase" class="w-24 h-24 object-cover shrink-0 border border-gold-500/20">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Tempura Ebi Moriawase</h3>
+                <span class="font-serif text-xl text-gold-300 ml-3">€ 26,50</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Knusprig im hauchdünnen, federleichten Tempurateig ausgebackene Riesengarnelen und saisonales Gemüse (Süßkartoffel, Lotuswurzel, Shiitake) mit heißer Tentsuyu-Dipsauce und geriebenem Daikon-Rettich.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A, B]</strong></span>
+          <span class="text-slate-300 font-medium">Goldknusprig</span>
+        </div>
+      </div>
+
+      <!-- Dish 5: Kamo Roosu (Gebratene Entenbrust) -->
+      <div class="dish-item warme-kueche bg-sumi-900/80 border border-white/10 p-6 flex flex-col justify-between hover:border-gold-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1514944298352-78d197607775?auto=format&fit=crop&w=350&q=80" alt="Kamo Roosu Gebratene Entenbrust" class="w-24 h-24 object-cover shrink-0 border border-gold-500/20">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Kamo Roosu (鴨ロース)</h3>
+                <span class="font-serif text-xl text-gold-300 ml-3">€ 28,00</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Zarte Barbarie-Entenbrust rosa gebraten, glasiert mit reduzierter Sansho-Pfeffer- &amp; Mirin-Teriyaki-Sauce, serviert mit gedämpftem Bok Choy und eingelegtem Ginger.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[A, F]</strong></span>
+          <span class="text-amber-400 font-medium">Haute Cuisine</span>
+        </div>
+      </div>
+
+      <!-- Dish 6: Feinstes Matcha Eis mit Azuki-Bohnen -->
+      <div class="dish-item dessert bg-sumi-900/80 border border-white/10 p-6 flex flex-col justify-between hover:border-gold-500/50 transition-all">
+        <div>
+          <div class="flex gap-5 mb-5">
+            <img src="https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?auto=format&fit=crop&w=350&q=80" alt="Feinstes Matcha Eis mit Azuki-Bohnen" class="w-24 h-24 object-cover shrink-0 border border-gold-500/20">
+            <div class="flex-1">
+              <div class="flex justify-between items-baseline mb-1">
+                <h3 class="font-serif text-2xl text-white font-normal">Matcha Eis mit Azuki-Bohnen</h3>
+                <span class="font-serif text-xl text-gold-300 ml-3">€ 9,50</span>
+              </div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Eiscreme aus erstklassigem Zeremonial-Matcha aus Uji (Kyoto), serviert mit langsam eingekochten süßen roten Azuki-Bohnen, zartem Shiratama Dango und Monaka-Reiswaffel.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: <strong class="text-slate-200">[G]</strong></span>
+          <span class="text-emerald-400 font-medium">Uji Kyoto Matcha</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ALLERGEN LEGEND -->
+    <div class="mt-12 p-6 bg-sumi-900 border border-white/5 text-[11px] text-slate-400 leading-relaxed">
+      <div class="font-semibold text-gold-400 uppercase tracking-widest text-[10px] mb-2">Österreichische Allergenkennzeichnung:</div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
+        <span><strong>A:</strong> Gluten</span>
+        <span><strong>B:</strong> Krebstiere</span>
+        <span><strong>C:</strong> Ei</span>
+        <span><strong>D:</strong> Fisch</span>
+        <span><strong>F:</strong> Soja</span>
+        <span><strong>G:</strong> Milch / Laktose</span>
+        <span><strong>N:</strong> Sesam</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOKUNIN & PHILOSOPHIE -->
+  <section id="philosophie" class="py-20 bg-sumi-900 border-y border-white/10 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.25em] uppercase text-gold-400 font-semibold border-b border-gold-500/30 pb-1">
+              Shokunin-Kultur &bull; Handwerkliche Meisterschaft
+            </span>
+          </div>
+
+          <h2 class="font-serif text-4xl sm:text-5xl text-white font-light leading-tight">
+            Keine Kompromisse.<br>
+            <span class="italic text-gold-300">Respekt vor jedem einzelnen Schnitt.</span>
+          </h2>
+
+          <p class="text-sm text-slate-300 leading-relaxed font-light">
+            In Japan bedeutet „Shokunin“ nicht nur meisterhafte Handwerkskunst, sondern die lebenslange Hingabe, jeden Tag ein klein wenig besser zu werden. Bei Benkei verarbeiten wir ausschließlich Edelfische zertifizierter Herkunft, schneiden jedes Stück mit handgeschmiedeten Sakai-Messern und servieren Brühen, die über Stunden sorgfältig gezogen werden.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 pt-4 border-t border-white/10 text-xs">
+            <div>
+              <div class="font-serif text-xl text-white">Sake-Kuratierung</div>
+              <p class="text-slate-400 mt-1">Über 15 exklusive Junmai Daiginjo Sake direkt aus japanischen Präfekturen importiert.</p>
+            </div>
+            <div>
+              <div class="font-serif text-xl text-gold-300">Gault&amp;Millau Note</div>
+              <p class="text-slate-400 mt-1">Konstante Spitzenbewertung für Präzision, Frische und kompromisslose Qualität.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="border border-gold-500/20 bg-sumi-950 p-4 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?auto=format&fit=crop&w=800&q=80" alt="Sushi Chef Handwerk Benkei" class="w-full h-80 object-cover">
+            <div class="p-4 text-center">
+              <span class="font-serif italic text-gold-200 text-sm">„Der wahre Geschmack liegt in der Schlichtheit des perfekten Augenblicks.“</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT & KONTAKT -->
+  <section id="kontakt" class="py-20 bg-sumi-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.25em] text-gold-400 font-semibold">Besuch in Wien 1030</span>
+          <h2 class="font-serif text-4xl text-white mt-2 mb-6">Ungargasse 65</h2>
+          
+          <div class="space-y-4 text-xs font-light text-slate-300">
+            <p><strong class="text-white font-semibold">Adresse:</strong> Ungargasse 65, 1030 Wien</p>
+            <p><strong class="text-gold-300 font-semibold">Distanz:</strong> Nur 500 Meter von der HTL Rennweg (ca. 6 Gehminuten)</p>
+            <p><strong class="text-white font-semibold">Öffentlich:</strong> Straßenbahn 71 / O (Station Rennweg / Ungargasse) oder S-Bahn Rennweg</p>
+            <p><strong class="text-white font-semibold">Telefon:</strong> <a href="tel:+4317181888" class="text-gold-400 underline">+43 1 718 18 88</a></p>
+            <p><strong class="text-white font-semibold">Öffnungszeiten:</strong><br>
+              Montag bis Samstag: 11:30 – 14:30 &amp; 18:00 – 22:30 Uhr<br>
+              Sonntag &amp; Feiertag: Ruhetag
+            </p>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="https://maps.google.com/?q=Ungargasse+65+1030+Wien" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-sumi-950 text-xs uppercase tracking-widest font-semibold hover:bg-gold-400 transition-all">
+              Route in Google Maps ↗
+            </a>
+            <button onclick="openModal()" class="px-6 py-3 border border-gold-500/60 hover:border-gold-400 text-gold-300 text-xs uppercase tracking-widest font-medium transition-all">
+              Tisch reservieren
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-sumi-900 border border-white/10 p-8 flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif text-2xl text-white mb-3">Reservierungsempfehlung</h3>
+            <p class="text-xs text-slate-300 font-light leading-relaxed mb-6">
+              Für das Omakase-Erlebnis und Abendessen empfehlen wir eine Reservierung mindestens 1–2 Tage im Voraus. Für den Mittagstisch stehen Ihnen auch spontane Plätze zur Verfügung.
+            </p>
+            <div class="p-4 bg-sumi-950 border border-gold-500/30 text-xs text-slate-200 space-y-1">
+              <div class="text-gold-400">📞 Telefonische Direktreservierung:</div>
+              <a href="tel:+4317181888" class="text-sm font-serif text-white block font-semibold">+43 1 718 18 88</a>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-white/10 text-[11px] text-slate-400">
+            Gault&amp;Millau &bull; Empfohlen für traditionelle japanische Küche in Wien.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-sumi-950 text-slate-500 py-10 text-xs">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px]">
+      <div>&copy; 2026 Benkei Wien • Ungargasse 65, 1030 Wien. Alle Rechte vorbehalten.</div>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-slate-300 transition-colors">Impressum</a>
+        <a href="#" class="hover:text-slate-300 transition-colors">Datenschutz</a>
+        <a href="#" class="hover:text-slate-300 transition-colors">Allergenverordnung</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-sumi-900 border border-gold-500/30 max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">Tischreservierung</span>
+        <h3 class="font-serif text-3xl font-light text-white mt-1">Benkei Wien</h3>
+        <p class="text-xs text-slate-400 mt-1">Ungargasse 65 • Telefonische Bestätigung unter +43 1 718 18 88.</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitReservation(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Ihr Name *</label>
+          <input type="text" required placeholder="Vor- und Nachname" class="w-full bg-sumi-950 border border-white/15 focus:border-gold-400 px-4 py-3 text-white outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43 1..." class="w-full bg-sumi-950 border border-white/15 focus:border-gold-400 px-4 py-3 text-white outline-none">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">E-Mail</label>
+            <input type="email" placeholder="name@beispiel.at" class="w-full bg-sumi-950 border border-white/15 focus:border-gold-400 px-4 py-3 text-white outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Datum (Mo-Sa)</label>
+            <input type="date" required id="res-date" class="w-full bg-sumi-950 border border-white/15 focus:border-gold-400 px-3 py-3 text-white outline-none text-[11px]">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Uhrzeit</label>
+            <select class="w-full bg-sumi-950 border border-white/15 focus:border-gold-400 px-3 py-3 text-white outline-none text-[11px]">
+              <option>12:00 Mittag</option>
+              <option>13:00 Mittag</option>
+              <option selected>18:30 Abend</option>
+              <option>19:30 Abend</option>
+              <option>20:30 Abend</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Gäste</label>
+            <select class="w-full bg-sumi-950 border border-white/15 focus:border-gold-400 px-3 py-3 text-white outline-none text-[11px]">
+              <option>2 Gäste</option>
+              <option>3–4 Gäste</option>
+              <option>5–6 Gäste</option>
+              <option>Gruppe 7+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block uppercase tracking-wider text-slate-300 mb-1 text-[10px]">Menüwunsch / Omakase Vorbestellung</label>
+          <input type="text" id="special-dish" placeholder="z.B. Omakase Nigiri 8 Stk., Sukiyaki Topf vorbestellen" class="w-full bg-sumi-950 border border-white/15 focus:border-gold-400 px-4 py-3 text-white outline-none">
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-gold-500 hover:bg-gold-400 text-sumi-950 font-semibold tracking-widest uppercase transition-all text-xs mt-3">
+          Reservierungsanfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-3xl text-white mb-2">Arigatou gozaimasu</h4>
+        <p class="text-xs text-slate-300 mb-6">Wir haben Ihre Anfrage erhalten und melden uns telefonisch zur Bestätigung.</p>
+        <button onclick="closeModal()" class="px-6 py-2.5 border border-gold-500 text-gold-300 text-xs tracking-wider uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE STICKY CTA BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-sumi-950/95 backdrop-blur-md border-t border-white/15 px-3 py-2.5 flex items-center justify-between gap-2">
+    <a href="tel:+4317181888" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-slate-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📞</span>
+      <span>Anrufen</span>
+    </a>
+    <a href="#speisekarte" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-slate-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>🍣</span>
+      <span>Karte</span>
+    </a>
+    <a href="https://maps.google.com/?q=Ungargasse+65+1030+Wien" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-white/5 border border-white/15 text-slate-200 rounded text-center text-[11px] font-medium flex items-center justify-center gap-1">
+      <span>📍</span>
+      <span>500 m</span>
+    </a>
+    <button onclick="openModal()" class="flex-1 py-2.5 bg-gold-500 text-sumi-950 rounded text-center text-[11px] font-semibold tracking-wide">
+      Tisch
+    </button>
+  </div>
+
+  <script>
+    function filterDishes(cat, btn) {
+      document.querySelectorAll('.menu-tab').forEach(b => {
+        b.classList.remove('border-gold-500', 'text-white', 'font-medium');
+        b.classList.add('border-transparent', 'text-slate-400');
+      });
+      btn.classList.add('border-gold-500', 'text-white', 'font-medium');
+      btn.classList.remove('border-transparent', 'text-slate-400');
+
+      document.querySelectorAll('.dish-item').forEach(card => {
+        if (cat === 'all' || card.classList.contains(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(dish = '') {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      if (dish) {
+        document.getElementById('special-dish').value = 'Vorbestellung: ' + dish;
+      }
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitReservation(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
