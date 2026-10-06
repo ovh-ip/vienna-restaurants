@@ -24,9 +24,9 @@
       <div>
         <h1 class="text-xs tracking-wider uppercase font-semibold text-white flex items-center gap-2">
           Vienna Gastro Studio
-          <span class="text-[9px] px-1.5 py-0.5 border border-white/10 text-stone-400 font-normal">Wien 1030 &bull; Rennweg &bull; Verified 100%</span>
+          <span class="text-[9px] px-1.5 py-0.5 border border-emerald-500/30 text-emerald-400 font-medium">LIVE ON GITHUB PAGES</span>
         </h1>
-        <p class="text-[10px] text-stone-400 font-light">3 заведения у HTL Rennweg с проверенными данными Google Maps</p>
+        <p class="text-[10px] text-stone-400 font-light">3 заведения у HTL Rennweg &bull; Готовые демо с QR-кодами</p>
       </div>
     </div>
 
@@ -45,8 +45,12 @@
 
     <!-- ACTIONS -->
     <div class="flex items-center space-x-3">
+      <button onclick="toggleQrModal()" class="px-3.5 py-1.5 bg-white text-stone-950 hover:bg-stone-200 text-xs tracking-wider uppercase font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+        <span>📱</span>
+        <span>QR-Коды</span>
+      </button>
       <button onclick="togglePitchModal()" class="px-3.5 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all">
-        Досье Google Maps &amp; Питч
+        Досье &amp; Питч
       </button>
       <a id="open-new-tab" href="lukas-fischrestaurant.html" target="_blank" class="px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 text-xs tracking-wider uppercase transition-all">
         ↗ Открыть сайт
@@ -58,6 +62,62 @@
   <div class="flex-1 relative flex overflow-hidden">
     <div class="flex-1 h-full bg-stone-900 relative">
       <iframe id="preview-frame" src="lukas-fischrestaurant.html" class="w-full h-full border-0"></iframe>
+    </div>
+  </div>
+
+  <!-- QR CODES MODAL -->
+  <div id="qr-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-white/15 max-w-3xl w-full p-8 shadow-2xl text-left">
+      <div class="flex justify-between items-start border-b border-white/10 pb-5 mb-6">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-semibold">Live HTTPS QR-коды для смартфонов</span>
+          <h2 class="font-serif text-3xl text-white mt-1">Отсканируйте камерой телефона</h2>
+          <p class="text-xs text-stone-400 mt-1">Открывайте прямо при владельце заведения без ввода ссылок вручную.</p>
+        </div>
+        <button onclick="toggleQrModal()" class="text-stone-400 hover:text-white text-xl">✕</button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        
+        <!-- QR 1 -->
+        <div class="bg-stone-950 border border-white/10 p-5 flex flex-col items-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-white mb-3">Luka's &amp; Co</span>
+          <div class="bg-white p-2 border border-white/10 mb-3 w-48 h-48 flex items-center justify-center">
+            <img src="qr_lukas.png" alt="QR Lukas" class="w-full h-full object-contain">
+          </div>
+          <a href="https://ovh-ip.github.io/vienna-restaurants/lukas-fischrestaurant.html" target="_blank" class="text-[10px] text-stone-400 hover:text-white break-all">
+            .../lukas-fischrestaurant.html
+          </a>
+        </div>
+
+        <!-- QR 2 -->
+        <div class="bg-stone-950 border border-white/10 p-5 flex flex-col items-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-white mb-3">Café Simon</span>
+          <div class="bg-white p-2 border border-white/10 mb-3 w-48 h-48 flex items-center justify-center">
+            <img src="qr_simon.png" alt="QR Simon" class="w-full h-full object-contain">
+          </div>
+          <a href="https://ovh-ip.github.io/vienna-restaurants/gasthaus-simon.html" target="_blank" class="text-[10px] text-stone-400 hover:text-white break-all">
+            .../gasthaus-simon.html
+          </a>
+        </div>
+
+        <!-- QR 3 -->
+        <div class="bg-stone-950 border border-white/10 p-5 flex flex-col items-center">
+          <span class="text-xs font-semibold uppercase tracking-wider text-white mb-3">Café Public</span>
+          <div class="bg-white p-2 border border-white/10 mb-3 w-48 h-48 flex items-center justify-center">
+            <img src="qr_public.png" alt="QR Public" class="w-full h-full object-contain">
+          </div>
+          <a href="https://ovh-ip.github.io/vienna-restaurants/cafe-public.html" target="_blank" class="text-[10px] text-stone-400 hover:text-white break-all">
+            .../cafe-public.html
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-xs text-stone-400">
+        <span>Общий хаб: <a href="https://ovh-ip.github.io/vienna-restaurants/" target="_blank" class="text-white underline">https://ovh-ip.github.io/vienna-restaurants/</a></span>
+        <button onclick="toggleQrModal()" class="px-5 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
+      </div>
     </div>
   </div>
 
@@ -176,6 +236,10 @@
 
     function togglePitchModal() {
       document.getElementById('pitch-modal').classList.toggle('hidden');
+    }
+
+    function toggleQrModal() {
+      document.getElementById('qr-modal').classList.toggle('hidden');
     }
   </script>
 </body>
