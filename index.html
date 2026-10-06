@@ -49,6 +49,7 @@
         <span>📱</span>
         <span>QR-Коды</span>
       </button>
+      <button onclick="toggleStatsModal()" class="px-3.5 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all flex items-center gap-1.5"><span>📊</span><span>Цены в Вене</span></button>
       <button onclick="togglePitchModal()" class="px-3.5 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all">
         Досье &amp; Питч
       </button>
@@ -242,5 +243,43 @@
       document.getElementById('qr-modal').classList.toggle('hidden');
     }
   </script>
+
+  <!-- PRICING STATS MODAL -->
+  <div id="stats-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-white/15 max-w-4xl w-full max-h-[95vh] overflow-y-auto p-6 shadow-2xl text-left">
+      <div class="flex justify-between items-start border-b border-white/10 pb-4 mb-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-emerald-400 font-semibold">Официальные рыночные данные &bull; WKO Österreich</span>
+          <h2 class="font-serif text-3xl text-white mt-1">Сколько стоят сайты в Вене</h2>
+        </div>
+        <button onclick="toggleStatsModal()" class="text-stone-400 hover:text-white text-xl">✕</button>
+      </div>
+
+      <div class="border border-white/10 rounded-lg overflow-hidden mb-6 bg-stone-950">
+        <img src="pricing_statistics.jpg" alt="Website Development Cost Analysis Vienna Austria" class="w-full h-auto">
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-light text-stone-300">
+        <div class="bg-stone-950 p-4 border border-white/10">
+          <span class="text-white font-semibold block mb-1">1. Gastro Landing Page</span>
+          <p class="text-stone-400">€800 – €1.800 разово в Вене. Одностраничник с меню, контактами и адаптивным мобильным видом.</p>
+        </div>
+        <div class="bg-stone-950 p-4 border border-white/10">
+          <span class="text-white font-semibold block mb-1">2. Standard Restaurant CMS</span>
+          <p class="text-stone-400">€2.500 – €5.000 в австрийских агентствах. Мультистраничник с CMS и расширенным SEO.</p>
+        </div>
+        <div class="bg-stone-950 p-4 border border-white/10">
+          <span class="text-white font-semibold block mb-1">3. WKO Stundensatz</span>
+          <p class="text-stone-400">€80 – €150/час официальная средняя ставка веб-специалистов в Австрии.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="toggleStatsModal()" class="px-6 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+<script>function toggleStatsModal(){ document.getElementById("stats-modal").classList.toggle("hidden"); }</script>
 </body>
 </html>
