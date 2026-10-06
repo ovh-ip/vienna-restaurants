@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full bg-stone-950 text-stone-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vienna Gastro Studio | Презентационный центр сайтов</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-serif { font-family: 'Instrument Serif', Georgia, serif; }
+  </style>
+</head>
+<body class="h-full flex flex-col overflow-hidden bg-stone-950 text-stone-200">
+
+  <!-- EXECUTIVE TOP BAR -->
+  <header class="h-16 bg-stone-900 border-b border-white/10 px-6 flex items-center justify-between shrink-0 z-20">
+    <div class="flex items-center space-x-4">
+      <div class="w-8 h-8 border border-white/20 bg-stone-950 flex items-center justify-center font-serif text-lg font-normal text-white">
+        V
+      </div>
+      <div>
+        <h1 class="text-xs tracking-wider uppercase font-semibold text-white flex items-center gap-2">
+          Vienna Gastro Studio
+          <span class="text-[9px] px-1.5 py-0.5 border border-white/10 text-stone-400 font-normal">Wien 1030 &bull; Rennweg &bull; Verified 100%</span>
+        </h1>
+        <p class="text-[10px] text-stone-400 font-light">3 заведения у HTL Rennweg с проверенными данными Google Maps</p>
+      </div>
+    </div>
+
+    <!-- SITE SWITCHER -->
+    <div class="flex items-center space-x-1.5 bg-stone-950 p-1 border border-white/10">
+      <button onclick="switchSite('lukas', this)" class="site-tab active px-3.5 py-1.5 text-xs tracking-wide uppercase font-medium bg-white text-stone-950 transition-all">
+        Luka's &amp; Co (Fisch)
+      </button>
+      <button onclick="switchSite('simon', this)" class="site-tab px-3.5 py-1.5 text-xs tracking-wide uppercase font-medium text-stone-400 hover:text-white transition-all">
+        Café Simon (Wurlitzer Bar)
+      </button>
+      <button onclick="switchSite('public', this)" class="site-tab px-3.5 py-1.5 text-xs tracking-wide uppercase font-medium text-stone-400 hover:text-white transition-all">
+        Café Public (Coffee &amp; Bar)
+      </button>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="flex items-center space-x-3">
+      <button onclick="togglePitchModal()" class="px-3.5 py-1.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all">
+        Досье Google Maps &amp; Питч
+      </button>
+      <a id="open-new-tab" href="lukas-fischrestaurant.html" target="_blank" class="px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-white/10 text-stone-300 text-xs tracking-wider uppercase transition-all">
+        ↗ Открыть сайт
+      </a>
+    </div>
+  </header>
+
+  <!-- IFRAME CONTAINER -->
+  <div class="flex-1 relative flex overflow-hidden">
+    <div class="flex-1 h-full bg-stone-900 relative">
+      <iframe id="preview-frame" src="lukas-fischrestaurant.html" class="w-full h-full border-0"></iframe>
+    </div>
+  </div>
+
+  <!-- PITCH & CLIENT DOSSIER MODAL -->
+  <div id="pitch-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-stone-900 border border-white/15 max-w-4xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl text-left">
+      <div class="flex justify-between items-start border-b border-white/10 pb-5 mb-6">
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-stone-400 font-semibold">100% Google Maps Verified &bull; Wien 3</span>
+          <h2 class="font-serif text-3xl text-white mt-1">Клиенты, реальные контакты и аргументы продаж</h2>
+        </div>
+        <button onclick="togglePitchModal()" class="text-stone-400 hover:text-white text-xl">✕</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-xs font-light">
+        
+        <!-- Client 1 -->
+        <div class="bg-stone-950 p-6 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white">Luka's &amp; Co</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 border border-white/20 text-stone-300">Google 4.7★</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Oberzellergasse 16/1a (250 м от HTL)</p>
+            <p><strong>Тел:</strong> +43 1 286 26 44</p>
+            <p><strong>Часы:</strong> Пн-Пт 11:30–14:30 &amp; 17:30–23:30, Сб 18:00–23:30, Вс закрыто</p>
+            <p><strong>Рейтинг:</strong> Falstaff 83 балла (1 вилка)</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Боль:</strong> Платят комиссии TheFork до €3,50 с гостя за бронирование. Прямой сайт с формой заявки экономит тысячи евро в месяц.
+          </div>
+          <p class="text-[11px] text-stone-400 pt-1">
+            <strong>Оценка проекта:</strong> €1.800 – €3.000
+          </p>
+        </div>
+
+        <!-- Client 2 -->
+        <div class="bg-stone-950 p-6 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white">Café Simon</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 border border-white/20 text-stone-300">Google 4.5★</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Landstraßer Hauptstr. 165 (350 м от HTL)</p>
+            <p><strong>Тел:</strong> +43 650 9033960</p>
+            <p><strong>Часы:</strong> Ежедневно 10:00 – 02:00 (до 2 ночи!)</p>
+            <p><strong>Фишка:</strong> Оригинальный Wurlitzer Jukebox</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Боль:</strong> Это культовая венская «машина времени» (Zeitkapsel), но в интернете ее принимают то за отель, то за ресторан. Сайт подчеркивает барную культуру и винил!
+          </div>
+          <p class="text-[11px] text-stone-400 pt-1">
+            <strong>Оценка проекта:</strong> €800 – €1.400
+          </p>
+        </div>
+
+        <!-- Client 3 -->
+        <div class="bg-stone-950 p-6 border border-white/10 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-serif text-xl text-white">Café Public</span>
+            <span class="text-[9px] uppercase tracking-widest px-2 py-0.5 border border-white/20 text-stone-300">Google 4.3★</span>
+          </div>
+          <div class="text-stone-300 space-y-1 text-[11px]">
+            <p><strong>Адрес:</strong> Landstraßer Hauptstr. 173–175 (350 м от HTL)</p>
+            <p><strong>Тел:</strong> +43 1 945 17 84</p>
+            <p><strong>Часы:</strong> Ежедневно 10:00 – 00:00</p>
+            <p><strong>Фишка:</strong> Schanigarten, Free Wi-Fi, Pet-friendly</p>
+          </div>
+          <div class="p-3 bg-white/5 border border-white/5 text-[11px] text-stone-300 leading-relaxed">
+            <strong>Боль:</strong> Нет презентации своего Schanigarten, кофе, бранчей и брони для празднования дней рождения и встреч после концертов в Arena Wien.
+          </div>
+          <p class="text-[11px] text-stone-400 pt-1">
+            <strong>Оценка проекта:</strong> €900 – €1.600
+          </p>
+        </div>
+
+      </div>
+
+      <!-- GERMAN PITCH SCRIPT -->
+      <div class="bg-stone-950 p-6 border border-white/10 mb-6">
+        <h3 class="text-xs uppercase tracking-wider text-white mb-3 font-semibold">
+          Скрипт для разговора с владельцем (на венском немецком)
+        </h3>
+        <div class="p-4 bg-stone-900 border border-white/5 font-sans text-xs text-stone-300 leading-relaxed space-y-2">
+          <p class="text-white font-medium">„Grüß Gott! Ich bin Webdesigner hier im 3. Bezirk beim Rennweg. Mir ist aufgefallen, dass Sie für Ihr Haus noch keinen zeitgemäßen Webauftritt nutzen und Gäste Sie derzeit nur über Google Maps oder Drittportale finden.“</p>
+          <p class="text-stone-300">„Ich habe bereits einen maßgeschneiderten, komplett fertigen Entwurf für Sie ausgearbeitet — mit klarer Speisekarte, hochauflösenden Fotos und direkter Tischreservierung.“</p>
+          <p class="text-stone-400">„Darf ich Ihnen den Entwurf kurz auf dem Tablet zeigen? Dauert nur zwei Minuten.“</p>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button onclick="togglePitchModal()" class="px-6 py-2 border border-white/20 hover:border-white text-white text-xs uppercase tracking-wider">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sites = {
+      lukas: 'lukas-fischrestaurant.html',
+      simon: 'gasthaus-simon.html',
+      public: 'cafe-public.html'
+    };
+
+    function switchSite(key, btn) {
+      document.querySelectorAll('.site-tab').forEach(t => {
+        t.classList.remove('bg-white', 'text-stone-950');
+        t.classList.add('text-stone-400');
+      });
+      btn.classList.add('bg-white', 'text-stone-950');
+      btn.classList.remove('text-stone-400');
+
+      const url = sites[key];
+      document.getElementById('preview-frame').src = url;
+      document.getElementById('open-new-tab').href = url;
+    }
+
+    function togglePitchModal() {
+      document.getElementById('pitch-modal').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

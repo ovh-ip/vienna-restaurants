@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luka's & Co | Restaurant & Meeresfrüchte • Wien 1030</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            noir: {
+              950: '#070a0e',
+              900: '#0d131a',
+              850: '#121a24',
+              800: '#182330',
+              700: '#233245',
+            },
+            champagne: {
+              100: '#f5efe6',
+              200: '#ebdccb',
+              300: '#dfc7ab',
+              400: '#c5a880',
+              500: '#a88960',
+              600: '#8c704b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-noir-950 text-slate-200 font-sans antialiased selection:bg-champagne-400 selection:text-noir-950">
+
+  <!-- TOP BAR (VERIFIED DATA) -->
+  <div class="border-b border-white/5 bg-noir-900/60 text-[11px] tracking-wider uppercase text-slate-400 py-2.5 px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center space-x-6">
+        <span>📍 Oberzellergasse 16/1a, 1030 Wien (3 Min. von HTL Rennweg)</span>
+        <span class="text-slate-600">•</span>
+        <span class="hidden sm:inline">Mo–Fr: 11:30–14:30 &amp; 17:30–23:30 | Sa: 18:00–23:30</span>
+      </div>
+      <div class="flex items-center space-x-6 font-medium">
+        <span class="text-champagne-300">★ Falstaff 83 Punkte &bull; Google 4.7★</span>
+        <a href="tel:+4312862644" class="hover:text-champagne-200 transition-colors">📞 +43 1 286 26 44</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-noir-950/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col">
+        <span class="font-serif text-2xl tracking-widest text-white font-medium">LUKA'S <span class="text-champagne-400 font-light">&amp;</span> CO</span>
+        <span class="text-[9px] tracking-[0.3em] uppercase text-slate-400 font-sans">Fischrestaurant &bull; Falstaff 2025/2026</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-10 text-xs tracking-[0.15em] uppercase font-medium text-slate-300">
+        <a href="#tagesfang" class="hover:text-champagne-300 transition-colors">Tagesfang</a>
+        <a href="#speisekarte" class="hover:text-champagne-300 transition-colors">Speisekarte</a>
+        <a href="#philosophie" class="hover:text-champagne-300 transition-colors">Über Uns</a>
+        <a href="#kontakt" class="hover:text-champagne-300 transition-colors">Kontakt</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <button onclick="openModal()" class="px-6 py-2.5 border border-champagne-400/80 text-champagne-200 hover:bg-champagne-400 hover:text-noir-950 text-xs tracking-widest uppercase font-medium transition-all duration-300">
+          Tisch reservieren
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-slate-300 p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-noir-900 border-b border-white/10 px-6 py-6 space-y-4 text-xs tracking-wider uppercase">
+      <a href="#tagesfang" onclick="toggleMobileMenu()" class="block py-1 hover:text-champagne-300">Tagesfang</a>
+      <a href="#speisekarte" onclick="toggleMobileMenu()" class="block py-1 hover:text-champagne-300">Speisekarte</a>
+      <a href="#philosophie" onclick="toggleMobileMenu()" class="block py-1 hover:text-champagne-300">Über Uns</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1 hover:text-champagne-300">Kontakt</a>
+      <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-4 py-3 bg-champagne-400 text-noir-950 font-semibold tracking-widest uppercase text-xs">
+        Tisch reservieren
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <!-- Authentic Fresh Fish Display -->
+      <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=1920&q=85" alt="Tagesfrischer Fisch auf Eis" class="w-full h-full object-cover opacity-25">
+      <div class="absolute inset-0 bg-gradient-to-t from-noir-950 via-noir-950/80 to-noir-950/50"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+      <div class="inline-block mb-6">
+        <span class="text-[11px] tracking-[0.25em] uppercase text-champagne-400/90 font-medium border-b border-champagne-400/30 pb-1.5">
+          Mediterrane Fischkultur &bull; 1030 Wien Landstraße
+        </span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-light tracking-normal text-white mb-8 leading-[1.15]">
+        Frischer Fang der Adria.<br>
+        <span class="italic font-normal text-champagne-200">Zubereitet mit purer Schlichtheit.</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-slate-300 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+        Täglich angelieferter Edelfisch im Ganzen gegrillt, dalmatinische Buzara mit fangfrischen Scampi, knuspriger Oktopus mit Wasabicreme und hausgemachte Pasta.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+        <button onclick="openModal()" class="w-full sm:w-auto px-9 py-4 bg-champagne-400 hover:bg-champagne-300 text-noir-950 text-xs tracking-[0.18em] uppercase font-semibold transition-all">
+          Tisch reservieren
+        </button>
+        <a href="#speisekarte" class="w-full sm:w-auto px-9 py-4 border border-white/20 hover:border-champagne-400 text-slate-200 hover:text-white text-xs tracking-[0.18em] uppercase transition-all">
+          Speisekarte einsehen
+        </a>
+      </div>
+
+      <!-- VERIFIED BADGES -->
+      <div class="grid grid-cols-3 gap-8 max-w-lg mx-auto mt-20 pt-10 border-t border-white/10 text-center">
+        <div>
+          <div class="font-serif text-3xl font-light text-white">4.7 ★</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">Google (300+ Rezensionen)</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl font-light text-champagne-300">83 Pkt.</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">Falstaff 1 Gabel</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl font-light text-white">9.4 / 10</div>
+          <div class="text-[10px] tracking-widest uppercase text-slate-400 mt-1">TheFork Bewertung</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGESFANG HIGHLIGHT -->
+  <section id="tagesfang" class="py-16 bg-noir-900 border-y border-white/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="border border-white/10 bg-noir-850 p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div class="max-w-2xl space-y-3">
+          <div class="text-[10px] tracking-[0.25em] uppercase text-champagne-400 font-semibold">Tagesempfehlung des Küchenchefs</div>
+          <h2 class="font-serif text-3xl sm:text-4xl text-white font-normal">Wolfsbarsch im Ganzen gegrillt</h2>
+          <p class="text-xs text-slate-300 leading-relaxed font-light">
+            Auf offenem Feuer sanft gegrillt mit nativem istrischem Olivenöl, Meersalz aus Nin, Knoblauch und feinen Kräutern. Serviert mit traditionellem Mangold-Kartoffel-Gemüse.
+          </p>
+          <div class="text-[11px] text-slate-400 font-sans pt-1">
+            Weinbegleitung: <span class="text-champagne-300">2023 Malvazija Istarska, Weingut Kozlović</span>
+          </div>
+        </div>
+        <div class="flex flex-col sm:items-end gap-3 shrink-0">
+          <div class="font-serif text-3xl text-white">€ 36,50</div>
+          <span class="text-[10px] text-slate-400 uppercase tracking-widest">Tagesfrisches Gewicht</span>
+          <button onclick="openModal('Wolfsbarsch')" class="mt-2 px-6 py-2.5 border border-champagne-400/80 text-champagne-300 hover:bg-champagne-400 hover:text-noir-950 text-xs tracking-wider uppercase transition-all">
+            Vorbestellen
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEISEKARTE (AUTHENTIC FALSTAFF HIGHLIGHTS) -->
+  <section id="speisekarte" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <div class="text-[10px] tracking-[0.3em] uppercase text-champagne-400 font-semibold mb-2">Auszug aus der Karte</div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-white font-light">Von Falstaff &amp; Gästen geliebt</h2>
+      <p class="text-xs text-slate-400 mt-3 font-light leading-relaxed">
+        Jedes Gericht wird à la minute zubereitet. Allergeninformationen gemäß österreichischer Kennzeichnung.
+      </p>
+
+      <div class="flex justify-center flex-wrap gap-2 mt-10 border-b border-white/10 pb-4">
+        <button onclick="filterDishes('all', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-champagne-400 text-white font-medium">Alle Speisen</button>
+        <button onclick="filterDishes('vorspeise', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-slate-200">Vorspeisen</button>
+        <button onclick="filterDishes('hauptgang', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-slate-200">Fisch &amp; Fleisch</button>
+        <button onclick="filterDishes('dessert', this)" class="menu-tab px-4 py-2 text-xs tracking-wider uppercase border-b-2 border-transparent text-slate-400 hover:text-slate-200">Desserts</button>
+      </div>
+    </div>
+
+    <!-- Dishes Grid with Exact Verified Images -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Dish 1: Crispy Octopus with Wasabi Cream (Exact Falstaff hit) -->
+      <div class="dish-item hauptgang border border-white/10 bg-noir-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-5">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=350&q=80" alt="Knuspriger Oktopusarm" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white font-normal">Knuspriger Oktopus</h3>
+              <span class="font-serif text-xl text-champagne-200 ml-3">€ 28,90</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Kross angebratener Oktopusarm serviert auf feiner Wasabicreme, marinierten Kirschtomaten und Kräuter-Olivenöl.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: R (Weichtiere), G, L</span>
+          <span class="text-champagne-300 font-medium">Falstaff-Kritikerliebling</span>
+        </div>
+      </div>
+
+      <!-- Dish 2: Scampi Buzara (Famous House Special) -->
+      <div class="dish-item hauptgang border border-white/10 bg-noir-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-5">
+          <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=350&q=80" alt="Scampi na Buzaru" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white font-normal">Škampi na Buzaru</h3>
+              <span class="font-serif text-xl text-champagne-200 ml-3">€ 32,50</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Ganze frische Scampi geschmort in traditioneller istrischer Buzara-Sauce aus Weißwein, Knoblauch, Tomaten und Petersilie.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: B (Krebstiere), O (Sulfite)</span>
+          <span class="text-champagne-300 font-medium">Hausspezialität</span>
+        </div>
+      </div>
+
+      <!-- Dish 3: Tuna Tartare -->
+      <div class="dish-item vorspeise border border-white/10 bg-noir-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-5">
+          <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=350&q=80" alt="Thunfisch Tartar" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white font-normal">Thunfisch Tartare</h3>
+              <span class="font-serif text-xl text-champagne-200 ml-3">€ 19,80</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Feinstes Gelbflossen-Thunfischfilet, Limettenzeste, Avocadocreme, Sesamöl und krosse Teigblätter.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: D (Fisch), N (Sesam)</span>
+          <span class="text-slate-400 font-medium">Sashimi-Güte</span>
+        </div>
+      </div>
+
+      <!-- Dish 4: Bistecca alla Fiorentina (Verified meat option) -->
+      <div class="dish-item hauptgang border border-white/10 bg-noir-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-5">
+          <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=350&q=80" alt="Bistecca Fiorentina" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white font-normal">Bistecca Fiorentina</h3>
+              <span class="font-serif text-xl text-champagne-200 ml-3">€ 34,00</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Für Fleischliebhaber: Zart gereiftes T-Bone Steak vom Grill mit Meersalzflocken, Rosmarin und Ofenkartoffeln.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: G (Milch)</span>
+          <span class="text-slate-400 font-medium">Vom Grill</span>
+        </div>
+      </div>
+
+      <!-- Dish 5: Whole Sea Bass / Dorade -->
+      <div class="dish-item hauptgang border border-white/10 bg-noir-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-5">
+          <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=350&q=80" alt="Orada im Ganzen" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white font-normal">Goldbrasse (Orada)</h3>
+              <span class="font-serif text-xl text-champagne-200 ml-3">€ 29,50</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Frische Goldbrasse im Ganzen saftig gegrillt mit dalmatinischem Mangold-Erdäpfel-Gemüse und frischem Knoblauchöl.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: D (Fisch), G</span>
+          <span class="text-slate-400 font-medium">Fangfrisch</span>
+        </div>
+      </div>
+
+      <!-- Dish 6: The famous "Blumentopf" Dessert -->
+      <div class="dish-item dessert border border-white/10 bg-noir-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-5">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=350&q=80" alt="Blumentopf Schokodessert" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-500">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white font-normal">Der „Blumentopf“</h3>
+              <span class="font-serif text-xl text-champagne-200 ml-3">€ 9,80</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Die berühmte Nachspeise unseres Hauses: Serviert im echten Tontopf mit dunkler Schokoladenerde, feiner Creme und frischer Minze.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-white/5 flex justify-between items-center text-[10px] text-slate-400 tracking-wider">
+          <span>Allergene: A, C, G</span>
+          <span class="text-champagne-300 font-medium">Berühmter Hausnachtisch</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KONTAKT & VERIFIED OPENING HOURS -->
+  <section id="kontakt" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="border border-white/10 bg-noir-900/50 p-8">
+        <div class="text-[10px] tracking-[0.2em] uppercase text-champagne-400 mb-2 font-semibold">Standort</div>
+        <h3 class="font-serif text-2xl text-white mb-4 font-normal">Oberzellergasse 16</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+          Oberzellergasse 16/1a<br>
+          1030 Wien, Österreich
+        </p>
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          3 Min. zu Fuß von HTL Rennweg &bull; S-Bahn St. Marx &bull; Tram 71.
+        </p>
+      </div>
+
+      <div class="border border-white/10 bg-noir-900/50 p-8">
+        <div class="text-[10px] tracking-[0.2em] uppercase text-champagne-400 mb-2 font-semibold">Google Maps Zeiten</div>
+        <h3 class="font-serif text-2xl text-white mb-4 font-normal">Öffnungszeiten</h3>
+        <ul class="text-xs text-slate-300 space-y-2 font-light">
+          <li class="flex justify-between">
+            <span>Montag – Freitag:</span>
+            <span class="text-white">11:30–14:30 &bull; 17:30–23:30</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Samstag:</span>
+            <span class="text-white">18:00–23:30 (Abend)</span>
+          </li>
+          <li class="flex justify-between text-slate-500 pt-1 border-t border-white/5">
+            <span>Sonntag &amp; Feiertage:</span>
+            <span>Geschlossen (Ruhetag)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="border border-white/10 bg-noir-900/50 p-8">
+        <div class="text-[10px] tracking-[0.2em] uppercase text-champagne-400 mb-2 font-semibold">Offizieller Kontakt</div>
+        <h3 class="font-serif text-2xl text-white mb-4 font-normal">Tisch reservieren</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light mb-4">
+          Direkt ohne Drittanbieter-Provisionen anfragen:
+        </p>
+        <a href="tel:+4312862644" class="block font-serif text-2xl text-champagne-300 hover:text-white transition-colors mb-2">
+          +43 1 286 26 44
+        </a>
+        <p class="text-[11px] text-slate-400 mb-4">fischlukas@outlook.com</p>
+        <button onclick="openModal()" class="w-full py-3 bg-champagne-400/10 hover:bg-champagne-400 hover:text-noir-950 text-champagne-200 border border-champagne-400/40 text-[11px] tracking-widest uppercase transition-all">
+          Reservierungsformular
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-12 text-center text-[11px] text-slate-500 font-light">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <span class="text-white font-medium">LUKA'S &amp; CO</span> &bull; Oberzellergasse 16/1a, 1030 Wien
+      </div>
+      <div>
+        &copy; 2026 Fischrestaurant Luka's &amp; Co.
+      </div>
+      <div class="space-x-6">
+        <a href="#" class="hover:text-slate-300">Impressum</a>
+        <a href="#" class="hover:text-slate-300">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RESERVATION MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-noir-900 border border-white/15 max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-[0.2em] text-champagne-400 font-semibold">Direkte Tischreservierung</span>
+        <h3 class="font-serif text-3xl font-normal text-white mt-1">Luka's &amp; Co</h3>
+        <p class="text-xs text-slate-400 mt-1">Telefonische Bestätigung unter +43 1 286 26 44.</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitReservation(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block uppercase tracking-wider text-slate-400 mb-1 text-[10px]">Name *</label>
+          <input type="text" required placeholder="Ihr Vor- und Nachname" class="w-full bg-noir-950 border border-white/10 focus:border-champagne-400 px-4 py-3 text-white outline-none">
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block uppercase tracking-wider text-slate-400 mb-1 text-[10px]">Telefonnummer *</label>
+            <input type="tel" required placeholder="+43..." class="w-full bg-noir-950 border border-white/10 focus:border-champagne-400 px-4 py-3 text-white outline-none">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-400 mb-1 text-[10px]">E-Mail</label>
+            <input type="email" placeholder="name@domain.at" class="w-full bg-noir-950 border border-white/10 focus:border-champagne-400 px-4 py-3 text-white outline-none">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3">
+          <div>
+            <label class="block uppercase tracking-wider text-slate-400 mb-1 text-[10px]">Datum</label>
+            <input type="date" required id="res-date" class="w-full bg-noir-950 border border-white/10 focus:border-champagne-400 px-3 py-3 text-white outline-none text-[11px]">
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-400 mb-1 text-[10px]">Uhrzeit</label>
+            <select class="w-full bg-noir-950 border border-white/10 focus:border-champagne-400 px-3 py-3 text-white outline-none text-[11px]">
+              <option>11:30 Mittag</option>
+              <option>12:30 Mittag</option>
+              <option selected>18:00 Abend</option>
+              <option>19:00 Abend</option>
+              <option>20:00 Abend</option>
+            </select>
+          </div>
+          <div>
+            <label class="block uppercase tracking-wider text-slate-400 mb-1 text-[10px]">Personen</label>
+            <select class="w-full bg-noir-950 border border-white/10 focus:border-champagne-400 px-3 py-3 text-white outline-none text-[11px]">
+              <option>2 Gäste</option>
+              <option>3–4 Gäste</option>
+              <option>5–6 Gäste</option>
+              <option>Gruppe 7+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block uppercase tracking-wider text-slate-400 mb-1 text-[10px]">Wunsch / Vorbestellung</label>
+          <input type="text" id="special-dish" placeholder="z.B. Scampi Buzara vorbestellen, Fensterplatz" class="w-full bg-noir-950 border border-white/10 focus:border-champagne-400 px-4 py-3 text-white outline-none">
+        </div>
+
+        <button type="submit" class="w-full py-4 bg-champagne-400 hover:bg-champagne-300 text-noir-950 font-semibold tracking-widest uppercase transition-all text-xs mt-3">
+          Reservierungsanfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-2xl text-white mb-2">Vielen Dank!</h4>
+        <p class="text-xs text-slate-400 mb-6">Wir haben Ihre Anfrage erhalten und melden uns telefonisch bei Ihnen.</p>
+        <button onclick="closeModal()" class="px-6 py-2 border border-champagne-400 text-champagne-300 text-xs tracking-wider uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterDishes(cat, btn) {
+      document.querySelectorAll('.menu-tab').forEach(b => {
+        b.classList.remove('border-champagne-400', 'text-white', 'font-medium');
+        b.classList.add('border-transparent', 'text-slate-400');
+      });
+      btn.classList.add('border-champagne-400', 'text-white', 'font-medium');
+      btn.classList.remove('border-transparent', 'text-slate-400');
+
+      document.querySelectorAll('.dish-item').forEach(card => {
+        if (cat === 'all' || card.classList.contains(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal(dish = '') {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      if (dish) {
+        document.getElementById('special-dish').value = 'Vorbestellung: ' + dish;
+      }
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitReservation(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

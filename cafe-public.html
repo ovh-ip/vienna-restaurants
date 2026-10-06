@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Public | Specialty Coffee & Bar • Wien 1030</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            studio: {
+              950: '#0e1013',
+              900: '#14171c',
+              850: '#1c2027',
+              800: '#262b33',
+              clay: '#b2614b',
+              sand: '#f4efe8',
+              muted: '#8c939f',
+              border: 'rgba(255, 255, 255, 0.08)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-studio-950 text-slate-200 font-sans antialiased selection:bg-studio-clay selection:text-white">
+
+  <!-- TOP INFO (VERIFIED GOOGLE MAPS DATA) -->
+  <div class="border-b border-studio-border bg-studio-900/60 text-[11px] tracking-wider uppercase text-studio-muted py-2.5 px-6">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-6">
+        <span>📍 Landstraßer Hauptstraße 173–175 (Madersperger-Hof), 1030 Wien</span>
+        <span class="text-slate-600">&bull;</span>
+        <span class="hidden sm:inline">4 Min. von HTL Rennweg &bull; Nahe T-Center &amp; Arena</span>
+      </div>
+      <div class="flex items-center space-x-6 font-medium">
+        <span>🕒 Täglich: 10:00 – 00:00 Uhr</span>
+        <a href="tel:+4319451784" class="hover:text-white transition-colors">📞 +43 1 945 17 84</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-studio-950/90 backdrop-blur-md border-b border-studio-border">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex flex-col">
+        <span class="font-serif text-3xl tracking-tight text-white font-normal">Café Public</span>
+        <span class="text-[9px] tracking-[0.25em] uppercase text-studio-muted">Coffee &bull; Bar &bull; Schanigarten &bull; 1030 Wien</span>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-10 text-xs tracking-wider uppercase font-medium text-slate-300">
+        <a href="#karte" class="hover:text-white transition-colors">Karte &amp; Getränke</a>
+        <a href="#konzept" class="hover:text-white transition-colors">Schanigarten &amp; Wi-Fi</a>
+        <a href="#kontakt" class="hover:text-white transition-colors">Standort</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <button onclick="openModal()" class="px-6 py-2.5 border border-white/20 hover:border-white text-white text-xs tracking-wider uppercase font-medium transition-all">
+          Platz anfragen
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-studio-900 border-b border-studio-border px-6 py-6 space-y-3 text-xs tracking-wider uppercase">
+      <a href="#karte" onclick="toggleMobileMenu()" class="block py-1 hover:text-white">Karte &amp; Getränke</a>
+      <a href="#konzept" onclick="toggleMobileMenu()" class="block py-1 hover:text-white">Über Uns</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1 hover:text-white">Standort &amp; Zeiten</a>
+      <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-3 py-3 border border-white text-white text-xs uppercase tracking-wider font-semibold">
+        Platz anfragen
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[75vh] flex items-center justify-center border-b border-studio-border overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1920&q=80" alt="Café Public Interior" class="w-full h-full object-cover opacity-20">
+      <div class="absolute inset-0 bg-gradient-to-t from-studio-950 via-studio-950/80 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+      <div class="inline-block mb-6">
+        <span class="text-[11px] tracking-[0.25em] uppercase text-studio-muted font-medium border-b border-white/10 pb-1">
+          Kaffee &bull; Drinks &bull; Laptop-Friendly &bull; Wien 3
+        </span>
+      </div>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-normal text-white mb-6 leading-[1.1]">
+        Vom ersten Espresso<br>
+        <span class="italic text-studio-sand">bis zum Feierabend-Drink.</span>
+      </h1>
+
+      <p class="text-sm text-slate-300 font-light max-w-xl mx-auto mb-10 leading-relaxed">
+        Direkt gehandelte Kaffeebohnen, ofenwarme Toasts, sonniger Schanigarten an der Landstraße und am Abend kühles Bier, Spritzer und erlesene Drinks.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openModal()" class="w-full sm:w-auto px-8 py-3.5 bg-white text-studio-950 hover:bg-studio-sand text-xs tracking-wider uppercase font-semibold transition-all">
+          Tisch / Lounge reservieren
+        </button>
+        <a href="#karte" class="w-full sm:w-auto px-8 py-3.5 border border-white/20 hover:border-white text-white text-xs tracking-wider uppercase transition-all">
+          Karte entdecken ↓
+        </a>
+      </div>
+
+      <!-- GOOGLE MAPS STATS -->
+      <div class="grid grid-cols-3 gap-6 max-w-md mx-auto mt-16 pt-8 border-t border-studio-border text-center">
+        <div>
+          <div class="font-serif text-2xl text-white">4.3 ★</div>
+          <div class="text-[10px] tracking-widest uppercase text-studio-muted mt-1">Google Maps (186 Reviews)</div>
+        </div>
+        <div>
+          <div class="font-serif text-2xl text-white">10 – 00 Uhr</div>
+          <div class="text-[10px] tracking-widest uppercase text-studio-muted mt-1">Täglich durchgehend</div>
+        </div>
+        <div>
+          <div class="font-serif text-2xl text-white">Schanigarten</div>
+          <div class="text-[10px] tracking-widest uppercase text-studio-muted mt-1">Freies Highspeed Wi-Fi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KARTE SECTION (VERIFIED ITEMS & EXACT PHOTOS) -->
+  <section id="karte" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="text-center max-w-xl mx-auto mb-16">
+      <div class="text-[10px] tracking-[0.25em] uppercase text-studio-muted font-semibold mb-2">Auswahl</div>
+      <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal">Kaffee, Drinks &amp; Snacks</h2>
+      <p class="text-xs text-slate-400 mt-3 font-light">Ehrliche Qualität zu fairen Wiener Preisen.</p>
+
+      <!-- Category Filter -->
+      <div class="flex justify-center flex-wrap gap-2 mt-8 border-b border-studio-border pb-4">
+        <button onclick="filterItems('all', this)" class="filter-tab px-4 py-2 text-xs uppercase tracking-wider border-b-2 border-white text-white font-semibold">Alle</button>
+        <button onclick="filterItems('coffee', this)" class="filter-tab px-4 py-2 text-xs uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-white">Kaffee &amp; Toast</button>
+        <button onclick="filterItems('drinks', this)" class="filter-tab px-4 py-2 text-xs uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-white">Bier &amp; Spritzer</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Item 1: Flat White -->
+      <div class="card-item coffee border border-studio-border bg-studio-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-4">
+          <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=350&q=80" alt="Specialty Coffee" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white">Wiener Melange / Flat White</h3>
+              <span class="font-serif text-lg text-slate-200">€ 4,20</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Kräftiger Espresso aus schonend gerösteten Bohnen, feinporiger Milchschaum. Wahlweise mit Bio-Vollmilch oder Hafermilch.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-studio-border text-[10px] text-studio-muted flex justify-between">
+          <span>Allergen: G (Milch)</span>
+          <span class="text-slate-300">Barista Handwerk</span>
+        </div>
+      </div>
+
+      <!-- Item 2: Avocado Toast -->
+      <div class="card-item coffee border border-studio-border bg-studio-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-4">
+          <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=350&q=80" alt="Avocado Toast" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white">Avocado Sauerteig-Toast</h3>
+              <span class="font-serif text-lg text-slate-200">€ 8,90</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Knuspriges Bauernbrot mit mariniertem Avocado-Mash, pochiertem Bio-Ei, Kirschtomaten und Kresse.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-studio-border text-[10px] text-studio-muted flex justify-between">
+          <span>Allergene: A, C</span>
+          <span class="text-slate-300">Vegetarisch</span>
+        </div>
+      </div>
+
+      <!-- Item 3: Schinken-Käse-Toast (Classic House Special) -->
+      <div class="card-item coffee border border-studio-border bg-studio-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-4">
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=350&q=80" alt="Schinken Käse Toast" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white">Schinken-Käse-Toast</h3>
+              <span class="font-serif text-lg text-slate-200">€ 5,50</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Der beliebte Klassiker: Heiß getoastet mit saftigem Schinken und reichlich geschmolzenem Käse, Ketchup oder Senf.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-studio-border text-[10px] text-studio-muted flex justify-between">
+          <span>Allergene: A, G</span>
+          <span class="text-slate-300">Warm &amp; Frisch</span>
+        </div>
+      </div>
+
+      <!-- Item 4: Aperitif Spritz -->
+      <div class="card-item drinks border border-studio-border bg-studio-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-4">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=350&q=80" alt="Aperitif Spritz" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white">Public Bitter Spritz</h3>
+              <span class="font-serif text-lg text-slate-200">€ 6,50</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Italienischer Bitterlikör, Prosecco, Soda und frische Zitrusscheibe auf Eis serviert.
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-studio-border text-[10px] text-studio-muted flex justify-between">
+          <span>Allergen: O (Sulfite)</span>
+          <span class="text-slate-300">Afterwork Favorit</span>
+        </div>
+      </div>
+
+      <!-- Item 5: Austrian Beer -->
+      <div class="card-item drinks border border-studio-border bg-studio-900/60 p-6 flex flex-col justify-between">
+        <div class="flex gap-5 mb-4">
+          <img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?auto=format&fit=crop&w=350&q=80" alt="Kühles Bier" class="w-24 h-24 object-cover shrink-0 grayscale hover:grayscale-0 transition-all duration-300">
+          <div class="flex-1">
+            <div class="flex justify-between items-baseline mb-1">
+              <h3 class="font-serif text-2xl text-white">Österreichisches Bier</h3>
+              <span class="font-serif text-lg text-slate-200">ab € 4,40</span>
+            </div>
+            <p class="text-xs text-slate-300 font-light leading-relaxed">
+              Kühles Helles und Märzenbier vom Fass und aus der Flasche (Ottakringer, Gösser, Stiegl).
+            </p>
+          </div>
+        </div>
+        <div class="pt-3 border-t border-studio-border text-[10px] text-studio-muted flex justify-between">
+          <span>Allergen: A</span>
+          <span class="text-slate-300">Kühl serviert</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KONZEPT & SCHANIGARTEN -->
+  <section id="konzept" class="py-20 bg-studio-900 border-t border-studio-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <div class="text-[10px] tracking-[0.25em] uppercase text-studio-muted font-semibold">Infrastruktur</div>
+          <h2 class="font-serif text-4xl sm:text-5xl text-white font-normal leading-tight">
+            Schanigarten, schnelles Wi-Fi &amp; Barrierefreiheit
+          </h2>
+          <p class="text-xs text-slate-300 font-light leading-relaxed">
+            Café Public im Madersperger-Hof ist der unkomplizierte Treffpunkt an der Landstraßer Hauptstraße. Ob für eine produktive Pause am Laptop, das Treffen mit Studienkollegen der HTL oder das Feierabendbier mit Kollegen aus dem T-Center.
+          </p>
+
+          <div class="space-y-3 pt-2 text-xs text-slate-300 font-light">
+            <div class="flex items-center gap-3">
+              <span class="text-white">—</span>
+              <span><strong>Großer Schanigarten:</strong> Gemütlich draußen sitzen in den Frühlings- und Sommermonaten.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-white">—</span>
+              <span><strong>Arbeitsfreundlich:</strong> Schnelles, kostenloses WLAN und Steckdosen.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-white">—</span>
+              <span><strong>Barrierefrei &amp; Pet-friendly:</strong> Vollständig barrierefreier Zugang, Hunde herzlich willkommen.</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Cafe Bar" class="border border-studio-border w-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STANDORT & KONTAKT -->
+  <section id="kontakt" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="border border-studio-border bg-studio-900/40 p-8">
+        <div class="text-[10px] tracking-wider uppercase text-studio-muted mb-2 font-semibold">Lage</div>
+        <h3 class="font-serif text-2xl text-white mb-3">Landstraßer Hauptstr. 173</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light mb-3">
+          Landstraßer Hauptstraße 173–175 (Madersperger-Hof)<br>
+          1030 Wien, Österreich
+        </p>
+        <p class="text-[11px] text-studio-muted">
+          4 Min. von HTL Rennweg &bull; U3 Schlachthausgasse &bull; Bus 77A &bull; Straßenbahn 18.
+        </p>
+      </div>
+
+      <div class="border border-studio-border bg-studio-900/40 p-8">
+        <div class="text-[10px] tracking-wider uppercase text-studio-muted mb-2 font-semibold">Öffnungszeiten</div>
+        <h3 class="font-serif text-2xl text-white mb-3">Täglich 10:00 – 00:00</h3>
+        <ul class="text-xs text-slate-300 space-y-2 font-light">
+          <li class="flex justify-between text-white font-medium">
+            <span>Montag – Sonntag:</span>
+            <span>10:00 – 00:00 Uhr</span>
+          </li>
+          <li class="pt-2 text-[11px] text-studio-muted border-t border-studio-border">
+            Kaffee, Drinks und Toasts durchgehend bis Mitternacht.
+          </li>
+        </ul>
+      </div>
+
+      <div class="border border-studio-border bg-studio-900/40 p-8">
+        <div class="text-[10px] tracking-wider uppercase text-studio-muted mb-2 font-semibold">Telefon</div>
+        <h3 class="font-serif text-2xl text-white mb-3">Direkt anrufen</h3>
+        <p class="text-xs text-slate-300 leading-relaxed font-light mb-3">
+          Für Reservierungen von Tischen oder Feiern:
+        </p>
+        <a href="tel:+4319451784" class="block font-serif text-2xl text-white hover:underline mb-4">
+          +43 1 945 17 84
+        </a>
+        <button onclick="openModal()" class="w-full py-2.5 border border-white/30 hover:border-white text-white text-xs tracking-wider uppercase transition-all">
+          Anfrage senden
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-studio-border py-10 bg-studio-950 text-center text-xs text-studio-muted font-light">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <span class="font-serif text-base text-white">Café Public</span> &bull; Landstraßer Hauptstraße 173–175, 1030 Wien
+      </div>
+      <div>&copy; 2026 Café Public. Alle Rechte vorbehalten.</div>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-white">Impressum</a>
+        <a href="#" class="hover:text-white">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-studio-900 border border-studio-border max-w-lg w-full p-8 shadow-2xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-studio-muted hover:text-white text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-wider text-studio-muted font-semibold">Tisch- &amp; Loungeanfrage</span>
+        <h3 class="font-serif text-2xl text-white mt-1">Café Public</h3>
+        <p class="text-xs text-studio-muted mt-1">Wir reservieren den passenden Bereich für Sie.</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitForm(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block text-slate-300 mb-1 text-[11px]">Name *</label>
+          <input type="text" required placeholder="Vor- &amp; Nachname" class="w-full bg-studio-950 border border-studio-border p-3 text-white outline-none focus:border-white">
+        </div>
+        <div>
+          <label class="block text-slate-300 mb-1 text-[11px]">Telefon *</label>
+          <input type="tel" required placeholder="+43 1 945..." class="w-full bg-studio-950 border border-studio-border p-3 text-white outline-none focus:border-white">
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          <div>
+            <label class="block text-slate-300 mb-1 text-[11px]">Datum</label>
+            <input type="date" required id="res-date" class="w-full bg-studio-950 border border-studio-border p-2.5 text-xs text-white outline-none">
+          </div>
+          <div>
+            <label class="block text-slate-300 mb-1 text-[11px]">Uhrzeit</label>
+            <select class="w-full bg-studio-950 border border-studio-border p-2.5 text-xs text-white outline-none">
+              <option>11:00</option>
+              <option>14:00</option>
+              <option selected>17:30</option>
+              <option>19:00</option>
+              <option>20:30</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-300 mb-1 text-[11px]">Personen</label>
+            <select class="w-full bg-studio-950 border border-studio-border p-2.5 text-xs text-white outline-none">
+              <option>2 Gäste</option>
+              <option>3–5 Gäste</option>
+              <option>6–10 Gäste</option>
+              <option>Gruppe 10+</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-white text-studio-950 font-semibold tracking-wider uppercase text-xs mt-3 hover:bg-studio-sand transition-all">
+          Anfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-2xl text-white mb-2">Vielen Dank!</h4>
+        <p class="text-xs text-studio-muted mb-4">Ihre Anfrage ist eingegangen. Wir bestätigen die Reservierung in Kürze.</p>
+        <button onclick="closeModal()" class="px-6 py-2 border border-white text-white text-xs uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterItems(cat, btn) {
+      document.querySelectorAll('.filter-tab').forEach(b => {
+        b.classList.remove('border-white', 'text-white', 'font-semibold');
+        b.classList.add('border-transparent', 'text-slate-400');
+      });
+      btn.classList.add('border-white', 'text-white', 'font-semibold');
+      btn.classList.remove('border-transparent', 'text-slate-400');
+
+      document.querySelectorAll('.card-item').forEach(card => {
+        if (cat === 'all' || card.classList.contains(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openModal() {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitForm(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

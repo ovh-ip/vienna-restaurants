@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Simon | Wiener Zeitkapsel & Wurlitzer Jukebox • Wien 1030</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            simon: {
+              paper: '#faf7f2',
+              card: '#ffffff',
+              border: '#e8e2d8',
+              dark: '#1c1815',
+              green: '#1e382b',
+              amber: '#c07a38',
+              wood: '#3a2e26',
+              muted: '#70675f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-simon-paper text-simon-dark font-sans antialiased selection:bg-simon-green selection:text-white">
+
+  <!-- TOP BAR (VERIFIED DATA) -->
+  <div class="border-b border-simon-border bg-[#f3ede3] text-[11px] py-2.5 px-6 text-simon-muted font-medium">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-6">
+        <span>📍 Landstraßer Hauptstraße 165, 1030 Wien (U3 Schlachthausgasse)</span>
+        <span class="text-simon-border">•</span>
+        <span>🕒 Täglich geöffnet: 10:00 – 02:00 Uhr früh</span>
+      </div>
+      <div class="flex items-center space-x-6">
+        <span class="text-simon-green font-semibold">🎵 Original Wurlitzer Jukebox</span>
+        <a href="tel:+436509033960" class="hover:text-simon-green transition-colors">📞 +43 650 9033960</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-simon-paper/95 backdrop-blur-md border-b border-simon-border">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3">
+        <div class="w-10 h-10 border border-simon-green text-simon-green flex items-center justify-center font-serif text-xl font-bold">
+          S
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold tracking-tight text-simon-dark block leading-none">Café Simon</span>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-simon-muted font-medium">Wiener Beisl &bull; Wurlitzer Bar</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-xs tracking-wider uppercase font-medium text-simon-wood">
+        <a href="#wurlitzer" class="hover:text-simon-green transition-colors">Die Wurlitzer</a>
+        <a href="#karte" class="hover:text-simon-green transition-colors">Getränke &amp; Toasts</a>
+        <a href="#charme" class="hover:text-simon-green transition-colors">Wiener Zeitkapsel</a>
+        <a href="#kontakt" class="hover:text-simon-green transition-colors">Standort</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <button onclick="openModal()" class="px-5 py-2.5 bg-simon-green hover:bg-emerald-900 text-white text-xs tracking-wider uppercase font-medium transition-all">
+          Tisch reservieren
+        </button>
+      </div>
+
+      <button onclick="toggleMobileMenu()" class="md:hidden text-simon-dark p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-simon-paper border-b border-simon-border px-6 py-6 space-y-3 text-xs tracking-wider uppercase font-medium">
+      <a href="#wurlitzer" onclick="toggleMobileMenu()" class="block py-1">Die Wurlitzer</a>
+      <a href="#karte" onclick="toggleMobileMenu()" class="block py-1">Getränkekarte</a>
+      <a href="#charme" onclick="toggleMobileMenu()" class="block py-1">Über das Beisl</a>
+      <a href="#kontakt" onclick="toggleMobileMenu()" class="block py-1">Kontakt &amp; Zeiten</a>
+      <button onclick="toggleMobileMenu(); openModal();" class="w-full mt-2 py-3 bg-simon-green text-white text-xs uppercase tracking-wider font-semibold">
+        Tisch reservieren
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative py-20 lg:py-28 border-b border-simon-border bg-[#f5efe4]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-block">
+            <span class="text-[11px] tracking-[0.2em] uppercase text-simon-green font-semibold border-b border-simon-green/30 pb-1">
+              Wiener Vorstadt-Café &bull; Landstraße 1030
+            </span>
+          </div>
+
+          <h1 class="font-serif text-5xl sm:text-6xl text-simon-dark font-normal leading-[1.12]">
+            Echte Wiener Zeitkapsel.<br>
+            <span class="italic font-normal text-simon-wood">Bier, Spritzer &amp; Vinyl-Musik.</span>
+          </h1>
+
+          <p class="text-sm text-simon-muted leading-relaxed font-light max-w-xl">
+            Kein durchgestyltes Retrolokal, sondern ein echter Wiener Klassiker. Bei uns treffen sich Nachbarn, Nachtschwärmer und Freunde auf ein kühles Krügerl vom Fass, einen ehrlichen Spritzer und legendäre Songs aus der Wurlitzer-Jukebox.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+            <button onclick="openModal()" class="px-8 py-3.5 bg-simon-green hover:bg-emerald-900 text-white text-xs tracking-widest uppercase font-semibold transition-all">
+              Platz vormerken
+            </button>
+            <a href="#karte" class="px-8 py-3.5 border border-simon-border bg-white hover:bg-simon-paper text-simon-dark text-xs tracking-widest uppercase font-medium text-center transition-all">
+              Karte einsehen ↓
+            </a>
+          </div>
+
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-simon-border text-center">
+            <div>
+              <div class="font-serif text-3xl font-normal text-simon-dark">10 – 02 Uhr</div>
+              <div class="text-[10px] tracking-widest uppercase text-simon-muted mt-1">Täglich bis spät</div>
+            </div>
+            <div>
+              <div class="font-serif text-3xl font-normal text-simon-green">Wurlitzer</div>
+              <div class="text-[10px] tracking-widest uppercase text-simon-muted mt-1">100 Vinyl-Singles</div>
+            </div>
+            <div>
+              <div class="font-serif text-3xl font-normal text-simon-dark">4.5 ★</div>
+              <div class="text-[10px] tracking-widest uppercase text-simon-muted mt-1">Google Rezensionen</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 relative">
+          <div class="border border-simon-border bg-white p-3 shadow-xs">
+            <img src="https://images.unsplash.com/photo-1546707012-c46675f12716?auto=format&fit=crop&w=800&q=80" alt="Wurlitzer Jukebox" class="w-full h-80 object-cover">
+            <div class="p-4 text-center">
+              <span class="font-serif italic text-simon-wood text-sm">„Münze einwerfen, Austropop wählen und ein kühles Bier trinken.“</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WURLITZER SECTION -->
+  <section id="wurlitzer" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="border border-simon-border bg-white p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="max-w-xl space-y-3">
+        <div class="text-[10px] tracking-[0.2em] uppercase text-simon-green font-semibold">Das Herzstück</div>
+        <h2 class="font-serif text-3xl sm:text-4xl text-simon-dark font-normal">Der originale Wurlitzer Jukebox</h2>
+        <p class="text-xs text-simon-muted leading-relaxed font-light">
+          In Zeiten digitaler Playlists halten wir am Knistern echter Schallplatten fest: Falco, Wolfgang Ambros, Georg Danzer, STS sowie internationale Rock- und Blues-Klassiker der 60er und 70er Jahre.
+        </p>
+      </div>
+      <div class="text-center shrink-0">
+        <span class="font-serif text-4xl text-simon-amber block font-bold">1 Münze</span>
+        <span class="text-[11px] text-simon-muted uppercase tracking-wider block mt-1">Freie Songauswahl</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GETRÄNKE & SNACKS -->
+  <section id="karte" class="py-20 bg-[#f5efe4] border-t border-simon-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <div class="text-[10px] tracking-[0.25em] uppercase text-simon-green font-semibold mb-2">Ehrliche Beisl-Kultur</div>
+        <h2 class="font-serif text-4xl text-simon-dark font-normal">Getränke &amp; Bar-Snacks</h2>
+        <p class="text-xs text-simon-muted mt-2 font-light">Frisch gezapftes Bier, Wiener Kaffee und warme Toasts.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Beer -->
+        <div class="bg-white border border-simon-border p-6 flex flex-col justify-between">
+          <div>
+            <div class="h-48 overflow-hidden mb-5">
+              <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&w=600&q=80" alt="Gezapftes Bier" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-simon-dark font-medium">Bier vom Fass</h3>
+              <span class="font-serif text-xl text-simon-green ml-2">€ 4,60</span>
+            </div>
+            <p class="text-xs text-simon-muted leading-relaxed font-light mb-4">
+              Frisch gezapftes Ottakringer oder Stiegl mit feinporiger Schaumkrone. Kühl und unverfälscht serviert.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-simon-border text-[10px] text-simon-muted flex justify-between">
+            <span>0,5l Krügerl</span>
+            <span>Seidel (0,3l): € 3,60</span>
+          </div>
+        </div>
+
+        <!-- Spritzer & Wein -->
+        <div class="bg-white border border-simon-border p-6 flex flex-col justify-between">
+          <div>
+            <div class="h-48 overflow-hidden mb-5">
+              <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Weißer Spritzer" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-simon-dark font-medium">Weißer Spritzer</h3>
+              <span class="font-serif text-xl text-simon-green ml-2">€ 3,40</span>
+            </div>
+            <p class="text-xs text-simon-muted leading-relaxed font-light mb-4">
+              Der unverzichtbare Wiener Klassiker: Grüner Veltliner mit spritzigem Sodawasser im Henkelglas.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-simon-border text-[10px] text-simon-muted flex justify-between">
+            <span>0,25l Glas</span>
+            <span>Auch Sommer-Spritzer</span>
+          </div>
+        </div>
+
+        <!-- Toast -->
+        <div class="bg-white border border-simon-border p-6 flex flex-col justify-between">
+          <div>
+            <div class="h-48 overflow-hidden mb-5">
+              <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80" alt="Schinken Käse Toast" class="w-full h-full object-cover">
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-simon-dark font-medium">Schinken-Käse-Toast</h3>
+              <span class="font-serif text-xl text-simon-green ml-2">€ 5,20</span>
+            </div>
+            <p class="text-xs text-simon-muted leading-relaxed font-light mb-4">
+              Kross getoastetes Brot mit feinem Schinken und geschmolzenem Gouda, serviert mit Ketchup oder Estragonsenf.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-simon-border text-[10px] text-simon-muted flex justify-between">
+            <span>Warm serviert</span>
+            <span>Frankfurter: € 4,80</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT & VERIFIED ZEITEN -->
+  <section id="kontakt" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div class="bg-white border border-simon-border p-8">
+        <div class="text-[10px] tracking-wider uppercase text-simon-green font-semibold mb-2">Adresse</div>
+        <h3 class="font-serif text-2xl text-simon-dark mb-3">Café Simon</h3>
+        <p class="text-xs text-simon-muted leading-relaxed font-light mb-3">
+          Landstraßer Hauptstraße 165<br>
+          1030 Wien, Österreich
+        </p>
+        <p class="text-[11px] text-simon-muted">
+          Direkt neben U3 Schlachthausgasse &bull; 4 Min. von HTL Rennweg.
+        </p>
+      </div>
+
+      <div class="bg-white border border-simon-border p-8">
+        <div class="text-[10px] tracking-wider uppercase text-simon-green font-semibold mb-2">Öffnungszeiten</div>
+        <h3 class="font-serif text-2xl text-simon-dark mb-3">Täglich bis 02:00 Uhr</h3>
+        <ul class="text-xs text-simon-muted space-y-2 font-light">
+          <li class="flex justify-between font-medium text-simon-dark">
+            <span>Montag – Sonntag:</span>
+            <span>10:00 – 02:00 Uhr</span>
+          </li>
+          <li class="pt-2 text-[11px] text-simon-muted border-t border-simon-border">
+            Durchgehend geöffnet, auch an Wochenenden und Feiertagen.
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white border border-simon-border p-8">
+        <div class="text-[10px] tracking-wider uppercase text-simon-green font-semibold mb-2">Telefon</div>
+        <h3 class="font-serif text-2xl text-simon-dark mb-3">Direkt anrufen</h3>
+        <p class="text-xs text-simon-muted leading-relaxed font-light mb-3">
+          Für Reservierungen von Tischen oder Feiern:
+        </p>
+        <a href="tel:+436509033960" class="block font-serif text-2xl text-simon-green hover:underline mb-4">
+          +43 650 9033960
+        </a>
+        <button onclick="openModal()" class="w-full py-2.5 border border-simon-green text-simon-green hover:bg-simon-green hover:text-white text-xs tracking-wider uppercase font-medium transition-all">
+          Reservierungsanfrage
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-simon-border py-10 bg-simon-paper text-center text-xs text-simon-muted font-light">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>
+        <span class="font-serif text-simon-dark font-medium">Café Simon</span> &bull; Landstraßer Hauptstraße 165, 1030 Wien
+      </div>
+      <div>&copy; 2026 Café Simon. Wiener Beisl-Tradition.</div>
+      <div class="space-x-4">
+        <a href="#" class="hover:underline">Impressum</a>
+        <a href="#" class="hover:underline">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="reservation-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-white border border-simon-border max-w-lg w-full p-8 shadow-xl relative text-left">
+      <button onclick="closeModal()" class="absolute top-6 right-6 text-simon-muted hover:text-simon-dark text-xl">✕</button>
+      
+      <div class="mb-6">
+        <span class="text-[10px] uppercase tracking-wider text-simon-green font-semibold">Tischvormerkung</span>
+        <h3 class="font-serif text-2xl text-simon-dark mt-1">Café Simon</h3>
+        <p class="text-xs text-simon-muted mt-1">Geben Sie kurz an, wann Sie vorbeikommen möchten.</p>
+      </div>
+
+      <form id="res-form" onsubmit="submitRes(event)" class="space-y-4 text-xs font-light">
+        <div>
+          <label class="block text-simon-wood mb-1 text-[11px] font-medium">Name *</label>
+          <input type="text" required placeholder="Ihr Name" class="w-full border border-simon-border p-3 outline-none focus:border-simon-green">
+        </div>
+        <div>
+          <label class="block text-simon-wood mb-1 text-[11px] font-medium">Telefonnummer *</label>
+          <input type="tel" required placeholder="+43 650..." class="w-full border border-simon-border p-3 outline-none focus:border-simon-green">
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          <div>
+            <label class="block text-simon-wood mb-1 text-[11px] font-medium">Datum</label>
+            <input type="date" required id="res-date" class="w-full border border-simon-border p-2.5 text-xs outline-none">
+          </div>
+          <div>
+            <label class="block text-simon-wood mb-1 text-[11px] font-medium">Uhrzeit</label>
+            <select class="w-full border border-simon-border p-2.5 text-xs outline-none">
+              <option>18:00</option>
+              <option selected>19:30</option>
+              <option>21:00</option>
+              <option>22:30</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-simon-wood mb-1 text-[11px] font-medium">Personen</label>
+            <select class="w-full border border-simon-border p-2.5 text-xs outline-none">
+              <option>2–3 Gäste</option>
+              <option>4–6 Gäste</option>
+              <option>Gruppe 7+</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-simon-green text-white text-xs uppercase tracking-wider font-semibold mt-3">
+          Anfrage absenden
+        </button>
+      </form>
+
+      <div id="res-success" class="hidden text-center py-8">
+        <h4 class="font-serif text-2xl text-simon-dark mb-2">Vielen Dank!</h4>
+        <p class="text-xs text-simon-muted mb-4">Wir freuen uns auf Ihren Besuch im Café Simon.</p>
+        <button onclick="closeModal()" class="px-6 py-2 border border-simon-green text-simon-green text-xs uppercase">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('reservation-modal').classList.remove('hidden');
+      document.getElementById('res-date').value = new Date().toISOString().split('T')[0];
+    }
+    function closeModal() {
+      document.getElementById('reservation-modal').classList.add('hidden');
+      document.getElementById('res-form').classList.remove('hidden');
+      document.getElementById('res-success').classList.add('hidden');
+    }
+    function submitRes(e) {
+      e.preventDefault();
+      document.getElementById('res-form').classList.add('hidden');
+      document.getElementById('res-success').classList.remove('hidden');
+    }
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
